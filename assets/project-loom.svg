@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Loom Studio abstract project cover</title>
+  <desc id="desc">Creative studio interface with media strips and publishing controls.</desc>
+  <rect width="1200" height="900" fill="#fffaf2"/>
+  <rect x="120" y="120" width="960" height="660" rx="44" fill="#f7f3eb" stroke="#151413" stroke-width="4"/>
+  <rect x="168" y="184" width="208" height="532" rx="28" fill="#151413"/>
+  <rect x="428" y="184" width="604" height="340" rx="32" fill="#0f8b8d"/>
+  <circle cx="730" cy="354" r="92" fill="#f8c945"/>
+  <path d="m704 302 96 52-96 52z" fill="#151413"/>
+  <rect x="428" y="570" width="176" height="146" rx="24" fill="#ff6b57"/>
+  <rect x="640" y="570" width="176" height="146" rx="24" fill="#8f6bdc"/>
+  <rect x="852" y="570" width="180" height="146" rx="24" fill="#b7e4c7"/>
+  <rect x="208" y="238" width="118" height="18" rx="9" fill="#fffaf2"/>
+  <rect x="208" y="302" width="86" height="18" rx="9" fill="#f8c945"/>
+  <rect x="208" y="366" width="126" height="18" rx="9" fill="#0f8b8d"/>
+</svg>

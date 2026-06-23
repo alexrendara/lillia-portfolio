@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>同程旅行景区 AI 导览 | Lillia Li</title>
+    <meta
+      name="description"
+      content="同程旅行景区 AI 导览作品集案例，展示可复用导览系统、UX 调研、交互逻辑和多景区设计规范。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="project-detail" style="--year-color: #3fd47f">
+    <canvas id="flow-field" aria-hidden="true"></canvas>
+
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="wordmark" href="../index.html"><span>Lillia Li</span><small>李思宇</small></a>
+      <nav>
+        <a href="../years/2026.html">2026</a>
+        <a href="#process">过程</a>
+        <a href="../index.html#contact">联系</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="case-hero" aria-labelledby="case-title">
+        <div class="ui-flow-lines" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="case-hero-copy">
+          <p class="eyebrow">2026 · Product UX · Service system</p>
+          <h1 id="case-title">同程旅行景区 AI 导览</h1>
+          <p class="case-lede">
+            为同程旅行景区 AI 导览建立一套可复用的设计标杆：从国内外地图、室内外导览和景区服务产品调研出发，重构景区首页、路线导览、讲解点内容与足迹沉淀，最终支持国内 30+ 景区接入上线。
+          </p>
+          <p class="case-lede english-note">
+            A scalable AI guide framework connecting research, interaction logic, visual standards, and
+            multi-destination deployment.
+          </p>
+        </div>
+        <div class="case-hero-media">
+          <div class="floating-ui-tag tag-route" aria-hidden="true">Route · 04 stops</div>
+          <div class="floating-ui-tag tag-ai" aria-hidden="true">AI guide online</div>
+          <div class="device-pair">
+            <img src="../assets/tongcheng-ai/home.png" alt="同程旅行景区 AI 导览首页设计稿" />
+            <img src="../assets/tongcheng-ai/route-select.png" alt="同程旅行景区路线选择设计稿" />
+          </div>
+        </div>
+      </section>
+
+      <section class="case-meta" aria-label="项目事实">
+        <div>
+          <span>角色 Role</span>
+          <strong>UX 调研、交互逻辑梳理、视觉规范建立、AI 导览结构重构</strong>
+        </div>
+        <div>
+          <span>场景 Context</span>
+          <strong>面向多个景区接入的 AI 导览与景区服务系统</strong>
+        </div>
+        <div>
+          <span>结果 Outcome</span>
+          <strong>国内 30+ 景区接入上线，形成可复用设计标准</strong>
+        </div>
+      </section>
+
+      <section class="case-section" aria-labelledby="challenge-title">
+        <div class="section-heading">
+          <p class="eyebrow">Design challenge</p>
+          <h2 id="challenge-title">一个导览系统，适配多个景区</h2>
+        </div>
+        <div class="case-two-col">
+          <p>
+            景区导览不是单一页面问题，而是一个多场景服务系统。游客需要知道“有什么、怎么去、听什么、玩过什么”，景区则需要在不同地图、路线、内容密度和服务能力之间保持体验统一。
+          </p>
+          <p class="english-note">
+            Scenic guide design is a service-system problem: destination identity, map navigation, audio guide
+            content, route decisions, and post-visit memory need to work together.
+          </p>
+          <p>
+            如果每个景区都单独设计，首页结构、讲解点内容、路线状态和服务入口会很快碎片化。因此项目重点不是做一套漂亮界面，而是建立可复制的交互规则和视觉规范。
+          </p>
+          <p class="english-note">
+            The key was to build reusable logic instead of isolated screens, so different scenic areas could keep
+            their own identity while sharing one guide framework.
+          </p>
+        </div>
+      </section>
+
+      <section id="process" class="case-section" aria-labelledby="research-title">
+        <div class="section-heading">
+          <p class="eyebrow">Research to design</p>
+          <h2 id="research-title">从产品调研到设计原则</h2>
+        </div>
+        <div class="insight-grid">
+          <article>
+            <span>01</span>
+            <h3>地图与空间导览</h3>
+            <p>
+              调研国内外地图、室内外导览和景区类产品后，我将重点放在 POI 层级、路线选择、当前位置、目的地行动和地图信息密度上。
+            </p>
+            <p class="english-note">Research focus: POI hierarchy, route choice, current location, destination actions.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>AI 回答结构</h3>
+            <p>
+              AI 不应只是聊天入口，而应该把自然语言问题转译成可操作的服务结果，例如景点讲解、路线推荐、餐饮、文创、厕所、酒店和附近服务。
+            </p>
+            <p class="english-note">AI was reframed as a structured service layer, not a generic chat box.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>可复用视觉规范</h3>
+            <p>
+              不同景区需要保留自身图片和氛围，但交互容器必须稳定。我沉淀了卡片、标签、底部播放器、行动按钮和内容模板，支撑多景区替换。
+            </p>
+            <p class="english-note">Reusable UI containers allow scenic identity to change without breaking the system.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section" aria-labelledby="framework-title">
+        <div class="section-heading">
+          <p class="eyebrow">System framework</p>
+          <h2 id="framework-title">把导览重构为可循环的服务闭环</h2>
+        </div>
+        <div class="flow-map" aria-label="AI guide service loop">
+          <span class="flow-current" aria-hidden="true"></span>
+          <div>
+            <span>入口 Entry</span>
+            <strong>景区首页</strong>
+            <small>AI 入口、服务快捷入口、景区视觉识别</small>
+          </div>
+          <div>
+            <span>意图 Intent</span>
+            <strong>输入或快捷提问</strong>
+            <small>文字输入、问题标签、场景化推荐</small>
+          </div>
+          <div>
+            <span>结果 Result</span>
+            <strong>结构化服务卡片</strong>
+            <small>景点、餐饮、文创、设施、讲解点</small>
+          </div>
+          <div>
+            <span>行动 Action</span>
+            <strong>前往 / 听讲解 / 购买</strong>
+            <small>从回答直接进入真实游玩动作</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section design-showcase" aria-labelledby="screens-title">
+        <div class="section-heading">
+          <p class="eyebrow">Product screens</p>
+          <h2 id="screens-title">从入口、路线、点位到记忆的完整导览体验</h2>
+        </div>
+        <div class="screen-row">
+          <article class="screen-copy">
+            <span>01</span>
+            <h3>首页：景区服务枢纽</h3>
+            <p>
+              首页不是简单聚合入口，而是游客进入景区后的决策中心：先建立景区氛围，再提供 AI 提问、门票、年卡、游船、餐饮等服务入口，并继续承接旅拍与推荐讲解点。
+            </p>
+            <p class="english-note">Destination identity first, then AI assistance, service shortcuts, and discovery.</p>
+          </article>
+          <div class="phone-gallery three decorated-gallery" data-label="ENTRY / ASSISTANCE">
+            <figure><img src="../assets/tongcheng-ai/home.png" alt="AI 导览首页" /><figcaption>首页</figcaption></figure>
+            <figure><img src="../assets/tongcheng-ai/home-expanded.png" alt="AI 导览首页展开" /><figcaption>展开态</figcaption></figure>
+            <figure><img src="../assets/tongcheng-ai/home-banner.png" alt="首页 Banner 切换" /><figcaption>Banner 状态</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="screen-row reverse">
+          <article class="screen-copy">
+            <span>02</span>
+            <h3>路线：从选择到边走边听</h3>
+            <p>
+              路线模块把“看地图”拆成连续决策：选择游览路线、比较路线列表、进入路线详情，再通过底部播放器持续保留讲解能力，让用户不会在移动中失去上下文。
+            </p>
+            <p class="english-note">Route logic: compare, enter, follow, and keep audio guidance available.</p>
+          </article>
+          <div class="phone-gallery route-strip decorated-gallery" data-label="ROUTE / AUDIO" aria-label="路线模块滑动浏览">
+            <figure><img src="../assets/tongcheng-ai/route-select.png" alt="路线选择" /><figcaption>路线选择</figcaption></figure>
+            <figure><img src="../assets/tongcheng-ai/route-select-1.png" alt="路线选择状态一" /><figcaption>选择状态</figcaption></figure>
+            <figure><img src="../assets/tongcheng-ai/route-select-2.png" alt="路线选择状态二" /><figcaption>地图点位</figcaption></figure>
+            <figure><img src="../assets/tongcheng-ai/route-select-pink.png" alt="路线选择主题状态" /><figcaption>主题状态</figcaption></figure>
+            <figure><img src="../assets/tongcheng-ai/route-list.png" alt="路线列表" /><figcaption>路线列表</figcaption></figure>
+            <figure><img src="../assets/tongcheng-ai/route-list-1.png" alt="路线列表状态" /><figcaption>列表状态</figcaption></figure>
+            <figure><img src="../assets/tongcheng-ai/route-detail.png" alt="路线详情" /><figcaption>路线详情</figcaption></figure>
+            <figure><img src="../assets/tongcheng-ai/route-detail-scroll.png" alt="路线详情滚动状态" /><figcaption>滚动状态</figcaption></figure>
+            <figure><img src="../assets/tongcheng-ai/route-detail-transport.png" alt="其他交通工具路线详情" /><figcaption>交通工具</figcaption></figure>
+            <figure><img src="../assets/tongcheng-ai/route-player.png" alt="底部播放器" /><figcaption>播放器</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="screen-row">
+          <article class="screen-copy">
+            <span>03</span>
+            <h3>点位：内容模板化</h3>
+            <p>
+              讲解点详情需要适配不同内容类型：人文历史、动植物科普、游玩设施、语音讲解和前往路线。因此页面采用统一信息层级，让内容可替换但阅读节奏一致。
+            </p>
+            <p class="english-note">POI templates support different content types while keeping hierarchy consistent.</p>
+          </article>
+          <div class="phone-gallery three decorated-gallery" data-label="CONTENT / POI">
+            <figure><img src="../assets/tongcheng-ai/poi-guide-detail.png" alt="讲解点详情" /><figcaption>讲解点</figcaption></figure>
+            <figure><img src="../assets/tongcheng-ai/poi-animal-plant.png" alt="动植物内容" /><figcaption>动植物</figcaption></figure>
+            <figure><img src="../assets/tongcheng-ai/poi-facility.png" alt="游玩设施内容" /><figcaption>设施内容</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="screen-row reverse">
+          <article class="screen-copy">
+            <span>04</span>
+            <h3>足迹：把导览变成旅行记忆</h3>
+            <p>
+              足迹模块是这个项目里更有故事感的部分。它把游客走过的路线、到达过的点位和拍摄过的照片重新组织成个人游览记录，让导览从“当下找路”延展到“回看我如何经历这个景区”。
+            </p>
+            <p>
+              这让产品不只是工具，也像一个轻量的旅行档案：地图记录路径，相册保存瞬间，用户离开景区后仍然能回到自己的游玩故事里。
+            </p>
+            <p class="english-note">Footprints turn routes, visited spots, and photos into a personal travel archive.</p>
+          </article>
+          <div class="phone-gallery footprint-strip decorated-gallery" data-label="MEMORY / FOOTPRINT" aria-label="足迹模块滑动浏览">
+            <figure><img src="../assets/tongcheng-ai/footprint-map.png" alt="足迹地图" /><figcaption>足迹地图</figcaption></figure>
+            <figure><img src="../assets/tongcheng-ai/footprint-map-1.png" alt="足迹地图点位状态" /><figcaption>点位状态</figcaption></figure>
+            <figure><img src="../assets/tongcheng-ai/footprint-map-2.png" alt="足迹地图路径状态" /><figcaption>路径状态</figcaption></figure>
+            <figure><img src="../assets/tongcheng-ai/footprint-album.png" alt="足迹相册" /><figcaption>足迹相册</figcaption></figure>
+            <figure><img src="../assets/tongcheng-ai/footprint-album-1.png" alt="足迹相册详情" /><figcaption>相册详情</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" aria-labelledby="logic-title">
+        <div class="section-heading">
+          <p class="eyebrow">Interaction logic</p>
+          <h2 id="logic-title">从开放问题到可执行动作</h2>
+        </div>
+        <div class="logic-list">
+          <article>
+            <span>输入 Input</span>
+            <p>
+              同时支持自由输入和快捷问题标签。快捷问题降低游客“我不知道能问什么”的压力，自由输入则保留 AI 的开放性。
+            </p>
+            <p class="english-note">Preset prompts reduce blank-state friction while free input keeps AI flexible.</p>
+          </article>
+          <article>
+            <span>结果 Result</span>
+            <p>
+              AI 回答不只输出文本，而是根据问题类型返回对应模板：路线、讲解点、餐饮、文创、厕所、酒店或其他服务信息。
+            </p>
+            <p class="english-note">Answers are mapped into templates such as route, POI, facility, restaurant, or hotel.</p>
+          </article>
+          <article>
+            <span>行动 Action</span>
+            <p>
+              每类结果都必须给出下一步，例如前往讲解点、听讲解、前往餐厅、前往商店。这样 AI 不停留在“回答”，而是推动真实游玩。
+            </p>
+            <p class="english-note">Each result connects to a next action, closing the gap between information and movement.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section outcome-section" aria-labelledby="outcome-title">
+        <div>
+          <p class="eyebrow">Outcome</p>
+          <h2 id="outcome-title">沉淀可复用标准，上线国内 30+ 景区</h2>
+        </div>
+        <p>
+          最终方案不是单个景区的定制页面，而是一套能被复用的景区 AI 导览框架：统一首页入口、路线导览、讲解点模板、服务结果和足迹记录，让不同景区可以替换内容与视觉素材，同时保持一致的交互体验。
+        </p>
+        <p class="english-note">
+          The final system combines reusable interaction logic, visual standards, and flexible content modules for
+          multi-scenic-area deployment.
+        </p>
+      </section>
+    </main>
+
+    <footer><p>© 2026 Lillia Li / 李思宇.</p></footer>
+    <script src="../script.js?v=copy-contact-1"></script>
+  </body>
+</html>

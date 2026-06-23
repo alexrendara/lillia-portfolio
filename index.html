@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lillia Li | UI/UX, Service & Product Design</title>
+    <meta
+      name="description"
+      content="Bilingual portfolio for Lillia Li, a UI/UX, service, and product designer exploring fluid digital experiences."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="home">
+    <canvas id="flow-field" aria-hidden="true"></canvas>
+
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="wordmark" href="index.html" aria-label="Lillia Li home">
+        <span>Lillia Li</span>
+        <small>李思宇</small>
+      </a>
+      <nav>
+        <a href="#years">Years</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero home-hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">UI/UX · Service Design · Product Design</p>
+          <h1 id="hero-title">以流动的设计回应人</h1>
+          <div class="intro-grid">
+            <p>
+              I am Lillia Li, a designer working across interface, product, and service systems. My portfolio is
+              organized by year: each year carries its own color, mood, and set of questions.
+            </p>
+            <p lang="zh-CN">
+              我是李思宇，关注 UI/UX、服务设计与产品设计。作品集以年份为线索组织，每一年都有自己的年度色、
+              主题氛围和设计问题。
+            </p>
+          </div>
+          <div class="hero-actions" aria-label="Hero actions">
+            <a class="button primary" href="#years">Explore years</a>
+            <a class="button secondary" href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <aside class="palette-panel" aria-label="Annual color system">
+          <p class="panel-label">Annual color logic</p>
+          <div class="palette-list">
+            <span style="--swatch: #3fd47f">2026</span>
+            <span style="--swatch: #9b8cff">2025</span>
+            <span style="--swatch: #2dd4bf">2024</span>
+            <span style="--swatch: #f6c85f">2023</span>
+          </div>
+          <p>
+            Black creates the gallery frame. Each annual color becomes the signal used across that year's overview
+            and future project detail pages.
+          </p>
+        </aside>
+      </section>
+
+      <section id="years" class="years-section" aria-label="Selected work by year">
+        <div class="year-grid">
+          <a class="year-card" style="--year-color: #3fd47f" href="years/2026.html">
+            <img src="assets/year-2026-cover.png?v=person-cover-1" alt="2026 annual portrait cover" />
+            <div>
+              <span>2026</span>
+              <strong>景区 AI 导览系统与服务流程</strong>
+              <small>1 project</small>
+            </div>
+          </a>
+
+          <a class="year-card" style="--year-color: #9b8cff" href="years/2025.html">
+            <img src="assets/year-2025-cover.png?v=person-cover-1" alt="2025 annual portrait cover" />
+            <div>
+              <span>2025</span>
+              <strong>AI 创作与生成流程</strong>
+              <small>3 projects</small>
+            </div>
+          </a>
+
+          <a class="year-card" style="--year-color: #2dd4bf" href="years/2024.html">
+            <img src="assets/year-2024-cover.png?v=person-cover-1" alt="2024 annual portrait cover" />
+            <div>
+              <span>2024</span>
+              <strong>医学考试学习平台与测试流程</strong>
+              <small>1 project</small>
+            </div>
+          </a>
+
+          <div class="year-card year-card-locked" style="--year-color: #f6c85f" aria-disabled="true">
+            <img src="assets/year-2023-cover.png?v=person-cover-1" alt="2023 annual portrait cover" />
+            <div>
+              <span>2023</span>
+              <strong>服务设计项目探索</strong>
+              <small>Coming soon</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about-section" aria-labelledby="about-title">
+        <div>
+          <p class="eyebrow">About Lillia</p>
+          <h2 id="about-title">在研究、结构与视觉<br /><span class="nowrap">系统之间推进设计</span></h2>
+        </div>
+        <div class="about-copy">
+          <p>
+            My work starts by listening closely: to people, constraints, invisible routines, and the small moments
+            where a product either earns trust or loses it. From there, I translate complexity into journeys,
+            prototypes, and interface systems that feel considered without feeling over-designed.
+          </p>
+          <p lang="zh-CN">
+            我的设计过程从理解真实场景开始：观察人、流程、限制和情绪，再把复杂问题转译为用户旅程、原型和界面系统。
+            我希望作品既有清晰的逻辑，也保留探索感和轻盈感。
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section" aria-labelledby="contact-title">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">一起塑造下一段体验</h2>
+          <p lang="zh-CN">欢迎联系我交流招聘机会、自由职业合作或作品集反馈。</p>
+        </div>
+        <address class="contact-list">
+          <a href="weixin://dl/chat?O15914231459">WeChat · O15914231459</a>
+          <button type="button" data-copy-email="13416549819@163.com">Email · 13416549819@163.com</button>
+          <a href="https://www.linkedin.com/in/lillia-656853227/" target="_blank" rel="noreferrer">LinkedIn · Lillia</a>
+        </address>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Lillia Li / 李思宇. Portfolio concept built for bilingual presentation.</p>
+    </footer>
+
+    <script src="script.js?v=copy-contact-1"></script>
+  </body>
+</html>

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>年会电子纪念票 | Lillia Li</title>
+    <meta name="description" content="年会电子纪念票作品集案例，展示 AI 图像生成、活动参与、纪念票模板、上传图片、生成结果与分享发布流程。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="project-detail ai-ticket-page" style="--year-color: #9b8cff">
+    <canvas id="flow-field" aria-hidden="true"></canvas>
+
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="wordmark" href="../index.html"><span>Lillia Li</span><small>李思宇</small></a>
+      <nav>
+        <a href="../years/2025.html">2025</a>
+        <a href="#process">过程</a>
+        <a href="../index.html#contact">联系</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="case-hero" aria-labelledby="case-title">
+        <div class="ui-flow-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="case-hero-copy">
+          <p class="eyebrow">2025 · AI image generation · Event experience</p>
+          <h1 id="case-title">年会电子纪念票</h1>
+          <p class="case-lede">
+            这是一个围绕年会场景的 AI 图像生成项目：用户从活动入口进入，选择纪念票主题与模板，上传个人图片，由 AI 生成专属纪念票，并完成内容发布与分享。
+          </p>
+          <p class="case-lede english-note">
+            An event-based AI image generation flow that turns personal photos into shareable memorial tickets.
+          </p>
+        </div>
+        <div class="case-hero-media">
+          <div class="floating-ui-tag tag-route" aria-hidden="true">Template · Upload · Generate</div>
+          <div class="floating-ui-tag tag-ai" aria-hidden="true">AI memorial ticket</div>
+          <div class="device-pair">
+            <img src="../assets/ai-ticket/entry.png" alt="纪念票活动入口设计稿" />
+            <img src="../assets/ai-ticket/result.png" alt="纪念票生成结果设计稿" />
+          </div>
+        </div>
+      </section>
+
+      <section class="case-meta" aria-label="项目事实">
+        <div><span>角色 Role</span><strong>活动生成流程、AI 图片上传与预览、结果分享链路、移动端交互设计</strong></div>
+        <div><span>场景 Context</span><strong>年会活动中的个性化纪念票生成与社交传播</strong></div>
+        <div><span>重点 Focus</span><strong>降低生成门槛，强化仪式感与分享动机</strong></div>
+      </section>
+
+      <section class="case-section" aria-labelledby="challenge-title">
+        <div class="section-heading">
+          <p class="eyebrow">Design challenge</p>
+          <h2 id="challenge-title">把一次活动参与变成可保存、可分享的纪念物</h2>
+        </div>
+        <div class="case-two-col">
+          <p>
+            AI 图像生成在活动场景里不能只是一个工具入口，它需要和用户的参与情绪绑定：用户为什么要上传照片、为什么要选择模板、生成结果如何体现“我参加过这场年会”。
+          </p>
+          <p class="english-note">
+            The challenge was to connect AI generation with event participation and emotional memory.
+          </p>
+          <p>
+            因此项目逻辑被设计成一个短链路闭环：活动吸引、主题理解、模板选择、上传预览、生成纪念票、发布分享。每一步都需要清楚告诉用户下一步会发生什么。
+          </p>
+          <p class="english-note">The flow needed to be short, predictable, and emotionally rewarding.</p>
+        </div>
+      </section>
+
+      <section id="process" class="case-section" aria-labelledby="research-title">
+        <div class="section-heading">
+          <p class="eyebrow">Research to design</p>
+          <h2 id="research-title">从活动传播和 AI 生成行为出发</h2>
+        </div>
+        <div class="insight-grid">
+          <article>
+            <span>01</span>
+            <h3>用户动机</h3>
+            <p>用户在年会场景中更愿意参与低成本、强反馈、可炫耀的互动。纪念票需要兼具身份感、活动氛围和可分享属性。</p>
+            <p class="english-note">Users need low effort, fast feedback, and a shareable identity artifact.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>生成信任</h3>
+            <p>AI 生成链路需要让用户知道图片会被如何使用。上传、预览、模板选择和生成结果之间要有足够明确的状态反馈。</p>
+            <p class="english-note">Upload and preview states build trust before generation.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>传播闭环</h3>
+            <p>生成结果不应停留在保存，而要继续引导发布内容、分享成功和二次传播，让活动热度从个人结果延展到社交触达。</p>
+            <p class="english-note">The generated ticket becomes a social sharing object.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section" aria-labelledby="framework-title">
+        <div class="section-heading">
+          <p class="eyebrow">System framework</p>
+          <h2 id="framework-title">建立从活动入口到分享传播的生成闭环</h2>
+        </div>
+        <div class="flow-map" aria-label="AI memorial ticket flow">
+          <span class="flow-current" aria-hidden="true"></span>
+          <div><span>入口 Entry</span><strong>活动触达</strong><small>年会入口、活动页、主题说明</small></div>
+          <div><span>选择 Select</span><strong>主题与模板</strong><small>纪念票主题、模板预览、视觉风格</small></div>
+          <div><span>生成 Generate</span><strong>上传并生成</strong><small>上传图片、预览确认、生成结果</small></div>
+          <div><span>传播 Share</span><strong>发布与分享</strong><small>内容发布、分享成功、社交扩散</small></div>
+        </div>
+      </section>
+
+      <section class="case-section design-showcase" aria-labelledby="screens-title">
+        <div class="section-heading">
+          <p class="eyebrow">Product screens</p>
+          <h2 id="screens-title">围绕年会纪念票生成组织完整流程</h2>
+        </div>
+
+        <div class="screen-row">
+          <article class="screen-copy">
+            <span>01</span>
+            <h3>活动入口：快速建立参与动机</h3>
+            <p>入口页和活动页需要先解释“这是一次年会纪念票活动”，并用视觉主题和生成结果暗示激发用户尝试。</p>
+            <p class="english-note">Entry screens frame the activity and invite quick participation.</p>
+          </article>
+          <div class="phone-gallery route-strip decorated-gallery" data-label="ENTRY / EVENT" aria-label="活动入口滑动浏览">
+            <figure><img src="../assets/ai-ticket/entry.png" alt="纪念票活动入口" /><figcaption>活动入口</figcaption></figure>
+            <figure class="scroll-phone">
+              <div class="phone-scroll-frame" tabindex="0" aria-label="可滚动查看完整纪念票活动页">
+                <img src="../assets/ai-ticket/activity-long.png" alt="纪念票活动页长图" />
+              </div>
+              <figcaption>活动页长图</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="screen-row reverse">
+          <article class="screen-copy">
+            <span>02</span>
+            <h3>主题与票面：把生成结果变得可期待</h3>
+            <p>五款电子纪念票共同建立活动主视觉：不同配色对应不同氛围与身份感，让用户在进入模板选择前，先感知结果物的收藏价值和分享吸引力。</p>
+            <p class="english-note">Five ticket styles turn the AI output into a collectible event artifact.</p>
+          </article>
+          <div class="ticket-theme-gallery decorated-gallery" data-label="TICKET STYLES" aria-label="纪念票主视觉浏览">
+            <div class="ticket-hero-wall" aria-label="五款电子纪念票主视觉">
+              <figure tabindex="0"><img src="../assets/ai-ticket/ticket-red.png" alt="红色年会电子纪念票" /><figcaption>热烈红</figcaption></figure>
+              <figure tabindex="0"><img src="../assets/ai-ticket/ticket-blue.png" alt="蓝色年会电子纪念票" /><figcaption>流光蓝</figcaption></figure>
+              <figure tabindex="0"><img src="../assets/ai-ticket/ticket-gold.png" alt="金色年会电子纪念票" /><figcaption>庆典金</figcaption></figure>
+              <figure tabindex="0"><img src="../assets/ai-ticket/ticket-white.png" alt="白色年会电子纪念票" /><figcaption>留白款</figcaption></figure>
+              <figure tabindex="0"><img src="../assets/ai-ticket/ticket-purple.png" alt="紫色年会电子纪念票" /><figcaption>幻彩紫</figcaption></figure>
+            </div>
+            <figure><img src="../assets/ai-ticket/template.png" alt="选择纪念票模板" /><figcaption>选择模板</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="screen-row">
+          <article class="screen-copy">
+            <span>03</span>
+            <h3>上传与生成：降低 AI 操作的不确定感</h3>
+            <p>上传图片、预览确认和生成结果构成核心 AI 任务链路。每一步都需要明确当前状态，让用户知道图片已被接收、正在生成，并最终得到可保存的纪念票。</p>
+            <p class="english-note">Upload, preview, and result states make generation transparent.</p>
+          </article>
+          <div class="phone-gallery route-strip decorated-gallery" data-label="UPLOAD / GENERATE" aria-label="上传与生成滑动浏览">
+            <figure><img src="../assets/ai-ticket/upload.png" alt="上传图片" /><figcaption>上传图片</figcaption></figure>
+            <figure><img src="../assets/ai-ticket/upload-preview.png" alt="上传图片预览" /><figcaption>图片预览</figcaption></figure>
+            <figure><img src="../assets/ai-ticket/result.png" alt="纪念票生成结果" /><figcaption>生成结果</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="screen-row reverse">
+          <article class="screen-copy">
+            <span>04</span>
+            <h3>发布分享：让纪念票成为传播内容</h3>
+            <p>生成后的页面继续引导用户发布内容与分享成功，将个人纪念票转化为可传播素材，让年会活动在社交链路中继续扩散。</p>
+            <p class="english-note">The generated ticket becomes shareable content, not only a saved image.</p>
+          </article>
+          <div class="phone-gallery route-strip decorated-gallery" data-label="PUBLISH / SHARE" aria-label="发布分享滑动浏览">
+            <figure><img src="../assets/ai-ticket/publish.png" alt="内容发布页面" /><figcaption>内容发布</figcaption></figure>
+            <figure><img src="../assets/ai-ticket/share-content.png" alt="发布内容分享" /><figcaption>发布分享</figcaption></figure>
+            <figure><img src="../assets/ai-ticket/share-success.png" alt="分享成功" /><figcaption>分享成功</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" aria-labelledby="logic-title">
+        <div class="section-heading">
+          <p class="eyebrow">Interaction logic</p>
+          <h2 id="logic-title">让 AI 生成流程短、稳、可分享</h2>
+        </div>
+        <div class="logic-list">
+          <article>
+            <span>短 Short</span>
+            <p>减少用户决策负担，避免过多参数配置，用模板和主题快速建立方向。</p>
+            <p class="english-note">Templates reduce configuration effort.</p>
+          </article>
+          <article>
+            <span>稳 Predictable</span>
+            <p>通过上传预览和生成结果确认，降低 AI 生成过程中的不确定感。</p>
+            <p class="english-note">Preview and result states make AI generation feel reliable.</p>
+          </article>
+          <article>
+            <span>传播 Shareable</span>
+            <p>把纪念票设计成适合发布和转发的结果物，让个人参与转化为活动传播。</p>
+            <p class="english-note">The output is designed as a social artifact.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer><p>© 2026 Lillia Li / 李思宇.</p></footer>
+    <script src="../script.js?v=copy-contact-1"></script>
+  </body>
+</html>

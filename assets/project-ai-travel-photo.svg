@@ -1,0 +1,38 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">AI旅拍项目封面</title>
+  <desc id="desc">基于AI导览旅拍、主站修图和哈尔滨专题设计稿重组的项目封面。</desc>
+  <rect width="1200" height="900" fill="#050506"/>
+  <path d="M0 0H1200V900H0V0Z" fill="url(#bg)"/>
+  <path d="M80 232C246 128 414 136 585 222C782 321 959 296 1120 182" stroke="#82d8ff" stroke-width="2" stroke-opacity=".34"/>
+  <g filter="url(#shadow)" transform="rotate(-7 292 454)">
+    <rect x="168" y="156" width="248" height="538" rx="36" fill="#111114"/>
+    <image href="ai-travel-photo/guide-recommend.png" x="186" y="178" width="212" height="460" preserveAspectRatio="xMidYMid slice" clip-path="url(#phoneA)"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="470" y="116" width="270" height="586" rx="40" fill="#111114"/>
+    <image href="ai-travel-photo/app-cloudy.png" x="490" y="140" width="230" height="498" preserveAspectRatio="xMidYMid slice" clip-path="url(#phoneB)"/>
+    <rect x="520" y="574" width="170" height="44" rx="22" fill="#ff7a66"/>
+    <text x="553" y="603" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800">AI 修图</text>
+  </g>
+  <g filter="url(#shadow)" transform="rotate(6 920 462)">
+    <rect x="802" y="180" width="236" height="512" rx="36" fill="#111114"/>
+    <image href="ai-travel-photo/harbin-detail-ice.png" x="820" y="202" width="200" height="434" preserveAspectRatio="xMidYMid slice" clip-path="url(#phoneC)"/>
+  </g>
+  <rect x="72" y="70" width="248" height="42" rx="21" fill="#ff7a66" fill-opacity=".16" stroke="#ff7a66" stroke-opacity=".42"/>
+  <text x="96" y="98" fill="#ffb0a4" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800">2025 / AI TRAVEL PHOTO</text>
+  <text x="72" y="812" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800">AI旅拍</text>
+  <text x="76" y="856" fill="#ffb0a4" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Guide pilot · Main app scaling · Harbin winter theme</text>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1200" y1="0" y2="900">
+      <stop stop-color="#11183a"/>
+      <stop offset=".44" stop-color="#050506"/>
+      <stop offset="1" stop-color="#261018"/>
+    </linearGradient>
+    <clipPath id="phoneA"><rect x="186" y="178" width="212" height="460" rx="26"/></clipPath>
+    <clipPath id="phoneB"><rect x="490" y="140" width="230" height="498" rx="28"/></clipPath>
+    <clipPath id="phoneC"><rect x="820" y="202" width="200" height="434" rx="26"/></clipPath>
+    <filter id="shadow" x="80" y="50" width="1060" height="740" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="30" stdDeviation="28" flood-color="#000000" flood-opacity=".55"/>
+    </filter>
+  </defs>
+</svg>

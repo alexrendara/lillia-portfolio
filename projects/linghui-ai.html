@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>灵绘 AI | Lillia Li</title>
+    <meta name="description" content="灵绘 AI 作品集案例，展示 AI 图像生成、数字人定制、会员系统与数字人口播生成流程。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="project-detail" style="--year-color: #9b8cff">
+    <canvas id="flow-field" aria-hidden="true"></canvas>
+
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="wordmark" href="../index.html"><span>Lillia Li</span><small>李思宇</small></a>
+      <nav>
+        <a href="../years/2025.html">2025</a>
+        <a href="#process">过程</a>
+        <a href="../index.html#contact">联系</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="case-hero" aria-labelledby="case-title">
+        <div class="ui-flow-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="case-hero-copy">
+          <p class="eyebrow">2025 · AI creation · Digital avatar workflow</p>
+          <h1 id="case-title">灵绘 AI</h1>
+          <p class="case-lede">
+            围绕 AI 图像生成与数字人视频生产，我将产品梳理为“发现能力、定制数字人、解锁会员权益、生成口播内容”的完整创作链路，重点解决新用户理解成本高、生成流程长、付费权益难感知的问题。
+          </p>
+          <p class="case-lede english-note">
+            An AI creation workflow connecting image generation, digital avatar customization, membership conversion,
+            and talking-avatar video output.
+          </p>
+        </div>
+        <div class="case-hero-media">
+          <div class="floating-ui-tag tag-route" aria-hidden="true">AI image · Avatar · Video</div>
+          <div class="floating-ui-tag tag-ai" aria-hidden="true">Creator workflow</div>
+          <div class="device-pair">
+            <img src="../assets/linghui-ai/home.png" alt="灵绘 AI 首页设计稿" />
+            <img src="../assets/linghui-ai/avatar-custom.png" alt="灵绘 AI 数字人定制设计稿" />
+          </div>
+        </div>
+      </section>
+
+      <section class="case-meta" aria-label="项目事实">
+        <div><span>角色 Role</span><strong>交互结构梳理、生成流程设计、会员转化路径、移动端 UI 规范</strong></div>
+        <div><span>场景 Context</span><strong>面向普通用户与轻量内容创作者的 AI 图片与数字人生成工具</strong></div>
+        <div><span>重点 Focus</span><strong>降低 AI 创作门槛，建立从试用到付费再到产出的闭环</strong></div>
+      </section>
+
+      <section class="case-section" aria-labelledby="challenge-title">
+        <div class="section-heading">
+          <p class="eyebrow">Design challenge</p>
+          <h2 id="challenge-title">把复杂 AI 能力转化为清晰的创作路径</h2>
+        </div>
+        <div class="case-two-col">
+          <p>
+            AI 图像和数字人产品的难点不在于“功能多”，而在于用户很难判断从哪里开始、需要准备什么、每一步会产出什么。尤其是数字人口播链路，需要连接形象、声音、文案、权益和生成结果，任何一步不清晰都会造成流失。
+          </p>
+          <p class="english-note">
+            The core challenge was not feature quantity, but turning model capabilities into a predictable creation
+            path.
+          </p>
+          <p>
+            因此我把项目定义为一个“创作漏斗”：首页负责理解与兴趣激发，数字人定制负责建立个性化资产，会员系统负责解释能力边界，数字人口播负责完成可交付内容。
+          </p>
+          <p class="english-note">
+            The product was reframed as a creation funnel: discover, customize, unlock, and generate.
+          </p>
+        </div>
+      </section>
+
+      <section id="process" class="case-section" aria-labelledby="research-title">
+        <div class="section-heading">
+          <p class="eyebrow">Research to design</p>
+          <h2 id="research-title">从用户与市场调研到流程拆解</h2>
+        </div>
+        <div class="insight-grid">
+          <article>
+            <span>01</span>
+            <h3>用户画像与动机</h3>
+            <p>目标用户可分为尝鲜型用户、轻量内容创作者和商业推广用户。他们共同关注生成效果、操作成本和是否值得付费。</p>
+            <p class="english-note">Personas: explorers, lightweight creators, and promotion-oriented users.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>市场产品对照</h3>
+            <p>参考 AI 绘图、模板化修图、数字人视频和会员权益产品后，提炼出“先展示结果，再降低操作门槛，最后解释权益”的转化逻辑。</p>
+            <p class="english-note">Market logic: show output value, reduce effort, then explain paid capability.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>生成链路拆分</h3>
+            <p>将复杂流程拆成可理解步骤：选择入口、定制形象、确认权益、输入口播内容、生成结果，避免用户被模型参数和任务状态淹没。</p>
+            <p class="english-note">Workflow logic: entry, avatar asset, membership, script, generation output.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section" aria-labelledby="framework-title">
+        <div class="section-heading">
+          <p class="eyebrow">System framework</p>
+          <h2 id="framework-title">建立从发现到生成的创作闭环</h2>
+        </div>
+        <div class="flow-map" aria-label="Linghui AI creation loop">
+          <span class="flow-current" aria-hidden="true"></span>
+          <div><span>发现 Entry</span><strong>首页能力展示</strong><small>Banner、功能入口、案例结果</small></div>
+          <div><span>资产 Asset</span><strong>数字人定制</strong><small>形象选择、参数配置、生成确认</small></div>
+          <div><span>权益 Unlock</span><strong>会员系统</strong><small>额度、功能边界、付费转化</small></div>
+          <div><span>产出 Output</span><strong>数字人口播</strong><small>输入文案、选择形象、生成视频</small></div>
+        </div>
+      </section>
+
+      <section class="case-section design-showcase" aria-labelledby="screens-title">
+        <div class="section-heading">
+          <p class="eyebrow">Product screens</p>
+          <h2 id="screens-title">围绕 AI 创作链路组织页面模块</h2>
+        </div>
+
+        <div class="screen-row">
+          <article class="screen-copy">
+            <span>01</span>
+            <h3>首页：先让用户理解能生成什么</h3>
+            <p>首页需要快速展示 AI 图像、数字人和创作模板的能力，让用户先看到结果价值，再进入具体功能。多个 Banner 状态用于承接不同推广主题和使用场景。</p>
+            <p class="english-note">Homepage: communicate output value before asking users to configure anything.</p>
+          </article>
+          <div class="phone-gallery route-strip decorated-gallery" data-label="HOME / DISCOVERY" aria-label="首页模块滑动浏览">
+            <figure><img src="../assets/linghui-ai/home.png" alt="灵绘 AI 首页" /><figcaption>首页</figcaption></figure>
+            <figure><img src="../assets/linghui-ai/home-scroll.png" alt="灵绘 AI 首页滑动" /><figcaption>首页滑动</figcaption></figure>
+            <figure><img src="../assets/linghui-ai/home-banner-1.png" alt="灵绘 AI Banner 状态一" /><figcaption>Banner 1</figcaption></figure>
+            <figure><img src="../assets/linghui-ai/home-banner-2.png" alt="灵绘 AI Banner 状态二" /><figcaption>Banner 2</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="screen-row reverse">
+          <article class="screen-copy">
+            <span>02</span>
+            <h3>数字人定制：把个性化拆成连续步骤</h3>
+            <p>数字人定制是核心资产生成流程。我将它拆成形象入口、风格/参数选择、生成确认和结果查看，让用户知道每一步正在塑造数字人的哪一部分。</p>
+            <p class="english-note">Avatar customization turns an abstract AI capability into step-by-step asset creation.</p>
+          </article>
+          <div class="phone-gallery route-strip decorated-gallery" data-label="AVATAR / CUSTOMIZE" aria-label="数字人定制滑动浏览">
+            <figure><img src="../assets/linghui-ai/avatar-custom.png" alt="数字人定制入口" /><figcaption>定制入口</figcaption></figure>
+            <figure><img src="../assets/linghui-ai/avatar-custom-1-0.png" alt="数字人定制指引" /><figcaption>数字人定制指引</figcaption></figure>
+            <figure><img src="../assets/linghui-ai/avatar-custom-1-1.png" alt="数字人定制步骤 1" /><figcaption>步骤 1</figcaption></figure>
+            <figure><img src="../assets/linghui-ai/avatar-custom-1-2.png" alt="数字人拍摄过程" /><figcaption>拍摄过程</figcaption></figure>
+            <figure><img src="../assets/linghui-ai/avatar-custom-2-1.png" alt="选择形象" /><figcaption>选择形象</figcaption></figure>
+            <figure><img src="../assets/linghui-ai/avatar-custom-2-2.png" alt="生成形象" /><figcaption>生成形象</figcaption></figure>
+            <figure><img src="../assets/linghui-ai/avatar-custom-2-3.png" alt="数字人动作定制" /><figcaption>数字人动作定制</figcaption></figure>
+            <figure><img src="../assets/linghui-ai/avatar-custom-3-1.png" alt="音色及脚本确认" /><figcaption>音色及脚本确认</figcaption></figure>
+            <figure><img src="../assets/linghui-ai/avatar-custom-4.png" alt="数字人定制完成" /><figcaption>完成状态</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="screen-row">
+          <article class="screen-copy">
+            <span>03</span>
+            <h3>数字人口播：从脚本到可发布视频</h3>
+            <p>数字人口播是最终产出环节。流程需要让用户完成形象选择、文本输入、任务确认和生成结果查看，把 AI 能力转化为可以发布的口播视频。</p>
+            <p class="english-note">Talking-avatar generation turns avatar assets and scripts into publishable videos.</p>
+          </article>
+          <div class="phone-gallery route-strip decorated-gallery" data-label="TALKING AVATAR / OUTPUT" aria-label="数字人口播滑动浏览">
+            <figure><img src="../assets/linghui-ai/talking-avatar-1-0.png" alt="数字人口播流程指引" /><figcaption>流程指引</figcaption></figure>
+            <figure><img src="../assets/linghui-ai/talking-avatar-1-1.png" alt="数字人口播视频输入" /><figcaption>视频输入</figcaption></figure>
+            <figure><img src="../assets/linghui-ai/talking-avatar-2-1.png" alt="音色及脚本确认" /><figcaption>音色及脚本确认</figcaption></figure>
+            <figure><img src="../assets/linghui-ai/talking-avatar-2-2.png" alt="数字人口播结果" /><figcaption>生成结果</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="screen-row reverse">
+          <article class="screen-copy">
+            <span>04</span>
+            <h3>会员系统：解释能力边界与付费价值</h3>
+            <p>会员系统承担“为什么要付费”的解释任务。页面需要清楚呈现生成额度、功能差异和会员权益，让用户理解付费后能解决什么限制。</p>
+            <p class="english-note">Membership design clarifies limits, benefits, and conversion moments.</p>
+          </article>
+          <div class="phone-gallery route-strip decorated-gallery" data-label="MEMBERSHIP / VALUE" aria-label="会员系统滑动浏览">
+            <figure><img src="../assets/linghui-ai/membership-0.png" alt="每日签到" /><figcaption>每日签到</figcaption></figure>
+            <figure><img src="../assets/linghui-ai/membership-2.png" alt="套餐信息" /><figcaption>套餐信息</figcaption></figure>
+            <figure><img src="../assets/linghui-ai/membership-1.png" alt="会员中心" /><figcaption>会员中心</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" aria-labelledby="logic-title">
+        <div class="section-heading">
+          <p class="eyebrow">Interaction logic</p>
+          <h2 id="logic-title">让用户始终知道下一步会发生什么</h2>
+        </div>
+        <div class="logic-list">
+          <article>
+            <span>认知 Cognitive</span>
+            <p>用首页案例和 Banner 先降低理解成本，让用户知道产品能生成图片、数字人和视频，而不是一进入就面对复杂参数。</p>
+            <p class="english-note">Show output value before exposing creation controls.</p>
+          </article>
+          <article>
+            <span>任务 Task</span>
+            <p>把生成流程拆成可完成的小任务：选择形象、配置参数、确认权益、输入脚本、生成结果，减少长流程中的不确定感。</p>
+            <p class="english-note">Break generation into small tasks with clear state feedback.</p>
+          </article>
+          <article>
+            <span>转化 Conversion</span>
+            <p>会员系统不单独作为商业页面，而是嵌入生成链路中解释限制和权益，帮助用户在需要能力时理解付费价值。</p>
+            <p class="english-note">Membership explains capability boundaries at the moment users need them.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer><p>© 2026 Lillia Li / 李思宇.</p></footer>
+    <script src="../script.js?v=copy-contact-1"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Personal Experiments abstract project cover</title>
+  <desc id="desc">Experimental motion shapes and playful interface fragments.</desc>
+  <rect width="1200" height="900" fill="#f7f3eb"/>
+  <path d="M180 454c90-176 238-176 328 0s238 176 328 0 210-176 300 0" fill="none" stroke="#151413" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="240" cy="252" r="112" fill="#ff6b57"/>
+  <circle cx="958" cy="236" r="82" fill="#0f8b8d"/>
+  <rect x="444" y="178" width="280" height="180" rx="34" fill="#151413"/>
+  <rect x="496" y="238" width="128" height="18" rx="9" fill="#fffaf2"/>
+  <rect x="496" y="292" width="178" height="18" rx="9" fill="#f8c945"/>
+  <rect x="174" y="568" width="252" height="152" rx="32" fill="#fffaf2" stroke="#151413" stroke-width="4"/>
+  <rect x="476" y="568" width="252" height="152" rx="32" fill="#8f6bdc"/>
+  <rect x="778" y="568" width="252" height="152" rx="32" fill="#b7e4c7"/>
+  <circle cx="1016" cy="672" r="46" fill="#f8c945"/>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Field Market abstract project cover</title>
+  <desc id="desc">Marketplace comparison cards and clear trust signals.</desc>
+  <rect width="1200" height="900" fill="#fffaf2"/>
+  <rect x="118" y="150" width="964" height="604" rx="42" fill="#151413"/>
+  <rect x="178" y="218" width="244" height="420" rx="28" fill="#f7f3eb"/>
+  <rect x="478" y="218" width="244" height="420" rx="28" fill="#f7f3eb"/>
+  <rect x="778" y="218" width="244" height="420" rx="28" fill="#f7f3eb"/>
+  <circle cx="300" cy="326" r="58" fill="#0f8b8d"/>
+  <circle cx="600" cy="326" r="58" fill="#ff6b57"/>
+  <circle cx="900" cy="326" r="58" fill="#f8c945"/>
+  <rect x="226" y="448" width="148" height="18" rx="9" fill="#151413"/>
+  <rect x="526" y="448" width="148" height="18" rx="9" fill="#151413"/>
+  <rect x="826" y="448" width="148" height="18" rx="9" fill="#151413"/>
+  <rect x="226" y="512" width="92" height="18" rx="9" fill="#8f6bdc"/>
+  <rect x="526" y="512" width="116" height="18" rx="9" fill="#0f8b8d"/>
+  <rect x="826" y="512" width="78" height="18" rx="9" fill="#ff6b57"/>
+</svg>

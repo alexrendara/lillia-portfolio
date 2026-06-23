@@ -1,0 +1,43 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">年会电子纪念票项目封面</title>
+  <desc id="desc">基于五款电子纪念票和活动生成流程设计稿重组的项目封面。</desc>
+  <rect width="1200" height="900" fill="#050506"/>
+  <path d="M0 0H1200V900H0V0Z" fill="url(#bg)"/>
+  <path d="M94 222C275 130 430 156 590 248C758 345 950 337 1114 218" stroke="#ff7a66" stroke-width="2" stroke-opacity=".34"/>
+  <g filter="url(#shadow)" transform="rotate(-10 282 438)">
+    <image href="ai-ticket/ticket-red.png" x="162" y="160" width="222" height="372" preserveAspectRatio="xMidYMid slice"/>
+  </g>
+  <g filter="url(#shadow)" transform="rotate(6 454 372)">
+    <image href="ai-ticket/ticket-blue.png" x="344" y="98" width="220" height="384" preserveAspectRatio="xMidYMid slice"/>
+  </g>
+  <g filter="url(#shadow)" transform="rotate(-2 608 430)">
+    <image href="ai-ticket/ticket-gold.png" x="482" y="120" width="254" height="442" preserveAspectRatio="xMidYMid slice"/>
+  </g>
+  <g filter="url(#shadow)" transform="rotate(8 780 382)">
+    <image href="ai-ticket/ticket-white.png" x="672" y="112" width="218" height="380" preserveAspectRatio="xMidYMid slice"/>
+  </g>
+  <g filter="url(#shadow)" transform="rotate(-6 936 458)">
+    <image href="ai-ticket/ticket-purple.png" x="824" y="202" width="224" height="390" preserveAspectRatio="xMidYMid slice"/>
+  </g>
+  <g filter="url(#soft)">
+    <rect x="150" y="590" width="900" height="84" rx="42" fill="#ff7a66" fill-opacity=".16" stroke="#ff7a66" stroke-opacity=".35"/>
+    <text x="210" y="642" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="800">Template · Upload · Generate · Share</text>
+  </g>
+  <rect x="72" y="70" width="250" height="42" rx="21" fill="#ff7a66" fill-opacity=".16" stroke="#ff7a66" stroke-opacity=".42"/>
+  <text x="96" y="98" fill="#ffb0a4" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800">2025 / EVENT AI IMAGE</text>
+  <text x="72" y="812" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800">年会电子纪念票</text>
+  <text x="76" y="856" fill="#ffb0a4" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">AI image generation · Event participation · Social sharing</text>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1200" y1="0" y2="900">
+      <stop stop-color="#221018"/>
+      <stop offset=".52" stop-color="#050506"/>
+      <stop offset="1" stop-color="#221018"/>
+    </linearGradient>
+    <filter id="shadow" x="80" y="40" width="1060" height="640" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="28" stdDeviation="24" flood-color="#000000" flood-opacity=".55"/>
+    </filter>
+    <filter id="soft" x="120" y="560" width="960" height="144" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000000" flood-opacity=".4"/>
+    </filter>
+  </defs>
+</svg>
