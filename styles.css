@@ -2401,14 +2401,36 @@ body.home .contact-section::after {
   }
 
   .archive-page .year-hero h1 {
-    font-size: clamp(1.55rem, 7.2vw, 1.95rem);
+    font-size: clamp(1.35rem, 6.4vw, 1.75rem);
   }
 
   #about-title {
     font-size: clamp(1.45rem, 6vw, 1.85rem);
   }
 
-  .contact-section h2 {
-    font-size: clamp(1.35rem, 5.4vw, 1.65rem);
+.contact-section h2 {
+  font-size: clamp(1.35rem, 5.4vw, 1.65rem);
+  }
+}
+
+.nomo-strip {
+  grid-auto-columns: minmax(26rem, 48rem);
+}
+
+.nomo-strip img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #2d333c;
+}
+
+.nomo-page .desktop-stack img:first-child,
+.nomo-page .desktop-stack img:nth-child(2) {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+@media (max-width: 640px) {
+  .nomo-strip {
+    grid-auto-columns: minmax(18rem, 88vw);
   }
 }
