@@ -1,0 +1,47 @@
+{
+  "index.html": {},
+  "projects/tongcheng-ai-guide.html": {
+    "body > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(3) > p:nth-of-type(1)::0": {
+      "text": "2026 · AI产品 · 设计系统",
+      "fontSize": 16,
+      "hidden": false,
+      "after": []
+    },
+    "#case-title::0": {
+      "text": "同程旅行\n景区智能导览",
+      "fontSize": null,
+      "hidden": false,
+      "after": []
+    },
+    "body > main:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(3) > p:nth-of-type(2)::0": {
+      "text": "独立负责景区线上导览设计，重构景区首页、路线导览、讲解点内容与成就等功能，并为景区智能导览建立一套可复用的设计系统，覆盖 30+ 室外景区、5 个博物馆；上线后至今所有景区日均访问用户 2,000+，核心功能（导览、路线规划、语音讲解等）实际体验转化率 42%。\n          ",
+      "fontSize": 16,
+      "hidden": false,
+      "after": []
+    },
+    "body > main:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > span:nth-of-type(1)::0": {
+      "text": "项目职责",
+      "fontSize": null,
+      "hidden": false,
+      "after": []
+    },
+    "body > main:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > strong:nth-of-type(1)::0": {
+      "text": "实地调研、交互逻辑梳理、视觉规范建立、信息架构重构",
+      "fontSize": null,
+      "hidden": false,
+      "after": []
+    },
+    "body > main:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(2) > span:nth-of-type(1)::0": {
+      "text": "场景",
+      "fontSize": null,
+      "hidden": false,
+      "after": []
+    },
+    "body > main:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(2) > strong:nth-of-type(1)::0": {
+      "text": "面向多个景区接入的智能导览与景区服务系统",
+      "fontSize": null,
+      "hidden": false,
+      "after": []
+    }
+  }
+}

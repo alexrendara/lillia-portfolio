@@ -3,206 +3,91 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nomo fintech | Lillia Li</title>
-    <meta name="description" content="Nomo fintech 作品集案例，展示符合伊斯兰教法的英国数字银行 App 产品系统设计、组件规范、用户流程梳理和转账详情页迭代。" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../styles.css" />
-  </head>
-  <body class="project-detail nomo-page" style="--year-color: #b7ddb7">
+    <title>数字银行产品系统</title>
+    <meta name="description" content="数字银行产品系统文档浏览式作品集页面，完整呈现原始页面内容。" />
+    <link rel="stylesheet" href="../styles.css?v=nomo-responsive-2" />
+  <link rel="stylesheet" href="../project-entry.css?v=hero-8" />
+<script src="../project-entry.js?v=preserve-15"></script>
+</head>
+  <body class="project-detail nomo-page nomo-pdf-page" style="--year-color: #ffdb5e">
     <canvas id="flow-field" aria-hidden="true"></canvas>
 
-    <header class="site-header" aria-label="Primary navigation">
-      <a class="wordmark" href="../index.html"><span>Lillia Li</span><small>李思宇</small></a>
-      <nav>
-        <a href="../years/2022.html">2022</a>
-        <a href="#process">过程</a>
-        <a href="../index.html#contact">联系</a>
-      </nav>
+    <header class="site-header project-sticker-header" aria-label="项目导航">
+      <a class="project-sticker" href="../index.html">返回首页</a>
+      <details class="project-contact">
+        <summary class="project-sticker">联系方式</summary>
+        <div class="project-contact-panel">
+          <button type="button" data-project-copy><small>邮箱 · 点击复制</small>13416549819@163.com</button>
+          <div><small>微信</small>O15914231459</div>
+          <a href="https://www.linkedin.com/in/lillia-656853227/" target="_blank" rel="noopener noreferrer">领英主页 ↗</a>
+          <span class="project-copy-status" role="status" aria-live="polite"></span>
+        </div>
+      </details>
     </header>
 
     <main>
-      <section class="case-hero" aria-labelledby="case-title">
-        <div class="ui-flow-lines" aria-hidden="true"><span></span><span></span><span></span></div>
-        <div class="case-hero-copy">
-          <p class="eyebrow">2022 · Nomo fintech · UI/UX</p>
-          <h1 id="case-title">金融产品系统设计</h1>
-          <p class="case-lede">
-            Nomo 是一家总部位于英国、符合伊斯兰教法的数字银行，面向具有国际生活方式、希望通过智能、简单和安全技术管理资金的人群。我负责产品系统设计，梳理全产品线用户使用流程，并统一设计规范与交互语言。
-          </p>
-          <p class="case-lede english-note">
-            A UK-based Sharia-compliant digital banking app designed for international lifestyles, with work focused on product systems, app flows, and design standards.
-          </p>
-        </div>
-        <div class="case-hero-media nomo-hero-media">
-          <div class="floating-ui-tag tag-route" aria-hidden="true">App flows</div>
-          <div class="floating-ui-tag tag-ai" aria-hidden="true">Design system</div>
-          <div class="desktop-stack">
-            <img src="../assets/nomo/1.1.png" alt="Nomo 项目背景页" />
-            <img src="../assets/nomo/2.0.png" alt="Nomo App 视觉总览" />
-          </div>
-        </div>
-      </section>
+      <section id="pdf-viewer" class="pdf-viewer" data-pdf-viewer aria-label="数字银行产品系统文档页面">
+        <aside class="pdf-sidebar" aria-label="文档页导航">
+          <ol>
+            <li><a href="#page-1">01</a></li>
+            <li><a href="#page-2">02</a></li>
+            <li><a href="#page-3">03</a></li>
+            <li><a href="#page-4">04</a></li>
+            <li><a href="#page-5">05</a></li>
+            <li><a href="#page-6">06</a></li>
+            <li><a href="#page-7">07</a></li>
+            <li><a href="#page-8">08</a></li>
+            <li><a href="#page-9">09</a></li>
+            <li><a href="#page-10">10</a></li>
+          </ol>
+        </aside>
 
-      <section class="case-meta" aria-label="项目事实">
-        <div><span>对象 Users</span><strong>国际学生、国际商务人士、投资人及跨境生活用户</strong></div>
-        <div><span>范围 Scope</span><strong>App 用户流程、iOS 组件系统、转账详情页、交互语言、视觉规范</strong></div>
-        <div><span>重点 Focus</span><strong>让金融服务在多币种、多场景和高信任要求下保持清晰一致</strong></div>
-      </section>
-
-      <section class="case-section" aria-labelledby="challenge-title">
-        <div class="section-heading">
-          <p class="eyebrow">Design challenge</p>
-          <h2 id="challenge-title">把复杂金融服务转化为清晰、可信的 App 体验</h2>
-        </div>
-        <div class="case-two-col">
-          <p>
-            Nomo 覆盖多币种账户、转账、支付、投资与账户管理等功能。金融产品对信息准确性、状态反馈和安全感要求很高，用户需要在短时间内判断金额、币种、收款人、付款状态和后续动作。
-          </p>
-          <p class="english-note">The product needed a consistent interaction language for high-trust banking scenarios.</p>
-          <p>
-            因此设计重点不是单个页面美化，而是将现有功能页、用户路径和组件规范重新组织成可复用系统：页面结构要足够直接，关键状态要清楚，组件样式要能覆盖不同国家、币种和金融场景。
-          </p>
-          <p class="english-note">The design work connected app-wide flows, reusable components, and scenario-specific details.</p>
-        </div>
-      </section>
-
-      <section id="process" class="case-section" aria-labelledby="research-title">
-        <div class="section-heading">
-          <p class="eyebrow">Research logic</p>
-          <h2 id="research-title">从合作客户用户群体出发，定义产品语言</h2>
-        </div>
-        <div class="insight-grid">
-          <article>
-            <span>01</span>
-            <h3>用户画像区分使用动机</h3>
-            <p>针对合作客户的用户群体进行市场调研和用户画像分析，识别国际学生、国际商务人士、投资人等不同人群在开户、消费、租金、学费和好友转账中的需求差异。</p>
-            <p class="english-note">User segmentation clarified why different audiences enter the banking flow.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>视觉语言兼顾清晰与严谨</h3>
-            <p>中学生群体偏好清晰、简单、直接的表达，商务和投资用户则更需要严谨与可信。设计语言需要在轻量感和金融专业感之间取得平衡。</p>
-            <p class="english-note">The visual tone balances directness with financial credibility.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>多币种场景要求系统化组件</h3>
-            <p>汇率、国家、投资价格、交易状态等信息在不同功能中反复出现，因此需要通过组件系统统一字段、图标、卡片、表单、导航和数据图表的表达。</p>
-            <p class="english-note">Reusable components support multi-currency and cross-market product scenarios.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="case-section" aria-labelledby="framework-title">
-        <div class="section-heading">
-          <p class="eyebrow">Product framework</p>
-          <h2 id="framework-title">用系统规范承接全产品线体验</h2>
-        </div>
-        <div class="flow-map nomo-flow" aria-label="Nomo product design framework">
-          <span class="flow-current" aria-hidden="true"></span>
-          <div><span>研究 Research</span><strong>用户画像</strong><small>市场调研、场景动机、推广建议</small></div>
-          <div><span>整理 Structure</span><strong>全产品线流程</strong><small>账户、转账、支付、投资、状态反馈</small></div>
-          <div><span>规范 System</span><strong>组件与视觉语言</strong><small>颜色、图标、表单、卡片、图表、导航</small></div>
-          <div><span>迭代 Iterate</span><strong>关键页面设计</strong><small>转账详情、编辑收款人、交易详情</small></div>
-        </div>
-      </section>
-
-      <section class="case-section design-showcase" aria-labelledby="screens-title">
-        <div class="section-heading">
-          <p class="eyebrow">Design system in use</p>
-          <h2 id="screens-title">从组件系统到关键转账流程的设计落地</h2>
-        </div>
-
-        <div class="screen-row">
-          <article class="screen-copy">
-            <span>01</span>
-            <h3>系统设计：统一品牌、组件和金融状态表达</h3>
-            <p>基于已有产品主张和用户偏好，整理 iOS 组件库，将品牌颜色、字体层级、图标、按钮、卡片、表单、导航和数据图表沉淀为可复用规范，降低多功能页面之间的体验割裂。</p>
-            <p class="english-note">The component system aligns brand foundations, atoms, molecules, organisms, and financial data states.</p>
-          </article>
-          <div class="desktop-gallery nomo-strip decorated-gallery" data-label="SYSTEM" aria-label="Nomo design system pages">
-            <figure><img src="../assets/nomo/1.2.png" alt="Nomo iOS components and brand foundations" /><figcaption>品牌与基础组件</figcaption></figure>
-            <figure><img src="../assets/nomo/1.3.png" alt="Nomo buttons and card components" /><figcaption>按钮与卡片规范</figcaption></figure>
-            <figure><img src="../assets/nomo/1.4.png" alt="Nomo form navigation and graph components" /><figcaption>表单、导航与图表</figcaption></figure>
-            <figure><img src="../assets/nomo/1.5.png" alt="Nomo multi-currency system design" /><figcaption>多币种视觉规则</figcaption></figure>
-          </div>
-        </div>
-
-        <div class="screen-row reverse">
-          <article class="screen-copy">
-            <span>02</span>
-            <h3>转账详情页：补足用户完成付款后的信息判断</h3>
-            <p>原有路径中，用户从账户页进入转账历史后只能看到收款人和金额，缺少付款时间、地点、转账 ID、当前状态等关键信息。设计通过多轮版本迭代，将交易详情、商户信息和帮助入口整合进更完整的详情页。</p>
-            <p class="english-note">The transaction detail flow adds the missing context users need after payment.</p>
-          </article>
-          <div class="desktop-gallery nomo-strip decorated-gallery" data-label="DETAIL" aria-label="Nomo transaction detail pages">
-            <figure><img src="../assets/nomo/1.6.png" alt="Nomo transfer detail page iterations" /><figcaption>转账详情页迭代</figcaption></figure>
-            <figure><img src="../assets/nomo/1.7.png" alt="Nomo transfer detail page background and user need" /><figcaption>场景与需求拆解</figcaption></figure>
-            <figure><img src="../assets/nomo/1.8.png" alt="Nomo edit recipient flow" /><figcaption>编辑收款人流程</figcaption></figure>
-            <figure><img src="../assets/nomo/1.9.png" alt="Nomo transfer flow final screens" /><figcaption>支付流程落地</figcaption></figure>
-          </div>
-        </div>
-
-        <div class="screen-row">
-          <article class="screen-copy">
-            <span>03</span>
-            <h3>全产品线视觉统一：让银行服务形成稳定识别</h3>
-            <p>最终视觉稿将账户、支付、投资、开户、卡片和个人资料等页面纳入同一套 App 语言，让 Nomo 的品牌气质、功能层级和操作反馈在不同产品线中保持一致。</p>
-            <p class="english-note">The final app overview shows a unified banking experience across product lines.</p>
-          </article>
-          <div class="desktop-gallery nomo-strip decorated-gallery" data-label="APP OVERVIEW" aria-label="Nomo app overview">
-            <figure><img src="../assets/nomo/2.0.png" alt="Nomo app overview and visual system" /><figcaption>App 视觉总览</figcaption></figure>
-            <figure><img src="../assets/nomo/1.1.png" alt="Nomo project cover and responsibility summary" /><figcaption>项目背景与职责</figcaption></figure>
-          </div>
-        </div>
-      </section>
-
-      <section class="case-section" aria-labelledby="logic-title">
-        <div class="section-heading">
-          <p class="eyebrow">Interaction logic</p>
-          <h2 id="logic-title">把金融操作拆解为可判断、可确认、可追踪的路径</h2>
-        </div>
-        <div class="logic-list">
-          <article>
-            <span>可判断</span>
-            <p>在账户、转账和投资页面中明确金额、币种、国家和产品状态，让用户进入流程前先理解当前对象和风险边界。</p>
-            <p class="english-note">Users should know the object, currency, and current state before acting.</p>
-          </article>
-          <article>
-            <span>可确认</span>
-            <p>关键动作如编辑收款人、继续付款和输入 passcode 需要清楚的确认节点，用状态反馈降低金融操作中的不确定感。</p>
-            <p class="english-note">Confirmation points reduce uncertainty in sensitive banking actions.</p>
-          </article>
-          <article>
-            <span>可追踪</span>
-            <p>交易详情页补充付款时间、地点、交易 ID、收款人和状态，让用户在完成支付后仍然可以追踪信息、核对记录并获得帮助。</p>
-            <p class="english-note">Transaction details turn completed payments into traceable records.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="case-section outcome-section" aria-labelledby="outcome-title">
-        <div>
-          <p class="eyebrow">Outcome</p>
-          <h2 id="outcome-title">沉淀可扩展的数字银行产品系统</h2>
-        </div>
-        <div>
-          <p>
-            Nomo fintech 项目将全产品线流程、用户画像、视觉规范和关键页面迭代整合到同一套设计语言中。它展示了我在复杂 App 结构中梳理交互逻辑、建立设计系统、并将用户研究转化为具体页面方案的能力。
-          </p>
-          <p class="english-note">
-            The project demonstrates product-system thinking across fintech user flows, reusable design standards, and high-trust app interactions.
-          </p>
+        <div class="pdf-document">
+          <figure id="page-1" class="pdf-page" data-page="01">
+            <img src="../assets/nomo/1.1.png" alt="项目文档第 1 页" />
+            <figcaption>01 / 项目背景</figcaption>
+          </figure>
+          <figure id="page-2" class="pdf-page" data-page="02">
+            <img src="../assets/nomo/1.2.png" alt="项目文档第 2 页" />
+            <figcaption>02 / 系统设计</figcaption>
+          </figure>
+          <figure id="page-3" class="pdf-page" data-page="03">
+            <img src="../assets/nomo/1.3.png" alt="项目文档第 3 页" />
+            <figcaption>03 / 组件规范</figcaption>
+          </figure>
+          <figure id="page-4" class="pdf-page" data-page="04">
+            <img src="../assets/nomo/1.4.png" alt="项目文档第 4 页" />
+            <figcaption>04 / 表单、导航与数据组件</figcaption>
+          </figure>
+          <figure id="page-5" class="pdf-page" data-page="05">
+            <img src="../assets/nomo/1.5.png" alt="项目文档第 5 页" />
+            <figcaption>05 / 多币种交易场景</figcaption>
+          </figure>
+          <figure id="page-6" class="pdf-page" data-page="06">
+            <img src="../assets/nomo/1.6.png" alt="项目文档第 6 页" />
+            <figcaption>06 / 转账详情页设计</figcaption>
+          </figure>
+          <figure id="page-7" class="pdf-page" data-page="07">
+            <img src="../assets/nomo/1.7.png" alt="项目文档第 7 页" />
+            <figcaption>07 / 项目背景与用户需求</figcaption>
+          </figure>
+          <figure id="page-8" class="pdf-page" data-page="08">
+            <img src="../assets/nomo/1.8.png" alt="项目文档第 8 页" />
+            <figcaption>08 / 编辑收款人流程</figcaption>
+          </figure>
+          <figure id="page-9" class="pdf-page" data-page="09">
+            <img src="../assets/nomo/1.9.png" alt="项目文档第 9 页" />
+            <figcaption>09 / 支付流程落地</figcaption>
+          </figure>
+          <figure id="page-10" class="pdf-page" data-page="10">
+            <img src="../assets/nomo/2.0.png" alt="项目文档第 10 页" />
+            <figcaption>10 / 应用视觉总览</figcaption>
+          </figure>
         </div>
       </section>
     </main>
 
-    <footer><p>© 2026 Lillia Li / 李思宇.</p></footer>
-    <script src="../script.js?v=copy-contact-1"></script>
-  </body>
+    <footer><p>© 2026 李思宇个人作品集。</p></footer>
+    <script src="../script.js?v=nomo-pdf-viewer-1"></script>
+  <script src="../text-content.js?v=1"></script></body>
 </html>

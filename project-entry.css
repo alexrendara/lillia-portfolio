@@ -1,0 +1,42 @@
+.project-entry-layer{position:fixed;inset:0;z-index:10000;perspective:1400px;pointer-events:none}
+.project-entry-card{position:absolute;transform-style:preserve-3d;transform-origin:center}
+.project-entry-face{position:absolute;inset:0;backface-visibility:hidden;background:#fff;box-shadow:0 16px 60px #0003;padding:12px 12px 34px}
+.project-entry-face img,.project-entry-face video{width:100%;height:100%;object-fit:contain;display:block}
+.project-entry-back{transform:rotateY(180deg);background:#f7f7f2 url('assets/profile-paper-fine.png') center/600px;padding:0}
+.project-entry-reveal{position:fixed;inset:0;background:#f7f7f2;z-index:10000;pointer-events:none}
+.project-entry-reveal.is-revealing{animation:projectReveal 600ms cubic-bezier(.2,.65,.3,1) both}
+@keyframes projectReveal{from{opacity:1}to{opacity:0}}
+.project-entry-reveal>img,.project-entry-reveal>video{width:100%;height:auto;object-fit:contain;display:block}
+body.project-detail .guide-cover-hero{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1fr);align-items:center;width:100vw;max-width:none;min-height:0;margin:0 calc(50% - 50vw);padding:0;overflow:visible;animation:none;gap:0}
+.guide-cover{position:relative;grid-area:1/1;align-self:start;z-index:-2;min-width:0}
+.guide-cover img,.guide-cover video{display:block;width:100%;max-width:100%;height:auto;min-height:0;object-fit:contain;filter:none!important;transform:none!important}
+.guide-cover-hero::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#f7f7f2 0%,#f7f7f2f5 23%,#f7f7f2b8 43%,#f7f7f21a 68%,transparent 85%)}
+.guide-cover-hero .ui-flow-lines,.guide-cover-hero::after{display:none}
+body.project-detail .guide-cover-hero .case-hero-copy{grid-area:1/1;width:48%;max-width:620px;margin:90px 0 50px 6%;animation:none}
+body.project-detail .guide-cover-hero h1{font-size:36px;line-height:1.4}
+@media(max-width:760px){body.project-detail .guide-cover-hero{padding:0}.guide-cover-hero::before{display:none}body.project-detail .guide-cover-hero .case-hero-copy{grid-area:2/1;width:auto;max-width:none;margin:28px 24px 40px}body.project-detail .guide-cover-hero h1{font-size:28px}}
+body.project-detail .site-header.project-sticker-header{position:relative;inset:auto;z-index:30;width:100%;max-width:none;margin:0;padding:22px 5%;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;background:transparent;border:0;backdrop-filter:none;color:#202522}
+.project-sticker{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 22px;border:4px solid white;border-radius:3px;background:#d6ebcf;color:#1b352c;box-shadow:0 3px 8px #0002;font:inherit;font-size:15px;line-height:1.4;text-decoration:none;letter-spacing:0;transform:rotate(-3deg)}
+.project-sticker:focus-visible,.project-contact-panel a:focus-visible,.project-contact-panel button:focus-visible{outline:3px solid #395acf;outline-offset:5px}
+.project-contact{position:relative;flex-shrink:0}
+body.project-detail .site-header.project-sticker-header{position:fixed;top:0;left:0;right:0;pointer-events:none}
+body.project-detail{padding-top:0}
+body.project-detail .site-header.project-sticker-header{background:none;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;border:0}
+.project-sticker-header>a,.project-sticker-header>details{pointer-events:auto}
+.project-sticker{border:0;padding:14px 26px;background:transparent!important;box-shadow:none;isolation:isolate;transition:transform .3s ease;transform-origin:50% 10%}
+.project-sticker::before{content:'';position:absolute;inset:0;z-index:-1;background:#d6ebcf;clip-path:polygon(2% 5%,18% 2%,30% 5%,51% 1%,73% 4%,97% 0,96% 18%,100% 32%,97% 51%,99% 73%,96% 96%,77% 98%,60% 95%,40% 99%,23% 96%,1% 100%,3% 78%,0 57%,3% 35%);border:5px solid #fff}
+.project-contact summary::before{background:#eee0ff;clip-path:polygon(0 7%,20% 3%,38% 5%,60% 0,79% 4%,98% 2%,96% 25%,100% 48%,97% 68%,100% 96%,78% 94%,61% 100%,41% 95%,21% 99%,2% 96%,4% 74%,0 51%,3% 26%)}
+.project-sticker:hover{animation:stickerWiggle .48s ease-in-out both}
+@keyframes stickerWiggle{0%{transform:rotate(-3deg)}35%{transform:rotate(2deg) translateY(-3px)}70%{transform:rotate(-2deg) translateY(-2px)}100%{transform:rotate(-1deg) translateY(-2px)}}
+@media(prefers-reduced-motion:reduce){.project-sticker:hover{animation:none}}
+body.project-detail .site-header.project-sticker-header{flex-direction:row;flex-wrap:nowrap}
+.project-contact summary{cursor:pointer;list-style:none;transform:rotate(3deg);background:#eee0ff;color:#342641}
+.project-contact summary::-webkit-details-marker{display:none}
+.project-contact[open] summary{transform:rotate(0)}
+.project-contact-panel{position:absolute;right:0;top:calc(100% + 14px);width:290px;max-width:calc(100vw - 32px);padding:22px;display:grid;gap:14px;text-align:left;background:#faf9ef url('assets/profile-paper-fine.png') center/600px;box-shadow:0 8px 24px #0003;border:1px solid #deddd3}
+.project-contact-panel a,.project-contact-panel button{color:#252a28;text-decoration:none;font:inherit;font-size:14px;line-height:1.6;overflow-wrap:anywhere;letter-spacing:0}
+.project-contact-panel button{border:0;padding:0;background:none;text-align:left;cursor:pointer}
+.project-contact-panel small{display:block;font-size:12px;color:#606661;margin-bottom:3px}
+.project-copy-status{font-size:12px;min-height:18px;color:#456341}
+@media(max-width:600px){body.project-detail .site-header.project-sticker-header{padding:18px 20px;gap:12px}.project-sticker{font-size:14px;padding:8px 14px;min-height:42px}}
+@media(prefers-reduced-motion:reduce){.project-entry-reveal{animation:none;display:none}}

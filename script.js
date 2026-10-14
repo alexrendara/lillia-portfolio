@@ -88,6 +88,7 @@ function draw(time = 0) {
   requestAnimationFrame(draw);
 }
 
+if (!document.body.classList.contains("home-reference")) {
 window.addEventListener("resize", resize);
 window.addEventListener("pointermove", (event) => {
   pointer = { x: event.clientX, y: event.clientY, active: true };
@@ -98,6 +99,7 @@ window.addEventListener("pointerleave", () => {
 
 resize();
 requestAnimationFrame(draw);
+}
 
 function toggleTicket(ticket) {
   const wall = ticket.closest(".ticket-hero-wall");
@@ -124,6 +126,8 @@ document.querySelectorAll(".ticket-hero-wall").forEach((wall) => {
 
 document.querySelectorAll("[data-copy-email]").forEach((button) => {
   const originalText = button.textContent;
+  const status = document.querySelector(".copy-status");
+  let resetTimer;
   button.addEventListener("click", async () => {
     const email = button.dataset.copyEmail;
     if (!email) return;
@@ -138,7 +142,8 @@ document.querySelectorAll("[data-copy-email]").forEach((button) => {
       field.select();
       const copied = document.execCommand("copy");
       field.remove();
-      return copied;
+      button.focus({ preventScroll: true });
+      if (!copied) throw new Error("Clipboard copy failed");
     };
 
     try {
@@ -151,13 +156,60 @@ document.querySelectorAll("[data-copy-email]").forEach((button) => {
       } else {
         copyWithFallback();
       }
-      button.textContent = `Email 已复制 · ${email}`;
+      if (status) status.textContent = "邮箱已复制";
+      else button.textContent = `邮箱已复制 · ${email}`;
     } catch {
-      button.textContent = `Email · ${email}`;
+      if (status) status.textContent = "复制失败，请手动复制邮箱地址";
+      else button.textContent = `邮箱 · ${email}`;
     }
 
-    window.setTimeout(() => {
+    window.clearTimeout(resetTimer);
+    resetTimer = window.setTimeout(() => {
       button.textContent = originalText;
-    }, 1600);
+      if (status) status.textContent = "";
+    }, 3000);
   });
+});
+
+document.querySelectorAll("[data-pdf-viewer]").forEach((viewer) => {
+  const pages = Array.from(viewer.querySelectorAll(".pdf-page"));
+  const links = Array.from(viewer.querySelectorAll(".pdf-sidebar a"));
+  const counter = viewer.querySelector("[data-pdf-count]");
+  const prevButton = viewer.querySelector("[data-pdf-prev]");
+  const nextButton = viewer.querySelector("[data-pdf-next]");
+  let currentIndex = 0;
+
+  function setActive(index) {
+    currentIndex = Math.max(0, Math.min(index, pages.length - 1));
+    links.forEach((link, linkIndex) => {
+      link.classList.toggle("is-active", linkIndex === currentIndex);
+    });
+    if (counter) {
+      counter.textContent = `Page ${String(currentIndex + 1).padStart(2, "0")} / ${String(pages.length).padStart(2, "0")}`;
+    }
+  }
+
+  function goTo(index) {
+    const page = pages[Math.max(0, Math.min(index, pages.length - 1))];
+    page?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  prevButton?.addEventListener("click", () => goTo(currentIndex - 1));
+  nextButton?.addEventListener("click", () => goTo(currentIndex + 1));
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!visible) return;
+        setActive(pages.indexOf(visible.target));
+      },
+      { rootMargin: "-20% 0px -55% 0px", threshold: [0.15, 0.3, 0.55] },
+    );
+    pages.forEach((page) => observer.observe(page));
+  } else {
+    setActive(0);
+  }
 });

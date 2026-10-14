@@ -3,118 +3,110 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ace the Exam | Lillia Li</title>
-    <meta name="description" content="Ace the Exam 作品集案例，展示新西兰医学考试学习平台的 landing page、blog、demo、注册登录、dashboard、创建考试、考试过程和结果复盘体验。" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../styles.css" />
-  </head>
+    <title>医学考试学习平台</title>
+    <meta name="description" content="医学考试学习平台作品集案例，展示新西兰医学考试平台的官网、文章内容、试用体验、注册登录、数据看板、创建考试、考试过程和结果复盘体验。" />
+    <link rel="stylesheet" href="../styles.css?v=puhuiti-1" />
+  <link rel="stylesheet" href="../project-entry.css?v=hero-8" />
+<script src="../project-entry.js?v=preserve-15"></script>
+</head>
   <body class="project-detail ace-exam-page" style="--year-color: #2dd4bf">
     <canvas id="flow-field" aria-hidden="true"></canvas>
 
-    <header class="site-header" aria-label="Primary navigation">
-      <a class="wordmark" href="../index.html"><span>Lillia Li</span><small>李思宇</small></a>
-      <nav>
-        <a href="../years/2024.html">2024</a>
-        <a href="#process">过程</a>
-        <a href="../index.html#contact">联系</a>
-      </nav>
+    <header class="site-header project-sticker-header" aria-label="项目导航">
+      <a class="project-sticker" href="../index.html">返回首页</a>
+      <details class="project-contact">
+        <summary class="project-sticker">联系方式</summary>
+        <div class="project-contact-panel">
+          <button type="button" data-project-copy><small>邮箱 · 点击复制</small>13416549819@163.com</button>
+          <div><small>微信</small>O15914231459</div>
+          <a href="https://www.linkedin.com/in/lillia-656853227/" target="_blank" rel="noopener noreferrer">领英主页 ↗</a>
+          <span class="project-copy-status" role="status" aria-live="polite"></span>
+        </div>
+      </details>
     </header>
 
     <main>
       <section class="case-hero" aria-labelledby="case-title">
         <div class="ui-flow-lines" aria-hidden="true"><span></span><span></span><span></span></div>
         <div class="case-hero-copy">
-          <p class="eyebrow">2024 · Medical learning platform · EdTech UX</p>
+          <p class="eyebrow">2024 · 医学学习平台 · 教育科技体验</p>
           <h1 id="case-title">医学考试学习平台</h1>
           <p class="case-lede">
-            Ace the Exam 是一家总部位于新西兰的线上医学考试学习平台，服务当地医生和医学相关从业者。平台将考试题库、模拟测试、复习进度、数据分析和错题复盘整合在一起，帮助用户更有计划地完成考试准备。
-          </p>
-          <p class="case-lede english-note">
-            A New Zealand medical exam platform that supports exam discovery, demo trial, paid testing, revision tracking, and result analytics.
+            医学考试学习平台是一家总部位于新西兰的线上医学考试学习平台，服务当地医生和医学相关从业者。平台将考试题库、模拟测试、复习进度、数据分析和错题复盘整合在一起，帮助用户更有计划地完成考试准备。
           </p>
         </div>
         <div class="case-hero-media ace-hero-media">
-          <div class="floating-ui-tag tag-route" aria-hidden="true">Landing · Demo · Test</div>
-          <div class="floating-ui-tag tag-ai" aria-hidden="true">Learning analytics</div>
+          <div class="floating-ui-tag tag-route" aria-hidden="true">官网 · 试用 · 测试</div>
+          <div class="floating-ui-tag tag-ai" aria-hidden="true">学习数据分析</div>
           <div class="desktop-stack">
-            <img src="../assets/ace-exam/landing-main.png" alt="Ace the Exam landing page" />
-            <img src="../assets/ace-exam/test-dashboard.png" alt="Ace the Exam dashboard" />
+            <img src="../assets/ace-exam/landing-main.png" alt="医学考试学习平台官网页面" />
+            <img src="../assets/ace-exam/test-dashboard.png" alt="医学考试学习平台数据看板" />
           </div>
         </div>
       </section>
 
       <section class="case-meta" aria-label="项目事实">
-        <div><span>对象 Users</span><strong>新西兰医生、医学考试考生、医学相关从业者</strong></div>
-        <div><span>范围 Scope</span><strong>获客官网、Blog、Demo、注册登录、付费学习平台、考试流程</strong></div>
-        <div><span>重点 Focus</span><strong>把高压力备考转化为可计划、可练习、可复盘的学习闭环</strong></div>
+        <div><span>对象</span><strong>新西兰医生、医学考试考生、医学相关从业者</strong></div>
+        <div><span>范围</span><strong>获客官网、文章内容、试用体验、注册登录、付费学习平台、考试流程</strong></div>
+        <div><span>重点</span><strong>把高压力备考转化为可计划、可练习、可复盘的学习闭环</strong></div>
       </section>
 
       <section class="case-section" aria-labelledby="challenge-title">
         <div class="section-heading">
-          <p class="eyebrow">Design challenge</p>
+          <p class="eyebrow">设计挑战</p>
           <h2 id="challenge-title">让医学考试备考从“题库堆积”变成清晰的学习路径</h2>
         </div>
         <div class="case-two-col">
           <p>
             医学相关考试内容密度高、周期长、压力大。用户不仅需要题库，更需要知道自己该练什么、哪些科目薄弱、过去做过什么、下一次如何提高。
           </p>
-          <p class="english-note">The platform needed to turn large question banks into structured revision behavior.</p>
           <p>
-            因此设计被拆成两个互相连接的部分：付费前通过 landing page、Blog、Demo 和注册登录建立信任；付费后通过 dashboard、创建考试、考试过程和结果分析承接长期复习。
+            因此设计被拆成两个互相连接的部分：付费前通过官网页面、文章内容、试用体验和注册登录建立信任；付费后通过数据看板、创建考试、考试过程和结果分析承接长期复习。
           </p>
-          <p class="english-note">Pre-payment pages build trust; the paid platform supports repeated learning loops.</p>
         </div>
       </section>
 
       <section id="process" class="case-section" aria-labelledby="research-title">
         <div class="section-heading">
-          <p class="eyebrow">User logic</p>
+          <p class="eyebrow">用户逻辑</p>
           <h2 id="research-title">围绕医学考生的决策与复习节奏组织体验</h2>
         </div>
         <div class="insight-grid">
           <article>
             <span>01</span>
             <h3>先确认考试匹配</h3>
-            <p>用户进入平台时最先关心“是否覆盖我的考试”。Landing page 需要把 AMC、ACEM、GSSE、RACP 等考试入口和服务说明清楚分层。</p>
-            <p class="english-note">Exam-specific pages reduce uncertainty before signup.</p>
+            <p>用户进入平台时最先关心“是否覆盖我的考试”。官网页面需要把不同考试入口、服务范围和学习支持说明清楚分层。</p>
           </article>
           <article>
             <span>02</span>
             <h3>再建立学习信任</h3>
-            <p>Blog、文章、考试日期和 Demo 体验承担教育和信任作用，让用户在付费前理解平台内容质量、题库范围和学习方式。</p>
-            <p class="english-note">Content and demo flows help users evaluate the product before payment.</p>
+            <p>考试文章、备考资料、重要日期和试用体验承担教育与信任建立作用，让用户在付费前理解平台内容质量、题库范围和学习方式。</p>
           </article>
           <article>
             <span>03</span>
             <h3>持续依靠数据反馈</h3>
-            <p>进入付费平台后，用户需要通过 dashboard、考试记录、收藏题和结果分析持续判断复习状态，而不是只完成一次测试。</p>
-            <p class="english-note">Analytics turn test attempts into revision decisions.</p>
+            <p>进入付费平台后，用户需要通过数据看板、考试记录、收藏题和结果分析持续判断复习状态，而不是只完成一次测试。</p>
           </article>
         </div>
       </section>
 
       <section class="case-section" aria-labelledby="framework-title">
         <div class="section-heading">
-          <p class="eyebrow">Product framework</p>
+          <p class="eyebrow">产品框架</p>
           <h2 id="framework-title">从获客、试用到付费学习的完整闭环</h2>
         </div>
-        <div class="flow-map ace-flow" aria-label="Ace the Exam product flow">
+        <div class="flow-map ace-flow" aria-label="医学考试学习平台产品流程">
           <span class="flow-current" aria-hidden="true"></span>
-          <div><span>发现 Discover</span><strong>考试服务页</strong><small>主站、考试介绍、服务价值</small></div>
-          <div><span>判断 Evaluate</span><strong>内容与Demo</strong><small>Blog、文章、考试日期、功能体验</small></div>
-          <div><span>练习 Practice</span><strong>创建考试</strong><small>计时/非计时、题型、暂停、收藏</small></div>
-          <div><span>复盘 Improve</span><strong>数据反馈</strong><small>Dashboard、历史记录、错题本、结果分析</small></div>
+          <div><span>发现</span><strong>考试服务页</strong><small>主站、考试介绍、服务价值</small></div>
+          <div><span>判断</span><strong>内容与试用体验</strong><small>考试文章、备考资料、重要日期、功能体验</small></div>
+          <div><span>练习</span><strong>创建考试</strong><small>计时/非计时、题型、暂停、收藏</small></div>
+          <div><span>复盘</span><strong>数据反馈</strong><small>数据看板、历史记录、错题本、结果分析</small></div>
         </div>
       </section>
 
       <section class="case-section design-showcase" aria-labelledby="screens-title">
         <div class="section-heading">
-          <p class="eyebrow">Design system in use</p>
+          <p class="eyebrow">页面设计</p>
           <h2 id="screens-title">两个产品层级：公开官网与付费学习平台</h2>
         </div>
 
@@ -122,14 +114,13 @@
           <article class="screen-copy">
             <span>01</span>
             <h3>公开官网：让用户先找到自己的考试和学习理由</h3>
-            <p>公开页面承担获客和教育角色：主站介绍平台价值，考试服务页说明不同考试支持范围，Blog 和文章提供考试相关内容，Demo 和注册登录完成转化前的最后一步。</p>
-            <p class="english-note">The public site builds trust through exam-specific service pages, content, demo trial, and account entry.</p>
+            <p>公开页面承担获客和教育角色：主站介绍平台价值，考试服务页说明不同考试支持范围，考试文章和备考内容提供持续参考，试用体验和注册登录完成转化前的最后一步。</p>
           </article>
-          <div class="webpage-gallery decorated-gallery" data-label="LANDING" aria-label="Ace landing pages">
-            <figure class="web-scroll"><div class="web-scroll-frame" tabindex="0"><img src="../assets/ace-exam/landing-main.png" alt="Ace the Exam 主站首页" /></div><figcaption>主站首页</figcaption></figure>
-            <figure class="web-scroll"><div class="web-scroll-frame" tabindex="0"><img src="../assets/ace-exam/landing-amc.png" alt="AMC考试服务页" /></div><figcaption>AMC考试页</figcaption></figure>
-            <figure class="web-scroll"><div class="web-scroll-frame" tabindex="0"><img src="../assets/ace-exam/landing-acem.png" alt="ACEM考试服务页" /></div><figcaption>ACEM考试页</figcaption></figure>
-            <figure class="web-scroll"><div class="web-scroll-frame" tabindex="0"><img src="../assets/ace-exam/landing-blog.png" alt="Blog列表页" /></div><figcaption>Blog列表</figcaption></figure>
+          <div class="webpage-gallery decorated-gallery" data-label="官网部分" aria-label="官网页面滑动浏览">
+            <figure class="web-scroll"><div class="web-scroll-frame" tabindex="0"><img src="../assets/ace-exam/landing-main.png" alt="医学考试学习平台主站首页" /></div><figcaption>主站首页</figcaption></figure>
+            <figure class="web-scroll"><div class="web-scroll-frame" tabindex="0"><img src="../assets/ace-exam/landing-amc.png" alt="考试服务页" /></div><figcaption>考试服务页</figcaption></figure>
+            <figure class="web-scroll"><div class="web-scroll-frame" tabindex="0"><img src="../assets/ace-exam/landing-acem.png" alt="考试服务页" /></div><figcaption>考试服务页</figcaption></figure>
+            <figure class="web-scroll"><div class="web-scroll-frame" tabindex="0"><img src="../assets/ace-exam/landing-blog.png" alt="文章内容列表页" /></div><figcaption>文章内容列表</figcaption></figure>
             <figure class="web-scroll"><div class="web-scroll-frame" tabindex="0"><img src="../assets/ace-exam/landing-article.png" alt="考试文章页" /></div><figcaption>文章详情</figcaption></figure>
             <figure><img src="../assets/ace-exam/landing-login.png" alt="登录页面" /><figcaption>登录</figcaption></figure>
             <figure><img src="../assets/ace-exam/landing-register.png" alt="注册页面" /><figcaption>注册</figcaption></figure>
@@ -140,14 +131,13 @@
           <article class="screen-copy">
             <span>02</span>
             <h3>付费学习平台：围绕长期复习建立工作台</h3>
-            <p>付费后用户进入真正的学习系统。Dashboard 显示整体进度和各科正确率；创建考试支持选择模式；历史记录把未完成、已完成、收藏和错题沉淀为可继续复习的入口。</p>
-            <p class="english-note">The paid platform turns practice attempts into a visible revision workspace.</p>
+            <p>付费后用户进入真正的学习系统。数据看板显示整体进度和各科正确率；创建考试支持选择模式；历史记录把未完成、已完成、收藏和错题沉淀为可继续复习的入口。</p>
           </article>
-          <div class="desktop-gallery route-strip decorated-gallery" data-label="PLATFORM" aria-label="Ace test platform screens">
-            <figure><img src="../assets/ace-exam/test-dashboard.png" alt="Dashboard页面" /><figcaption>Dashboard</figcaption></figure>
-            <figure><img src="../assets/ace-exam/test-dashboard-2.png" alt="Dashboard数据页面" /><figcaption>科目数据</figcaption></figure>
+          <div class="desktop-gallery route-strip decorated-gallery" data-label="学习平台" aria-label="学习平台页面滑动浏览">
+            <figure><img src="../assets/ace-exam/test-dashboard.png" alt="数据看板页面" /><figcaption>数据看板</figcaption></figure>
+            <figure><img src="../assets/ace-exam/test-dashboard-2.png" alt="数据看板数据页面" /><figcaption>科目数据</figcaption></figure>
             <figure><img src="../assets/ace-exam/test-create-timed.png" alt="创建考试计时模式" /><figcaption>创建考试</figcaption></figure>
-            <figure><img src="../assets/ace-exam/test-create-tutor.png" alt="创建考试Tutor模式" /><figcaption>Tutor模式</figcaption></figure>
+            <figure><img src="../assets/ace-exam/test-create-tutor.png" alt="创建考试辅导模式" /><figcaption>辅导模式</figcaption></figure>
             <figure><img src="../assets/ace-exam/test-previous.png" alt="历史考试列表" /><figcaption>历史记录</figcaption></figure>
             <figure><img src="../assets/ace-exam/test-notebook.png" alt="错题本页面" /><figcaption>错题本</figcaption></figure>
           </div>
@@ -158,9 +148,8 @@
             <span>03</span>
             <h3>考试过程：在真实考试感和复习控制感之间取得平衡</h3>
             <p>考试过程区分计时与非计时场景，支持暂停、退出、收藏题目、保存到错题本和反馈问题。结束后自动计算分数，并用结果页帮助用户定位薄弱点。</p>
-            <p class="english-note">The test flow balances exam realism with revision controls and post-test analytics.</p>
           </article>
-          <div class="desktop-gallery route-strip decorated-gallery" data-label="TEST FLOW" aria-label="Ace test flow screens">
+          <div class="desktop-gallery route-strip decorated-gallery" data-label="测试流程" aria-label="考试流程页面滑动浏览">
             <figure><img src="../assets/ace-exam/test-single-best-answer.png" alt="单选题考试页面" /><figcaption>单选题</figcaption></figure>
             <figure><img src="../assets/ace-exam/test-short-answer.png" alt="简答题考试页面" /><figcaption>简答题</figcaption></figure>
             <figure><img src="../assets/ace-exam/test-marked.png" alt="收藏题目状态" /><figcaption>收藏题目</figcaption></figure>
@@ -175,45 +164,39 @@
 
       <section class="case-section" aria-labelledby="logic-title">
         <div class="section-heading">
-          <p class="eyebrow">Interaction logic</p>
+          <p class="eyebrow">交互逻辑</p>
           <h2 id="logic-title">让每一次测试都回到下一步复习决策</h2>
         </div>
         <div class="logic-list">
           <article>
             <span>付费前</span>
-            <p>通过考试服务页和内容页解决“平台是否适合我”的问题，Demo 让用户在正式付费前体验真实功能，降低决策门槛。</p>
-            <p class="english-note">Pre-payment experience reduces trust and fit uncertainty.</p>
+            <p>通过考试服务页和内容页解决“平台是否适合我”的问题，试用体验让用户在正式付费前体验真实功能，降低决策门槛。</p>
           </article>
           <article>
             <span>练习中</span>
             <p>考试页面保留必要控制：计时、暂停、收藏、反馈和错题沉淀，让用户既能模拟考试，也能进行针对性复习。</p>
-            <p class="english-note">Practice controls support both exam simulation and targeted revision.</p>
           </article>
           <article>
             <span>复盘后</span>
-            <p>结果页和 dashboard 把分数、正确率和历史记录可视化，让用户知道下一轮应该关注哪个科目、哪类题目和哪些错题。</p>
-            <p class="english-note">Result analytics guide the next revision cycle.</p>
+            <p>结果页和数据看板把分数、正确率和历史记录可视化，让用户知道下一轮应该关注哪个科目、哪类题目和哪些错题。</p>
           </article>
         </div>
       </section>
 
       <section class="case-section outcome-section" aria-labelledby="outcome-title">
         <div>
-          <p class="eyebrow">Outcome</p>
+          <p class="eyebrow">项目结果</p>
           <h2 id="outcome-title">把医学考试平台设计成可持续复习系统</h2>
         </div>
         <div>
           <p>
-            Ace the Exam 的核心不是单次答题，而是让用户在“发现平台、体验功能、创建考试、完成测试、查看结果、继续复习”的循环中形成可持续的学习节奏。设计通过清晰的信息架构和数据反馈，帮助高压力考生把备考拆解成可执行的下一步。
-          </p>
-          <p class="english-note">
-            The product experience turns medical exam preparation into a repeatable learning system with acquisition, trial, practice, feedback, and improvement loops.
+            医学考试学习平台的核心不是单次答题，而是让用户在“发现平台、体验功能、创建考试、完成测试、查看结果、继续复习”的循环中形成可持续的学习节奏。设计通过清晰的信息架构和数据反馈，帮助高压力考生把备考拆解成可执行的下一步。
           </p>
         </div>
       </section>
     </main>
 
-    <footer><p>© 2026 Lillia Li / 李思宇.</p></footer>
+    <footer><p>© 2026 李思宇个人作品集。</p></footer>
     <script src="../script.js?v=copy-contact-1"></script>
-  </body>
+  <script src="../text-content.js?v=1"></script></body>
 </html>
