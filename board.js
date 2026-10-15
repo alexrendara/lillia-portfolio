@@ -19,10 +19,10 @@ const years=[
  {year:2022,x:130,y:580,color:'#ffdb5e',tilt:-7,images:['year-2022-cover.png','project-play-cover.png'],label:'数字银行与儿童活动体验'},
 ];
 const regions=[
- {year:'伦敦',x:350,y:330,color:'#a9bcd6',tilt:4,images:['project-nomo-cover.png','year-2023-cover.png'],label:'伦敦项目图片占位，内容待补充',locked:true},
- {year:'新西兰',x:1200,y:100,color:'#b4d0ac',tilt:-6,images:['project-ace-exam-cover.png','ace-exam/test-dashboard.png'],label:'新西兰项目图片占位，内容待补充',locked:true},
- {year:'苏州',x:740,y:1080,color:'#d6b5d9',tilt:-5,images:['project-ai-ticket-cover.png','project-ai-travel-photo-cover.png'],label:'苏州项目图片占位，内容待补充',locked:true},
- {year:'广州',x:1700,y:560,color:'#ecc784',tilt:6,images:['project-tongcheng-ai-cover.png','project-linghui-ai-cover.png'],label:'广州项目图片占位，内容待补充',locked:true},
+ {year:'伦敦',x:250,y:200,color:'#a9bcd6',tilt:4,images:['regions/london.jpg','project-nomo-cover.png','project-play-cover.png'],label:'伦敦，数字银行与儿童活动体验'},
+ {year:'新西兰',x:1660,y:60,color:'#b4d0ac',tilt:-6,images:['regions/new-zealand.jpg','project-ace-exam-cover.png'],label:'新西兰，医学考试学习平台'},
+ {year:'苏州',x:450,y:1250,color:'#d6b5d9',tilt:-5,images:['regions/suzhou.jpg','project-ai-ticket-cover.png','project-ai-travel-photo-cover.png'],label:'苏州，智能导览与人工智能创作'},
+ {year:'广州',x:2350,y:620,color:'#ecc784',tilt:6,images:['regions/guangzhou.jpg'],label:'广州，正在更新中',locked:true},
 ];
 let mode='years';
 const projects={
@@ -36,13 +36,28 @@ const expandedYears=new Map();
 Object.assign(years[0],{x:340,y:130});
 Object.assign(years[1],{x:320,y:1040});
 Object.assign(years[2],{x:1670,y:140});
-Object.assign(years[3],{x:1730,y:730});
+Object.assign(years[3],{x:2450,y:650});
 Object.assign(years[4],{x:-130,y:520});
 Object.assign(projects[2025][0],{x:-100,y:1770});
 Object.assign(projects[2025][1],{x:-790,y:1270});
 Object.assign(projects[2025][2],{x:610,y:1950});
 Object.assign(projects[2022][0],{x:-1470,y:50});
 Object.assign(projects[2022][1],{x:-810,y:250});
+const regionProjects={
+ '伦敦':projects[2022].map((project,i)=>({...project,x:-700,y:80+i*620})),
+ '新西兰':projects[2024].map(project=>({...project,x:2350,y:-100})),
+ '苏州':[...projects[2026],...projects[2025]].map((project,i)=>({...project,x:-450+i*680,y:i%2?2300:1770})),
+ '广州':[]
+};
+const groupProjects=item=>(mode==='years'?projects:regionProjects)[item.year]||[];
+function toggleUpdate(item,trigger){
+ if(switching||projectMotion)return;
+ const existing=trigger.querySelector('.update-note');
+ if(existing){existing.remove();trigger.setAttribute('aria-expanded','false');return;}
+ const note=document.createElement('span');note.className='update-note';note.setAttribute('role','status');note.textContent='正在更新中';
+ trigger.append(note);trigger.setAttribute('aria-expanded','true');
+ if(!reducedMotion.matches)note.animate([{opacity:0,transform:'translateX(-18px) rotate(-8deg)'},{opacity:1,transform:'translateX(0) rotate(4deg)'}],{duration:260,easing:'ease-out'});
+}
 let projectMotion=0;
 function clearProjects(){
  cancelAnimationFrame(projectMotion);projectMotion=0;
@@ -53,8 +68,8 @@ function clearProjects(){
 async function toggleYear(item,trigger){
  if(switching||projectMotion)return;
  projectMotion=-1;
- const closing=expandedYears.has(item.year),index=years.indexOf(item);
- const entries=closing?expandedYears.get(item.year):projects[item.year].map((project,i)=>{
+ const closing=expandedYears.has(item.year),index=(mode==='years'?years:regions).indexOf(item);
+ const entries=closing?expandedYears.get(item.year):groupProjects(item).map((project,i)=>{
   const card=document.createElement('a');card.className='project-card item';card.href=`projects/${project.page}.html`;card.style.visibility='hidden';
   card.style.setProperty('--paper',i%2?'#e4e3dc':'#fcfcf7');card.style.setProperty('--angle',`${i%2?5:-4}deg`);
   const img=window.createCoverMedia(project.image);
@@ -108,17 +123,17 @@ document.querySelector('#threads').replaceChildren();document.querySelector('#pi
 const items=mode==='years'?years:regions;
 for(const item of items){
  const single=!item.locked&&mode==='years'&&projects[item.year]?.length===1;
- const el=document.createElement(item.locked?'article':single?'a':'button');
+ const el=document.createElement(single?'a':'button');
  el.className=`year item${item.locked?' locked':''}`;
  el.style.cssText=`left:${item.x}px;top:${item.y}px;--color:${item.color};--tilt:${item.tilt}deg`;
  el.id=`year-${item.year}`;
  if(single){
   el.href=`projects/${projects[item.year][0].page}.html`;
   el.onclick=event=>{if(switching||projectMotion)event.preventDefault();};
- }else if(!item.locked){
-  el.type='button';el.setAttribute('aria-expanded','false');el.onclick=()=>toggleYear(item,el);
+ }else{
+  el.type='button';el.setAttribute('aria-expanded','false');el.onclick=()=>item.locked?toggleUpdate(item,el):toggleYear(item,el);
  }
- el.setAttribute('aria-label',`${item.year}，${item.label}`);
+ el.setAttribute('aria-label',mode==='years'?`${item.year}，${item.label}`:item.label);
  el.innerHTML=`<span class="photo-stack">${item.images.map((src,i)=>`<span class="polaroid print-${i}"><img src="assets/${src}" alt="${i?'':item.label}" draggable="false"></span>`).reverse().join('')}</span><span class="year-tag">${item.year}</span>`;
  board.append(el);
 }
@@ -129,7 +144,7 @@ items.forEach(y=>anchors[y.year]=[y.x+149,y.y+9]);
 const connections=mode==='years'?[['profile',2026],['profile',2025],['profile',2024],['profileSide',2023],[2022,2025],[2022,'profile'],[2024,2023],[2023,'contact'],['profileSide','contact']]:[['profile','伦敦'],['profile','新西兰'],['profile','苏州'],['profileSide','广州'],['伦敦','苏州'],['新西兰','广州'],['广州','contact'],['profileSide','contact']];
 for(const [i,[a,b]] of connections.entries()){const [x,y]=anchors[a],[u,v]=anchors[b];const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.dataset.from=a;path.dataset.to=b;path.setAttribute('d',`M${x},${y} Q${(x+u)/2},${(y+v)/2+20} ${u},${v}`);if(i>3)path.classList.add('secondary');document.querySelector('#threads').append(path);}
 for(const [key,[x,y]] of Object.entries(anchors)){
- const colorIndex=mode==='years'?years.findIndex(item=>String(item.year)===key):-1;
+ const colorIndex=items.findIndex(item=>String(item.year)===key);
  const pin=document.createElement(colorIndex<0?'img':'span');
  const offsetX=colorIndex<0?-26:-4,offsetY=colorIndex<0?-43:-80;
  if(colorIndex<0){pin.src='assets/board-pin.png';pin.alt='';}
@@ -229,17 +244,20 @@ new ResizeObserver(()=>{if(!initialized){frame();initialized=true;}else frame(tr
 document.querySelector('#copy-email').onclick=async()=>{const status=document.querySelector('#copy-status');try{await navigator.clipboard.writeText('13416549819@163.com');status.textContent='邮箱已复制';}catch{status.textContent='请复制上方邮箱地址';}};
 document.addEventListener('portfolio:depart',()=>{
  stopCamera();
- try{sessionStorage.setItem('portfolio-board-camera',JSON.stringify({state,years:[...expandedYears.keys()]}));}catch{}
+ try{sessionStorage.setItem('portfolio-board-camera',JSON.stringify({state,mode,years:[...expandedYears.keys()]}));}catch{}
 });
 try{
  if(sessionStorage.getItem('portfolio-board-return')){
   sessionStorage.removeItem('portfolio-board-return');
   const saved=JSON.parse(sessionStorage.getItem('portfolio-board-camera')||'null');
   if(saved){
+   if(saved.mode==='regions'){
+    mode='regions';drawLayout();const button=document.querySelector('#layout-toggle');button.textContent='按年份';button.setAttribute('aria-pressed','true');button.setAttribute('aria-label','切换为年份陈列');button.title='切换为年份陈列';
+   }
    await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
    for(const year of saved.years){
-    const item=years.find(y=>y.year===year),trigger=document.getElementById(`year-${year}`);
-    if(item&&trigger&&projects[year]?.length>1){await toggleYear(item,trigger);await new Promise(resolve=>{function wait(){if(projectMotion)requestAnimationFrame(wait);else resolve();}wait();});}
+    const item=(mode==='years'?years:regions).find(y=>y.year===year),trigger=document.getElementById(`year-${year}`);
+    if(item&&trigger&&groupProjects(item).length){await toggleYear(item,trigger);await new Promise(resolve=>{function wait(){if(projectMotion)requestAnimationFrame(wait);else resolve();}wait();});}
    }
    moveCamera(saved.state,false);
    if(!reducedMotion.matches)board.animate([{opacity:0},{opacity:1}],{duration:250,fill:'both'});
