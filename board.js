@@ -246,3 +246,5 @@ try{
   }
  }
 }catch{}
+window.portfolioBoardReady=true;
+document.dispatchEvent(new Event('portfolio:board-ready'));
