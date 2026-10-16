@@ -29,15 +29,15 @@ const projects={
  2026:[{title:'同程旅行景区AI导览',image:'project-tongcheng-ai-cover.png',page:'tongcheng-ai-guide',x:155,y:110}],
  2025:[{title:'灵绘AI',image:'project-linghui-ai-cover.png',page:'linghui-ai',x:60,y:1210},{title:'年会电子纪念票',image:'project-ai-ticket-cover.png',page:'ai-ticket',x:-390,y:1080},{title:'AI旅拍',image:'project-ai-travel-photo-cover.png',page:'ai-travel-photo',x:475,y:1450}],
  2024:[{title:'Ace the Exam',image:'project-ace-exam-cover.png',page:'ace-the-exam',x:1940,y:240}],
- 2022:[{title:'Nomo Fintech',image:'project-nomo-cover.png',page:'nomo-fintech',x:-390,y:65},{title:'Play@',image:'project-play-cover.png',page:'play-at',x:-430,y:455}],
+ 2022:[{title:'Nomo Fintech',image:'project-nomo-cover.png',page:'nomo-fintech',x:-390,y:65},{title:'Play@',image:'project-play-cover.png',page:'play-at',x:-430,y:455},{title:'TBI · The Big Impact',image:'project-tbi-cover.png',page:'tbi',x:-1470,y:650}],
 };
 const expandedYears=new Map();
 // Leave room for landscape prints, their pins, and their rotated corners.
-Object.assign(years[0],{x:340,y:130});
-Object.assign(years[1],{x:320,y:1040});
-Object.assign(years[2],{x:1670,y:140});
-Object.assign(years[3],{x:2450,y:650});
-Object.assign(years[4],{x:-130,y:520});
+Object.assign(years[0],{x:460,y:170});
+Object.assign(years[1],{x:330,y:990});
+Object.assign(years[2],{x:1510,y:180});
+Object.assign(years[3],{x:1650,y:650});
+Object.assign(years[4],{x:100,y:570});
 Object.assign(projects[2025][0],{x:-100,y:1770});
 Object.assign(projects[2025][1],{x:-790,y:1270});
 Object.assign(projects[2025][2],{x:610,y:1950});
@@ -139,7 +139,7 @@ for(const item of items){
 }
 // All pins and threads share the board's world coordinates and sit above every paper.
 board.querySelectorAll('.year .polaroid img').forEach(img=>{const key=img.getAttribute('src').slice(7);img.replaceWith(window.createCoverMedia(key,img.alt));});
-const anchors={profile:[965,470],profileSide:[1365,820],contact:[1960,1037]};
+const anchors={profile:[965,470],profileSide:[1365,1070],contact:[1960,1037]};
 items.forEach(y=>anchors[y.year]=[y.x+149,y.y+9]);
 const connections=mode==='years'?[['profile',2026],['profile',2025],['profile',2024],['profileSide',2023],[2022,2025],[2022,'profile'],[2024,2023],[2023,'contact'],['profileSide','contact']]:[['profile','伦敦'],['profile','新西兰'],['profile','苏州'],['profileSide','广州'],['伦敦','苏州'],['新西兰','广州'],['广州','contact'],['profileSide','contact']];
 for(const [i,[a,b]] of connections.entries()){const [x,y]=anchors[a],[u,v]=anchors[b];const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.dataset.from=a;path.dataset.to=b;path.setAttribute('d',`M${x},${y} Q${(x+u)/2},${(y+v)/2+20} ${u},${v}`);if(i>3)path.classList.add('secondary');document.querySelector('#threads').append(path);}
@@ -159,6 +159,7 @@ const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
 let switching=false;
 function switchLayout(){
  if(switching||projectMotion)return;
+ document.dispatchEvent(new Event('portfolio:layout-change'));
  clearProjects();
  const outgoing=mode==='years'?years:regions;
  mode=mode==='years'?'regions':'years';
@@ -220,12 +221,20 @@ function zoom(value,cx=viewport.clientWidth/2,cy=viewport.clientHeight/2){stopCa
 function frame(all=false,animate=false){
  const w=viewport.clientWidth,h=viewport.clientHeight;
  let left=-25,top=-25,right=2325,bottom=1525;
- for(const el of board.querySelectorAll('.year')){left=Math.min(left,el.offsetLeft-120);top=Math.min(top,el.offsetTop-100);right=Math.max(right,el.offsetLeft+el.offsetWidth+130);bottom=Math.max(bottom,el.offsetTop+el.offsetHeight+110);}
+ for(const el of board.querySelectorAll('.year,.career-note')){left=Math.min(left,el.offsetLeft-120);top=Math.min(top,el.offsetTop-100);right=Math.max(right,el.offsetLeft+el.offsetWidth+130);bottom=Math.max(bottom,el.offsetTop+el.offsetHeight+110);}
  for(const entries of expandedYears.values())for(const {project,card} of entries){left=Math.min(left,project.x-45);top=Math.min(top,project.y-90);right=Math.max(right,project.x+card.offsetWidth+50);bottom=Math.max(bottom,project.y+card.offsetHeight+45);}
  const scale=all?Math.max(MIN,Math.min(MAX,w/(right-left),(h-70)/(bottom-top))):Math.max(MIN,Math.min(DEFAULT_SCALE,(w-32)/480));
  moveCamera({scale,x:w/2-(all?(left+right)/2:1165)*scale,y:(h-65)/2-(all?(top+bottom)/2:775)*scale},animate);
 }
 document.querySelector('#fit').onclick=()=>frame(true,true);
+let careerCamera=null;
+document.addEventListener('portfolio:career-toggle',event=>{
+ if(event.detail.opened){
+  careerCamera={...state};
+  const scale=Math.min(state.scale,(viewport.clientWidth-50)/780,(viewport.clientHeight-110)/1300);
+  moveCamera({scale,x:viewport.clientWidth/2-1165*scale,y:(viewport.clientHeight-70)/2-1085*scale});
+ }else if(careerCamera){moveCamera(careerCamera);careerCamera=null;}
+});
 document.querySelector('#layout-toggle').onclick=switchLayout;
 document.querySelector('#focus-contact').onclick=()=>moveCamera({scale:DEFAULT_SCALE,x:viewport.clientWidth/2-2025*DEFAULT_SCALE,y:(viewport.clientHeight-65)/2-1180*DEFAULT_SCALE});
 viewport.addEventListener('pointerdown',stopCamera);
