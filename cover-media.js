@@ -1,5 +1,6 @@
 (() => {
- let covers={};
+ let covers={},previews={};
+ window.portfolioPreviewSource=key=>{const actual=covers[key]||key;return /\.mp4$/i.test(actual)?key:(previews[actual]||actual);};
  const root=new URL('.',document.currentScript.src);
  const videos=new Set();
  function bindPlayback(video){
@@ -21,13 +22,13 @@
   videos.add(video);
  }
  window.createCoverMedia=(key,alt='')=>{
-  const source=covers[key]||key,video=/\.mp4$/i.test(source),el=document.createElement(video?'video':'img');
+  const original=covers[key]||key,source=previews[original]||original,video=/\.mp4$/i.test(source),el=document.createElement(video?'video':'img');
   el.dataset.coverKey=key;el.src=new URL('assets/'+source,root).href;
-  if(video){el.muted=true;el.autoplay=false;el.loop=false;el.playsInline=true;el.preload='auto';el.setAttribute('aria-label',alt||'封面视频');}
-  else el.alt=alt;
+  if(video){el.muted=true;el.autoplay=false;el.loop=false;el.playsInline=true;el.preload='metadata';el.setAttribute('aria-label',alt||'封面视频');}
+  else el.alt=alt;el.decoding='async';
   el.draggable=false;return el;
  };
- window.coverMediaReady=fetch(new URL('cover-media.json',root),{cache:'no-store'}).then(r=>r.ok?r.json():{}).then(data=>{covers=data;}).catch(()=>{});
+ window.coverMediaReady=Promise.all([fetch(new URL('cover-media.json',root),{cache:'no-store'}).then(r=>r.ok?r.json():{}).catch(()=>({})),fetch(new URL('home-previews.json',root),{cache:'no-store'}).then(r=>r.ok?r.json():{}).catch(()=>({}))]).then(([c,p])=>{covers=c;previews=p;});
  window.coverMediaReady.then(()=>{
   const update=()=>{document.querySelectorAll('img:not([data-cover-key])').forEach(img=>{
    const url=new URL(img.src),prefix=new URL('assets/',root).pathname;
@@ -40,3 +41,5 @@
   update();new MutationObserver(update).observe(document.body,{childList:true,subtree:true});
  });
 })();
+
+window.coverMediaReady.then(()=>document.querySelectorAll('[data-home-preview]').forEach(img=>{img.src='assets/'+window.portfolioPreviewSource(img.dataset.homePreview);img.addEventListener('error',()=>{img.src=img.dataset.originalSrc;},{once:true});}));

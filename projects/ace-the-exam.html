@@ -1,18 +1,6 @@
 <!doctype html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>医学考试学习平台</title>
-    <meta name="description" content="医学考试学习平台作品集案例，展示新西兰医学考试平台的官网、文章内容、试用体验、注册登录、数据看板、创建考试、考试过程和结果复盘体验。" />
-    <link rel="stylesheet" href="../styles.css?v=puhuiti-1" />
-  <link rel="stylesheet" href="../project-entry.css?v=hero-8" />
-<script src="../project-entry.js?v=preserve-15"></script>
-</head>
-  <body class="project-detail ace-exam-page" style="--year-color: #2dd4bf">
-    <canvas id="flow-field" aria-hidden="true"></canvas>
-
-    <header class="site-header project-sticker-header" aria-label="项目导航">
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="ACE the Exam 医学备考平台设计案例：产品框架、学习体验、响应式设计与品牌官网。"><title>ACE the Exam · 产品设计案例</title><link rel="stylesheet" href="../assets/ace-exam/case/style.css"><link rel="stylesheet" href="../project-entry.css?v=hero-8"><script src="../project-entry.js?v=preserve-15"></script></head>
+<body class="project-detail ace-exam-page"><header class="site-header project-sticker-header" aria-label="项目导航">
       <a class="project-sticker" href="../index.html">返回首页</a>
       <details class="project-contact">
         <summary class="project-sticker">联系方式</summary>
@@ -24,179 +12,15 @@
         </div>
       </details>
     </header>
-
-    <main>
-      <section class="case-hero" aria-labelledby="case-title">
-        <div class="ui-flow-lines" aria-hidden="true"><span></span><span></span><span></span></div>
-        <div class="case-hero-copy">
-          <p class="eyebrow">2024 · 医学学习平台 · 教育科技体验</p>
-          <h1 id="case-title">医学考试学习平台</h1>
-          <p class="case-lede">
-            医学考试学习平台是一家总部位于新西兰的线上医学考试学习平台，服务当地医生和医学相关从业者。平台将考试题库、模拟测试、复习进度、数据分析和错题复盘整合在一起，帮助用户更有计划地完成考试准备。
-          </p>
-        </div>
-        <div class="case-hero-media ace-hero-media">
-          <div class="floating-ui-tag tag-route" aria-hidden="true">官网 · 试用 · 测试</div>
-          <div class="floating-ui-tag tag-ai" aria-hidden="true">学习数据分析</div>
-          <div class="desktop-stack">
-            <img src="../assets/ace-exam/landing-main.png" alt="医学考试学习平台官网页面" />
-            <img src="../assets/ace-exam/test-dashboard.png" alt="医学考试学习平台数据看板" />
-          </div>
-        </div>
-      </section>
-
-      <section class="case-meta" aria-label="项目事实">
-        <div><span>对象</span><strong>新西兰医生、医学考试考生、医学相关从业者</strong></div>
-        <div><span>范围</span><strong>获客官网、文章内容、试用体验、注册登录、付费学习平台、考试流程</strong></div>
-        <div><span>重点</span><strong>把高压力备考转化为可计划、可练习、可复盘的学习闭环</strong></div>
-      </section>
-
-      <section class="case-section" aria-labelledby="challenge-title">
-        <div class="section-heading">
-          <p class="eyebrow">设计挑战</p>
-          <h2 id="challenge-title">让医学考试备考从“题库堆积”变成清晰的学习路径</h2>
-        </div>
-        <div class="case-two-col">
-          <p>
-            医学相关考试内容密度高、周期长、压力大。用户不仅需要题库，更需要知道自己该练什么、哪些科目薄弱、过去做过什么、下一次如何提高。
-          </p>
-          <p>
-            因此设计被拆成两个互相连接的部分：付费前通过官网页面、文章内容、试用体验和注册登录建立信任；付费后通过数据看板、创建考试、考试过程和结果分析承接长期复习。
-          </p>
-        </div>
-      </section>
-
-      <section id="process" class="case-section" aria-labelledby="research-title">
-        <div class="section-heading">
-          <p class="eyebrow">用户逻辑</p>
-          <h2 id="research-title">围绕医学考生的决策与复习节奏组织体验</h2>
-        </div>
-        <div class="insight-grid">
-          <article>
-            <span>01</span>
-            <h3>先确认考试匹配</h3>
-            <p>用户进入平台时最先关心“是否覆盖我的考试”。官网页面需要把不同考试入口、服务范围和学习支持说明清楚分层。</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>再建立学习信任</h3>
-            <p>考试文章、备考资料、重要日期和试用体验承担教育与信任建立作用，让用户在付费前理解平台内容质量、题库范围和学习方式。</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>持续依靠数据反馈</h3>
-            <p>进入付费平台后，用户需要通过数据看板、考试记录、收藏题和结果分析持续判断复习状态，而不是只完成一次测试。</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="case-section" aria-labelledby="framework-title">
-        <div class="section-heading">
-          <p class="eyebrow">产品框架</p>
-          <h2 id="framework-title">从获客、试用到付费学习的完整闭环</h2>
-        </div>
-        <div class="flow-map ace-flow" aria-label="医学考试学习平台产品流程">
-          <span class="flow-current" aria-hidden="true"></span>
-          <div><span>发现</span><strong>考试服务页</strong><small>主站、考试介绍、服务价值</small></div>
-          <div><span>判断</span><strong>内容与试用体验</strong><small>考试文章、备考资料、重要日期、功能体验</small></div>
-          <div><span>练习</span><strong>创建考试</strong><small>计时/非计时、题型、暂停、收藏</small></div>
-          <div><span>复盘</span><strong>数据反馈</strong><small>数据看板、历史记录、错题本、结果分析</small></div>
-        </div>
-      </section>
-
-      <section class="case-section design-showcase" aria-labelledby="screens-title">
-        <div class="section-heading">
-          <p class="eyebrow">页面设计</p>
-          <h2 id="screens-title">两个产品层级：公开官网与付费学习平台</h2>
-        </div>
-
-        <div class="screen-row">
-          <article class="screen-copy">
-            <span>01</span>
-            <h3>公开官网：让用户先找到自己的考试和学习理由</h3>
-            <p>公开页面承担获客和教育角色：主站介绍平台价值，考试服务页说明不同考试支持范围，考试文章和备考内容提供持续参考，试用体验和注册登录完成转化前的最后一步。</p>
-          </article>
-          <div class="webpage-gallery decorated-gallery" data-label="官网部分" aria-label="官网页面滑动浏览">
-            <figure class="web-scroll"><div class="web-scroll-frame" tabindex="0"><img src="../assets/ace-exam/landing-main.png" alt="医学考试学习平台主站首页" /></div><figcaption>主站首页</figcaption></figure>
-            <figure class="web-scroll"><div class="web-scroll-frame" tabindex="0"><img src="../assets/ace-exam/landing-amc.png" alt="考试服务页" /></div><figcaption>考试服务页</figcaption></figure>
-            <figure class="web-scroll"><div class="web-scroll-frame" tabindex="0"><img src="../assets/ace-exam/landing-acem.png" alt="考试服务页" /></div><figcaption>考试服务页</figcaption></figure>
-            <figure class="web-scroll"><div class="web-scroll-frame" tabindex="0"><img src="../assets/ace-exam/landing-blog.png" alt="文章内容列表页" /></div><figcaption>文章内容列表</figcaption></figure>
-            <figure class="web-scroll"><div class="web-scroll-frame" tabindex="0"><img src="../assets/ace-exam/landing-article.png" alt="考试文章页" /></div><figcaption>文章详情</figcaption></figure>
-            <figure><img src="../assets/ace-exam/landing-login.png" alt="登录页面" /><figcaption>登录</figcaption></figure>
-            <figure><img src="../assets/ace-exam/landing-register.png" alt="注册页面" /><figcaption>注册</figcaption></figure>
-          </div>
-        </div>
-
-        <div class="screen-row reverse">
-          <article class="screen-copy">
-            <span>02</span>
-            <h3>付费学习平台：围绕长期复习建立工作台</h3>
-            <p>付费后用户进入真正的学习系统。数据看板显示整体进度和各科正确率；创建考试支持选择模式；历史记录把未完成、已完成、收藏和错题沉淀为可继续复习的入口。</p>
-          </article>
-          <div class="desktop-gallery route-strip decorated-gallery" data-label="学习平台" aria-label="学习平台页面滑动浏览">
-            <figure><img src="../assets/ace-exam/test-dashboard.png" alt="数据看板页面" /><figcaption>数据看板</figcaption></figure>
-            <figure><img src="../assets/ace-exam/test-dashboard-2.png" alt="数据看板数据页面" /><figcaption>科目数据</figcaption></figure>
-            <figure><img src="../assets/ace-exam/test-create-timed.png" alt="创建考试计时模式" /><figcaption>创建考试</figcaption></figure>
-            <figure><img src="../assets/ace-exam/test-create-tutor.png" alt="创建考试辅导模式" /><figcaption>辅导模式</figcaption></figure>
-            <figure><img src="../assets/ace-exam/test-previous.png" alt="历史考试列表" /><figcaption>历史记录</figcaption></figure>
-            <figure><img src="../assets/ace-exam/test-notebook.png" alt="错题本页面" /><figcaption>错题本</figcaption></figure>
-          </div>
-        </div>
-
-        <div class="screen-row">
-          <article class="screen-copy">
-            <span>03</span>
-            <h3>考试过程：在真实考试感和复习控制感之间取得平衡</h3>
-            <p>考试过程区分计时与非计时场景，支持暂停、退出、收藏题目、保存到错题本和反馈问题。结束后自动计算分数，并用结果页帮助用户定位薄弱点。</p>
-          </article>
-          <div class="desktop-gallery route-strip decorated-gallery" data-label="测试流程" aria-label="考试流程页面滑动浏览">
-            <figure><img src="../assets/ace-exam/test-single-best-answer.png" alt="单选题考试页面" /><figcaption>单选题</figcaption></figure>
-            <figure><img src="../assets/ace-exam/test-short-answer.png" alt="简答题考试页面" /><figcaption>简答题</figcaption></figure>
-            <figure><img src="../assets/ace-exam/test-marked.png" alt="收藏题目状态" /><figcaption>收藏题目</figcaption></figure>
-            <figure><img src="../assets/ace-exam/test-save-notebook.png" alt="保存到错题本" /><figcaption>保存错题</figcaption></figure>
-            <figure><img src="../assets/ace-exam/test-feedback-popup.png" alt="题目反馈弹窗" /><figcaption>反馈问题</figcaption></figure>
-            <figure><img src="../assets/ace-exam/test-exit.png" alt="退出考试确认" /><figcaption>暂停/退出</figcaption></figure>
-            <figure><img src="../assets/ace-exam/test-result.png" alt="考试结果页" /><figcaption>考试结果</figcaption></figure>
-            <figure><img src="../assets/ace-exam/test-result-details.png" alt="历史结果详情" /><figcaption>结果详情</figcaption></figure>
-          </div>
-        </div>
-      </section>
-
-      <section class="case-section" aria-labelledby="logic-title">
-        <div class="section-heading">
-          <p class="eyebrow">交互逻辑</p>
-          <h2 id="logic-title">让每一次测试都回到下一步复习决策</h2>
-        </div>
-        <div class="logic-list">
-          <article>
-            <span>付费前</span>
-            <p>通过考试服务页和内容页解决“平台是否适合我”的问题，试用体验让用户在正式付费前体验真实功能，降低决策门槛。</p>
-          </article>
-          <article>
-            <span>练习中</span>
-            <p>考试页面保留必要控制：计时、暂停、收藏、反馈和错题沉淀，让用户既能模拟考试，也能进行针对性复习。</p>
-          </article>
-          <article>
-            <span>复盘后</span>
-            <p>结果页和数据看板把分数、正确率和历史记录可视化，让用户知道下一轮应该关注哪个科目、哪类题目和哪些错题。</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="case-section outcome-section" aria-labelledby="outcome-title">
-        <div>
-          <p class="eyebrow">项目结果</p>
-          <h2 id="outcome-title">把医学考试平台设计成可持续复习系统</h2>
-        </div>
-        <div>
-          <p>
-            医学考试学习平台的核心不是单次答题，而是让用户在“发现平台、体验功能、创建考试、完成测试、查看结果、继续复习”的循环中形成可持续的学习节奏。设计通过清晰的信息架构和数据反馈，帮助高压力考生把备考拆解成可执行的下一步。
-          </p>
-        </div>
-      </section>
-    </main>
-
-    <footer><p>© 2026 李思宇个人作品集。</p></footer>
-    <script src="../script.js?v=copy-contact-1"></script>
-  <script src="../text-content.js?v=1"></script></body>
-</html>
+<main id="top"><section class="hero wrap"><p class="eyebrow">ACE THE EXAM / PRODUCT DESIGN CASE STUDY</p><h1>让每一次练习，<br>都有下一步<span>。</span></h1><div class="hero-bottom"><p>ACE the Exam 医学备考平台重构。<br>帮助学习者了解复习情况，安排适合自己的练习。</p><a class="text-link" href="#experience">查看设计过程 <span>↗</span></a></div><div class="hero-visual"><div class="visual-title">A clearer way to prepare.</div><img class="hero-screen zoomable" src="../assets/ace-exam/case/dashboard.webp" alt="ACE 学习数据总览界面" fetchpriority="high"><img class="hero-phone zoomable" src="../assets/ace-exam/case/mobile-answer.webp" alt="手机端答题解析界面"><div class="hero-caption">学习进度 · 练习反馈 · 重点回顾</div></div></section>
+<section id="overview" class="wrap overview"><div><span class="meta-label">我的角色</span><p>产品逻辑 · 信息架构<br>交互设计 · 视觉设计</p></div><div><span class="meta-label">协作方式</span><p>与创始人共同定义产品<br>与开发伙伴协作落地</p></div><div><span class="meta-label">项目周期</span><p>2022 至今<br>远程 / Part-time</p></div><div><span class="meta-label">设计范围</span><p>Web 学习平台 · 移动端<br>品牌官网 · Blog</p></div></section>
+<section id="context" class="wrap chapter"><div class="section-intro"><p class="kicker">项目起点</p><h2>用户需要了解自己的复习情况</h2><p>ACE 面向新西兰的医生与医学相关从业者，用户中也有医学学生。我接手时，平台已验证付费需求，提供了题库选择和创建练习的基本流程。用户在使用中难以了解自己的复习进度，也不方便重新找到做错或值得回看的题目。</p></div><div class="scenario-explorer"><div class="scenario-tabs" role="tablist" aria-label="备考场景"><button role="tab" id="scene-work" aria-controls="scene-panel" aria-selected="true" data-scene="work">在职备考<span>时间分散，需要选择科目</span></button><button role="tab" id="scene-exam" aria-controls="scene-panel" aria-selected="false" tabindex="-1" data-scene="exam">考前自测<span>需要独立判断与限时练习</span></button><button role="tab" id="scene-review" aria-controls="scene-panel" aria-selected="false" tabindex="-1" data-scene="review">再次复习<span>需要找回重点与查看表现</span></button></div><div id="scene-panel" role="tabpanel" aria-labelledby="scene-work"><span class="scene-context">场景归纳 / 非用户原话</span><h3 id="scene-question">利用空闲时间安排一轮练习</h3><div class="scene-route"><div><small>遇到的困难</small><p id="scene-pain">用户需要了解已经练过的范围，才能决定这次复习什么。</p></div><span aria-hidden="true">→</span><div><small>对应的设计</small><p id="scene-solution">创建页提供覆盖进度，用户可以据此选择科目，并设置题量和题目状态。</p></div></div><a id="scene-link" href="#experience">查看创建练习设计 ↗</a></div></div><div class="problem-grid"><div class="problem-lead"><img class="challenge-photo" src="../assets/ace-exam/case/challenge-placeholder.jpg" alt="新西兰场景占位图，可在后台替换"><div class="challenge-copy"><span>THE CHALLENGE</span><h3>这次重构要解决的问题</h3><p>我与创始人结合用户访谈、客服记录和日常反馈，整理了以下问题，作为功能讨论的依据。</p></div></div><div class="problem-list"><article><span>01</span><div><h3>我已经复习了多少？</h3><p>旧平台没有清楚展示已练习的范围，用户难以判断还剩哪些内容。</p><a class="solution-link" href="#learning-data">覆盖进度 → 学习数据</a></div></article><article><span>02</span><div><h3>哪些科目需要再练？</h3><p>用户缺少各科目的答题数据，选择复习内容时主要依靠自己判断。</p><a class="solution-link" href="#experience">表现参考 → 按科目创建练习</a></div></article><article><span>03</span><div><h3>值得重看的题在哪里？</h3><p>再次定位此前的错题与重点题目不够方便。</p><a class="solution-link" href="#review">动态错题 + 主动收藏 → 回顾重点</a></div></article></div></div></section>
+<section id="persona" class="wrap chapter persona-section"><div class="section-intro"><p class="kicker">用户画像 / Persona</p><h2>工作之余准备考试的医学从业者</h2><p>以下画像依据项目中了解到的使用场景整理，代表平台的一类核心用户。平台也服务医学学生，这里重点讨论在职备考的需求。</p></div><div class="persona-layout"><div class="persona-profile"><span class="persona-label">在职备考</span><h3>需要兼顾工作<br>与考试准备</h3><p>平时利用空闲时间复习，有较完整的时间时通过电脑练习，也会在手机网页上做题。</p><div class="persona-devices"><span>PC 网页端</span><span>手机网页端</span></div><small>场景归纳，非单个受访者档案</small></div><div class="persona-details"><article><span>学习目标</span><h3>完成考试准备，并了解自己的复习情况</h3><p>需要知道哪些科目已经练过，哪些题还值得回看。考前希望在限时条件下检验作答表现。</p></article><article><span>主要困难</span><h3>复习时间分散，难以凭记忆跟踪进度</h3><p>题库内容丰富，但用户不容易记住此前的练习范围，也不方便重新找到需要回顾的题目。</p></article><article><span>设计考虑</span><h3>提供选择练习内容与回顾题目的依据</h3><p>通过覆盖进度和答题数据辅助选择，保留错题筛选与主动收藏，并适配手机上的阅读顺序。</p></article></div></div></section><section class="wash"><div class="wrap chapter"><div class="section-intro"><p class="kicker">产品结构</p><h2>根据学习记录安排登录后的页面</h2><p>新用户没有答题记录，登录后默认进入创建练习页。积累数据后，平台优先展示 Dashboard，方便用户了解此前的复习情况，再决定练习内容。我负责梳理这些页面之间的关系，并与创始人共同确定功能优先级。</p></div><div class="entry-routes"><div><span class="route-tag">首次使用</span><strong>还没有学习记录</strong><span>→</span><b>创建第一轮练习</b></div><div><span class="route-tag">再次回来</span><strong>已经积累答题数据</strong><span>→</span><b>先查看 Dashboard</b></div></div><div class="flow"><div><b>01</b><h3>选择练习</h3><p>题量、科目、题目状态</p></div><span>→</span><div><b>02</b><h3>答题与理解</h3><p>复习或模拟考试</p></div><span>→</span><div><b>03</b><h3>查看反馈</h3><p>解析、成绩与收藏</p></div><span>→</span><div><b>04</b><h3>再做选择</h3><p>依据数据安排后续练习</p></div></div><p class="small-note">当前由用户查看数据后返回题库创建练习，尚未提供自动复习推荐。</p></div></section>
+<section id="experience" class="wrap chapter"><div class="section-intro"><p class="kicker">学习体验 / 创建练习</p><h2>按需要选择本次练习的内容</h2><p>例如，用户希望重新练习某个科目的错题，就可以选择该科目和 Incorrect，再设置本次题量。我将这些设置集中在创建页，并在科目旁展示覆盖进度，方便用户选择时参考。</p></div><div class="decision-strip"><div><span>用户目标</span><strong>补练某科目的错题</strong></div><span aria-hidden="true">→</span><div><span>操作选择</span><strong>选科目 + Incorrect + 题量</strong></div><span aria-hidden="true">→</span><div><span>设计回应</span><strong>创建符合本次需要的练习</strong></div></div><figure class="screen-stage"><img class="zoomable" src="../assets/ace-exam/case/create.webp" alt="创建练习页面，包含题量、题目状态与科目选择" loading="lazy"></figure><div class="three-notes"><div><b>设置题量</b><p>用户可以选择预设题量，也可以输入自己希望练习的数量。</p></div><div><b>根据记录筛选</b><p>Incorrect 随最近作答结果更新，答对后移出，答错后再次进入。</p></div><div><b>选择科目</b><p>选择科目时可以同时查看已做题目的比例。</p></div></div><p class="small-note">图中保留了设计阶段的选项，最终上线版本不含 Marked 和 Omitted。</p></section>
+<section class="wrap chapter modes"><div class="section-intro"><p class="kicker">学习体验 / 反馈时机</p><h2>为日常复习和模拟考试设置不同模式</h2><p>日常复习中，用户可以在答题后立即查看解析。如果希望模拟真实考试，则需要限时作答，并在结束后统一查看答案。两种模式都在创建练习时选择，主要区别是时间限制和解析的展示时机。</p></div><div class="feedback-sequence"><div><span>理解知识</span><p><b>作答</b><i>→</i><b class="accent-step">查看解析</b><i>→</i><b>下一题</b></p></div><div><span>检验表现</span><p><b>限时作答</b><i>→</i><b>提交</b><i>→</i><b class="accent-step">统一回顾</b></p></div></div><div class="mode-bar" role="tablist" aria-label="练习模式"><button id="tutor-tab" role="tab" aria-selected="true" aria-controls="mode-panel" data-mode="tutor">Tutor mode <span>边练边理解</span></button><button id="test-tab" role="tab" aria-selected="false" aria-controls="mode-panel" data-mode="test" tabindex="-1">Test mode <span>模拟真实考试</span></button></div><div id="mode-panel" role="tabpanel" aria-labelledby="tutor-tab"><div class="mode-description"><h3 id="mode-title">答题后即可查看解析</h3><p id="mode-copy">Tutor 模式不设时间限制，用户可以逐题查看解析。我希望这种安排能让用户专注于理解题目，减轻答错时的心理负担。</p></div><figure class="screen-stage"><img id="mode-image" data-test-src="../assets/ace-exam/case/test.webp" class="zoomable" src="../assets/ace-exam/case/tutor.webp" alt="Tutor 模式答题与解析设计稿" loading="lazy"></figure></div><p class="small-note" id="mode-note">界面中的选项比例为示例内容；该反馈功能在首版上线后加入。</p></section>
+<section id="review" class="wrap chapter"><div class="section-intro"><p class="kicker">学习体验 / 回顾与数据</p><h2>方便用户回看错题和自己收藏的题目</h2></div><div class="editorial-pair"><div><h3>收藏也包含答对后仍想回看的题目</h3><p>用户有时答对了题目，仍希望以后再看。因此，除了按作答记录筛选错题，平台还提供 Notebook 收藏功能。用户可以自行保存需要回顾的题目，不受当前对错状态影响。</p></div><figure><img class="zoomable" src="../assets/ace-exam/case/notebook.webp" alt="Notebook 收藏题目列表" loading="lazy"></figure></div><div class="recall-map"><div><span>按最近作答结果更新</span><h3>Incorrect</h3><p>答错 <b>→</b> 进入错题 <b>→</b> 答对后移出</p></div><div><span>由用户主动收藏</span><h3>Notebook</h3><p>值得重看 <b>→</b> 主动收藏 <b>→</b> 再次回顾</p></div></div><div id="learning-data" class="data-intro"><h3>用答题数据辅助后续复习</h3><p>用户可以在结果页查看本轮成绩，也可以在 Dashboard 中了解累计复习情况，作为选择后续练习的参考。</p></div><div class="metric-explainer"><article><div class="metric-index">01<span>覆盖进度</span></div><div><h4>我接触了多少内容？</h4><p>已做过的不重复题目 ÷ 题库总量</p><small>辅助识别尚未覆盖的范围</small></div></article><article><div class="metric-index">02<span>答题正确率</span></div><div><h4>我的回答表现怎样？</h4><p>基于全部答题记录统计正确率</p><small>为后续科目选择提供参考</small></div></article></div><div class="data-pair"><figure><img class="zoomable" src="../assets/ace-exam/case/results.webp" alt="单次练习成绩与科目分析" loading="lazy"><figcaption><b>一次练习的反馈</b><span>查看成绩与科目表现，再回顾答案。</span></figcaption></figure><figure><img class="zoomable" src="../assets/ace-exam/case/dashboard.webp" alt="累计学习数据总览" loading="lazy"><figcaption><b>累计学习的状态</b><span>覆盖率记录不重复题目的完成比例；正确率按全部答题记录统计。</span></figcaption></figure></div><aside class="decision"><span>正确率指标的由来</span><p>在覆盖进度之外补充答题正确率</p><small>最初的 Dashboard 只展示复习覆盖比例。基于自己的复习经验，我提出加入正确率，让用户同时了解答题表现。这个指标反映历史作答情况，不能直接用于判断考试通过概率。</small></aside></section>
+<section class="wash"><div class="wrap chapter mobile-section"><div class="section-intro"><p class="kicker">响应式设计</p><h2>适配在职用户的手机复习场景</h2><p>在职用户会利用碎片时间复习，也会通过手机访问平台。PC 端将题目和解析并排展示；手机端空间有限，我将解析放到选项下方，用户可以向下阅读。我还负责制定适配规范，与开发伙伴核对不同屏幕下的显示效果。</p></div><div class="device-logic"><div><span>PC / 并列对照</span><div class="desktop-wire"><b>题目与选项</b><b>解析</b></div></div><span class="device-arrow">→</span><div><span>Mobile / 顺序阅读</span><div class="mobile-wire"><b>题目</b><i>↓</i><b>选项</b><i>↓</i><b>解析</b></div></div><p>手机端将解析放在选项下方，<br>通过纵向滚动查看。</p></div><div class="phones"><figure><img class="zoomable" src="../assets/ace-exam/case/mobile-create.webp" alt="手机端创建练习设计稿" loading="lazy"><figcaption>组织一轮练习</figcaption></figure><figure><img class="zoomable" src="../assets/ace-exam/case/mobile-answer.webp" alt="手机端作答后查看解析" loading="lazy"><figcaption>作答后理解原因</figcaption></figure><figure><img class="zoomable" src="../assets/ace-exam/case/mobile-result.webp" alt="手机端练习结果" loading="lazy"><figcaption>查看本次表现</figcaption></figure></div><p class="small-note">展示素材保留原始设计稿，部分文字与数字为占位内容。</p></div></section>
+<section class="wrap chapter iteration"><div class="section-intro"><p class="kicker">持续迭代</p><h2>根据用户反馈加入选项选择比例</h2><p>上线后，有用户提出想知道多少人选择了和自己相同的答案。我们在后续版本中加入各选项的选择比例，用户查看解析时可以看到这些数据。</p></div><div class="detail-image"><img class="zoomable" src="../assets/ace-exam/case/tutor.webp" alt="查看解析时展示其他用户的选项分布" loading="lazy"></div><p class="small-note">我们希望这项功能增加练习中的互动感。目前没有单独统计它对留存的影响。</p></section>
+<section id="brand" class="wrap chapter brand"><div class="section-intro"><p class="kicker">品牌官网 / 约 2026 年上线</p><h2>更新官网视觉，展示平台的使用方式</h2><p>创始人认为旧官网的视觉风格较为老旧，希望提升品牌辨识度。我主要负责视觉与动画呈现，在首页更突出地展示产品界面，并沿用学习平台的蓝色和青绿色。希望首次访问的用户能更直观地了解产品的使用方式。</p></div><div class="brand-rationale"><div><span class="color-chip blue-chip"></span><b>专业与可信</b><p>蓝色作为品牌主色</p></div><div><span class="color-chip teal-chip"></span><b>亲和与活力</b><p>青绿色辅助区分内容</p></div><div><span class="type-sample">Aa 文</span><b>突出产品界面</b><p>调整标题与界面的视觉层级</p></div></div><div class="compare"><figure><div class="site-window"><img class="zoomable" src="../assets/ace-exam/case/old-home.webp" alt="接手前的旧官网首页" loading="lazy"></div><figcaption><b>Before</b><span>接手前的官网</span></figcaption></figure><figure><div class="site-window"><img class="zoomable" src="../assets/ace-exam/case/home.webp" alt="更新后的 ACE 官网首页" loading="lazy"></div><figcaption><b>After</b><span>更新品牌视觉与产品展示</span></figcaption></figure></div><div class="brand-notes"><h3>在首屏展示 PC 和手机端界面</h3><p>新版首屏使用了学习平台和移动端的界面组合，向访客展示产品。标题、背景和按钮也采用统一的蓝绿色系。</p></div><div class="blog-layout"><div><h3>为运营团队增加 Blog 页面</h3><p>运营团队需要一个发布内容的位置，因此官网增加了 Blog。我负责列表和文章详情页的视觉设计，使文章浏览与阅读页面保持一致的风格。</p><span class="blog-label">Blog / Editorial experience</span></div><figure class="blog-shot"><img class="zoomable" src="../assets/ace-exam/case/blog.webp" alt="Blog 列表设计" loading="lazy"></figure><figure class="article-shot"><img class="zoomable" src="../assets/ace-exam/case/article.webp" alt="Blog 文章详情设计" loading="lazy"></figure></div><p class="small-note">本案例使用静态设计素材呈现官网视觉，未模拟原官网动画。</p></section>
+<section id="outcome" class="wash"><div class="wrap chapter"><div class="section-intro"><p class="kicker">成果与反思</p><h2>项目上线后的结果与后续计划</h2></div><div class="outcome-grid"><div class="stat"><strong>+15<span>%</span></strong><h3>注册用户总数增长</h3><p>根据后台统计，新版上线后六个月内，注册用户总数较上线前增长约 15%。同期也有运营推广，因此这一增长是产品更新与运营共同作用的结果。</p></div><div class="milestones"><article><span>2022</span><div><h3>参与产品重构</h3><p>功能定义、产品逻辑、信息架构与 UI/UX。</p></div></article><article><span>2023.12</span><div><h3>新版学习平台上线</h3><p>练习模式、学习数据、收藏与回顾流程。</p></div></article><article><span>2026</span><div><h3>官网更新与持续迭代</h3><p>品牌视觉、动画与 Blog 页面。</p></div></article></div></div><div class="future"><span>下一阶段 · 尚未实现</span><h3>继续探索考试日期与复习计划的结合</h3><p>后续希望结合遗忘规律推荐需要重看的错题，并根据用户的考试日期帮助安排复习进度。这部分尚未实现，需要进一步讨论推荐规则，并了解用户是否能按计划完成学习。</p></div></div></section>
+<footer class="wrap"><div><b>ACE the Exam</b><p>产品体验 · 品牌视觉 · 持续迭代</p><a class="portfolio-return" href="../index.html">返回个人作品集 ↗</a></div><a class="text-link" href="#top">回到顶部 ↑</a></footer></main><dialog id="lightbox"><button id="close-lightbox" aria-label="关闭图片">关闭 ×</button><img alt=""><p></p></dialog><script src="../assets/ace-exam/case/app.js"></script><script src="../text-content.js?v=ace-2"></script></body></html>

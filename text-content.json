@@ -43,5 +43,19 @@
       "hidden": false,
       "after": []
     }
+  },
+  "projects/ace-the-exam.html": {
+    "#brand > div:nth-of-type(1) > p:nth-of-type(1)::0": {
+      "text": "品牌官网 /  2025 年上线",
+      "fontSize": null,
+      "hidden": false,
+      "after": []
+    },
+    "#outcome > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > article:nth-of-type(3) > span:nth-of-type(1)::0": {
+      "text": "2025",
+      "fontSize": null,
+      "hidden": false,
+      "after": []
+    }
   }
 }
