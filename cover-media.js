@@ -22,16 +22,17 @@
   videos.add(video);
  }
  window.createCoverMedia=(key,alt='')=>{
-  const original=covers[key]||key,source=previews[original]||original,video=/\.mp4$/i.test(source),el=document.createElement(video?'video':'img');
+  const original=covers[key]||key,source=document.querySelector('#board')?(previews[original]||original):original,video=/\.mp4$/i.test(source),el=document.createElement(video?'video':'img');
   el.dataset.coverKey=key;el.src=new URL('assets/'+source,root).href;
-  if(video){el.muted=true;el.autoplay=false;el.loop=false;el.playsInline=true;el.preload='none';el.poster=new URL('assets/'+(previews[key]||key),root).href;const poster=new Image();poster.onload=()=>{el.dataset.coverWidth=poster.naturalWidth;el.dataset.coverHeight=poster.naturalHeight;el.dispatchEvent(new Event('portfolio:cover-sized',{bubbles:true}));};poster.src=el.poster;el.setAttribute('aria-label',alt||'封面视频');}
-  else el.alt=alt;el.decoding='async';
+  if(video){el.muted=true;el.autoplay=false;el.loop=false;el.playsInline=true;el.preload='metadata';el.setAttribute('aria-label',alt||'封面视频');}
+  else {el.alt=alt;el.decoding='async';if(source!==original)el.addEventListener('error',()=>{el.src=new URL('assets/'+original,root).href;},{once:true});}
   el.draggable=false;return el;
  };
  window.coverMediaReady=Promise.all([fetch(new URL('cover-media.json',root),{cache:'no-cache'}).then(r=>r.ok?r.json():{}).catch(()=>({})),fetch(new URL('home-previews.json',root),{cache:'no-cache'}).then(r=>r.ok?r.json():{}).catch(()=>({}))]).then(([c,p])=>{covers=c;previews=p;});
  window.coverMediaReady.then(()=>{
   const update=()=>{document.querySelectorAll('img:not([data-cover-key])').forEach(img=>{
-   const url=new URL(img.src),prefix=new URL('assets/',root).pathname;
+   if(!img.getAttribute('src'))return;
+   const url=new URL(img.getAttribute('src'),document.baseURI),prefix=new URL('assets/',root).pathname;
    if(!url.pathname.startsWith(prefix))return;const key=decodeURIComponent(url.pathname.slice(prefix.length));
    if(!covers[key])return;const media=window.createCoverMedia(key,img.alt);media.className=img.className;media.style.cssText=img.style.cssText;img.replaceWith(media);
   });

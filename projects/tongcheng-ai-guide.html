@@ -10,7 +10,7 @@
     />
     <link rel="stylesheet" href="../styles.css?v=puhuiti-1" />
   <link rel="stylesheet" href="../project-entry.css?v=guide-contain-10" />
-<script src="../project-entry.js?v=preserve-15"></script>
+<script src="../project-entry.js?v=media-fix-20"></script>
 </head>
   <body class="project-detail" style="--year-color: #3fd47f">
     <canvas id="flow-field" aria-hidden="true"></canvas>
@@ -30,7 +30,7 @@
 
     <main>
       <section class="case-hero guide-cover-hero" aria-labelledby="case-title">
-        <div class="guide-cover" aria-hidden="true"><img src="../assets/year-2026-cover.png" alt="" /></div>
+        <div class="guide-cover" aria-hidden="true"><img src="../assets/tongcheng-ai/detail-hero.jpg" alt="" /></div>
         <div class="ui-flow-lines" aria-hidden="true">
           <span></span>
           <span></span>
@@ -252,11 +252,11 @@
     </main>
 
     <footer><p>© 2026 李思宇个人作品集。</p></footer>
-    <script src="../cover-media.js"></script>
+    <script src="../cover-media.js?v=media-fix-20"></script>
     <script>
       window.coverMediaReady.then(() => {
         const host = document.querySelector('.guide-cover');
-        if (!host.querySelector('[data-cover-key]')) host.replaceChildren(window.createCoverMedia('year-2026-cover.png', '景区智能导览封面'));
+        if (!host.querySelector('[data-cover-key]')) host.replaceChildren(window.createCoverMedia('tongcheng-ai/detail-hero.jpg', '景区智能导览封面'));
       });
     </script>
     <script src="../script.js?v=copy-contact-1"></script>

@@ -137,7 +137,7 @@ for(const item of items){
  el.setAttribute('aria-label',mode==='years'?`${item.year}，${item.label}`:item.label);
  el.innerHTML=`<span class="photo-stack">${item.images.map((src,i)=>`<span class="polaroid print-${i}"></span>`).reverse().join('')}</span><span class="year-tag">${item.year}</span>`;
  const cover=window.createCoverMedia(item.images[0],item.label);
- cover.loading='lazy';el.querySelector('.print-0').append(cover);
+ cover.loading='eager';el.querySelector('.print-0').append(cover);
  board.append(el);
 }
 // All pins and threads share the board's world coordinates and sit above every paper.

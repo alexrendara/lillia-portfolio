@@ -71,76 +71,9 @@
       window.top.location.assign(url.href);return;
     }
     if (url.origin !== location.origin || !/\/projects\/[^/]+\.html$/.test(url.pathname) || reduced.matches) return;
-    const media = link.querySelector('.print-0 img,.print-0 video') || link.querySelector('img,video') || link.closest('.project')?.querySelector('img,video');
-    if (!media) return;
-    event.preventDefault();
-    if (navigating) return;
-    navigating = true;
-    const rect = media.getBoundingClientRect();
+    // Native navigation starts immediately and does not wait for an entire hidden iframe.
     document.dispatchEvent(new Event('portfolio:depart'));
-    try{sessionStorage.setItem('portfolio-camera-origin',JSON.stringify({rect:{left:rect.left,top:rect.top,width:rect.width,height:rect.height}}));}catch{}
-    url.searchParams.set('view','preserve-15');
-    layer = document.createElement('div');
-    layer.className = 'project-entry-layer';
-    layer.setAttribute('aria-hidden', 'true');
-    const destination = document.createElement('iframe');
-    destination.title = '项目进入过渡';
-    destination.tabIndex = -1;
-    destination.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;opacity:0;pointer-events:none';
-    const ready = new Promise(resolve => {
-      destination.addEventListener('load',resolve,{once:true});
-      setTimeout(resolve,2500);
-    });
-    destination.src = url.href;
-    layer.append(destination);document.body.append(layer);
-    await ready;
-    const targetDocument = destination.contentDocument;
-    if (!targetDocument?.querySelector('main')) {location.assign(url.href);return;}
-    const targetImage = targetDocument?.querySelector('main img');
-    if(targetImage?.decode)await Promise.race([targetImage.decode().catch(()=>{}),new Promise(resolve=>setTimeout(resolve,1000))]);
-    const scene = document.querySelector('#viewport') || document.querySelector('main');
-    const targetCopy = targetDocument?.querySelector('.case-hero-copy');
-    const stages = targetCopy ? [
-      ...targetCopy.children,
-      ...targetDocument.querySelectorAll('main > section:not(.case-hero)')
-    ] : [];
-    stages.forEach(element=>{element.style.animation='none';element.style.opacity='0';});
-    const nativeWidth = media.naturalWidth || media.videoWidth || rect.width;
-    const nativeHeight = media.naturalHeight || media.videoHeight || rect.height;
-    const frame = media.closest('.polaroid,.project-card,.project-media');
-    const matrix = new DOMMatrix(frame ? getComputedStyle(frame).transform : undefined);
-    const angle = Math.atan2(matrix.b,matrix.a);
-    const projectedWidth = rect.width / (Math.abs(Math.cos(angle)) + nativeHeight/nativeWidth*Math.abs(Math.sin(angle)));
-    const cx=rect.left+rect.width/2,cy=rect.top+rect.height/2;
-    const scale=Math.max(1,2*Math.max(cx,innerWidth-cx)/projectedWidth,
-      2*Math.max(cy,innerHeight-cy)/(projectedWidth*nativeHeight/nativeWidth));
-    const sceneRect=scene.getBoundingClientRect();
-    const targetTransform=`scale(${scale}) rotate(${-angle}rad)`;
-    // Keep the clicked image's screen-space center stationary throughout the zoom.
-    scene.style.transformOrigin=`${cx-sceneRect.left}px ${cy-sceneRect.top}px`;
-    scene.style.pointerEvents='none';
-    try {
-      cameraAnimation = scene.animate([{transform:'none'},{transform:targetTransform}],
-        {duration:1000,easing:'cubic-bezier(.4,0,.2,1)',fill:'forwards'});
-      destination.animate([{opacity:0},{opacity:0,offset:.64},{opacity:1}],{duration:1000,easing:'linear',fill:'forwards'});
-      await cameraAnimation.finished;
-    } catch {}
-    // Keep the already rendered document: a second navigation causes a visible flash.
-    layer.removeAttribute('aria-hidden');
-    layer.style.pointerEvents='auto';
-    destination.style.pointerEvents='auto';
-    destination.tabIndex=0;
-    destination.title=targetDocument.title || '项目详情';
-    scene.inert=true;
-    activeScene=scene;
-    document.querySelector('.view-tools')?.setAttribute('inert','');
-    history.pushState({portfolioProject:true},'',url.href);
-    document.title=targetDocument.title;
-    stages.forEach((element,index)=>{
-      element.animate([{opacity:0,transform:'translateY(12px)'},{opacity:1,transform:'translateY(0)'}],
-        {duration:440,delay:Math.min(index,5)*110,easing:'cubic-bezier(.2,.7,.3,1)',fill:'forwards'});
-    });
-    destination.focus({preventScroll:true});
+
   });
   window.addEventListener('pageshow', () => {layer?.remove();cameraAnimation?.cancel();const scene=document.querySelector('#viewport')||document.querySelector('main');if(scene){scene.style.pointerEvents='';scene.style.transformOrigin='';}navigating = false;});
   document.addEventListener('DOMContentLoaded', () => {

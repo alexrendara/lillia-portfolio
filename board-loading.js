@@ -13,7 +13,7 @@
    const r=media.getBoundingClientRect();
    if(r.right<0||r.bottom<0||r.left>innerWidth||r.top>innerHeight)continue;
    if(media.tagName==='IMG'){media.loading='eager';media.fetchPriority='high';pending.push(settleImage(media));}
-   else if(media.poster){const poster=new Image();poster.src=media.poster;pending.push(settleImage(poster));}
+   else if(media.readyState<2){pending.push(new Promise(resolve=>{media.addEventListener('loadeddata',resolve,{once:true});media.addEventListener('error',resolve,{once:true});}));}
   }
   for(const source of ['profile-paper-fine.webp','year-pins.webp']){const image=new Image();image.src='assets/'+source;pending.push(settleImage(image));}
   pending.push(document.fonts.ready);
