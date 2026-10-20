@@ -24,11 +24,11 @@
  window.createCoverMedia=(key,alt='')=>{
   const original=covers[key]||key,source=previews[original]||original,video=/\.mp4$/i.test(source),el=document.createElement(video?'video':'img');
   el.dataset.coverKey=key;el.src=new URL('assets/'+source,root).href;
-  if(video){el.muted=true;el.autoplay=false;el.loop=false;el.playsInline=true;el.preload='metadata';el.setAttribute('aria-label',alt||'封面视频');}
+  if(video){el.muted=true;el.autoplay=false;el.loop=false;el.playsInline=true;el.preload='none';el.poster=new URL('assets/'+(previews[key]||key),root).href;const poster=new Image();poster.onload=()=>{el.dataset.coverWidth=poster.naturalWidth;el.dataset.coverHeight=poster.naturalHeight;el.dispatchEvent(new Event('portfolio:cover-sized',{bubbles:true}));};poster.src=el.poster;el.setAttribute('aria-label',alt||'封面视频');}
   else el.alt=alt;el.decoding='async';
   el.draggable=false;return el;
  };
- window.coverMediaReady=Promise.all([fetch(new URL('cover-media.json',root),{cache:'no-store'}).then(r=>r.ok?r.json():{}).catch(()=>({})),fetch(new URL('home-previews.json',root),{cache:'no-store'}).then(r=>r.ok?r.json():{}).catch(()=>({}))]).then(([c,p])=>{covers=c;previews=p;});
+ window.coverMediaReady=Promise.all([fetch(new URL('cover-media.json',root),{cache:'no-cache'}).then(r=>r.ok?r.json():{}).catch(()=>({})),fetch(new URL('home-previews.json',root),{cache:'no-cache'}).then(r=>r.ok?r.json():{}).catch(()=>({}))]).then(([c,p])=>{covers=c;previews=p;});
  window.coverMediaReady.then(()=>{
   const update=()=>{document.querySelectorAll('img:not([data-cover-key])').forEach(img=>{
    const url=new URL(img.src),prefix=new URL('assets/',root).pathname;

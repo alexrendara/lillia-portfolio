@@ -42,10 +42,11 @@
   for(const added of value?.after||[]){const p=document.createElement('portfolio-paragraph');p.textContent=added.text;p.style.display='block';p.style.marginTop='.65em';if(added.fontSize)p.style.fontSize=added.fontSize+'px';span.append(p);}
  }
  const observer=new MutationObserver(()=>{clearTimeout(timer);timer=setTimeout(scan,120);});
+ window.portfolioTextReady=new Promise(resolve=>window.resolvePortfolioTextReady=resolve);
  async function start(){
-  try{const response=await fetch(new URL('text-content.json',root),{cache:'no-store'});if(response.ok)edits=(await response.json())[page]||{};}catch{}
-  try{const response=await fetch(new URL('dynamic-copy.json',root),{cache:'no-store'});if(response.ok){const data=await response.json();for(const original of [...(data['*']||[]),...(data[page]||[])]){catalog.set(original,true);const key='@copy:'+original;slots.set(key,{key,original,tag:'dynamic',section:'动态内容',size:20,spans:[]});}}}catch{}
-  scan();
+  try{const response=await fetch(new URL('text-content.json',root),{cache:'no-cache'});if(response.ok)edits=(await response.json())[page]||{};}catch{}
+  try{const response=await fetch(new URL('dynamic-copy.json',root),{cache:'no-cache'});if(response.ok){const data=await response.json();for(const original of [...(data['*']||[]),...(data[page]||[])]){catalog.set(original,true);const key='@copy:'+original;slots.set(key,{key,original,tag:'dynamic',section:'动态内容',size:20,spans:[]});}}}catch{}
+  scan();window.resolvePortfolioTextReady();
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
  if(editor){

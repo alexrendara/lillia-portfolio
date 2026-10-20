@@ -4,12 +4,13 @@ const viewport=document.querySelector('#viewport'), board=document.querySelector
 function sizeCover(media){
  const host=media.closest('.project-card,.print-0');
  if(!host)return;
- const width=media.naturalWidth||media.videoWidth,height=media.naturalHeight||media.videoHeight;
+ const width=media.naturalWidth||media.videoWidth||Number(media.dataset.coverWidth),height=media.naturalHeight||media.videoHeight||Number(media.dataset.coverHeight);
  if(!width||!height)return;
  (host.closest('.year')||host).classList.toggle('is-landscape',width>height);
 }
 board.addEventListener('load',event=>sizeCover(event.target),true);
 board.addEventListener('loadedmetadata',event=>sizeCover(event.target),true);
+board.addEventListener('portfolio:cover-sized',event=>sizeCover(event.target),true);
 new MutationObserver(()=>board.querySelectorAll('.print-0 img,.print-0 video,.project-card img,.project-card video').forEach(sizeCover)).observe(board,{childList:true,subtree:true});
 const years=[
  {year:2026,x:510,y:220,color:'#b4d0ac',tilt:-5,images:['year-2026-cover.png','tongcheng-ai/footprint-album.png','tongcheng-ai/route-detail.png'],label:'景区智能导览系统'},
@@ -134,11 +135,13 @@ for(const item of items){
   el.type='button';el.setAttribute('aria-expanded','false');el.onclick=()=>item.locked?toggleUpdate(item,el):toggleYear(item,el);
  }
  el.setAttribute('aria-label',mode==='years'?`${item.year}，${item.label}`:item.label);
- el.innerHTML=`<span class="photo-stack">${item.images.map((src,i)=>`<span class="polaroid print-${i}"><img src="assets/${window.portfolioPreviewSource(src)}" loading="lazy" decoding="async" alt="${i?'':item.label}" draggable="false"></span>`).reverse().join('')}</span><span class="year-tag">${item.year}</span>`;
+ el.innerHTML=`<span class="photo-stack">${item.images.map((src,i)=>`<span class="polaroid print-${i}"></span>`).reverse().join('')}</span><span class="year-tag">${item.year}</span>`;
+ const cover=window.createCoverMedia(item.images[0],item.label);
+ cover.loading='lazy';el.querySelector('.print-0').append(cover);
  board.append(el);
 }
 // All pins and threads share the board's world coordinates and sit above every paper.
-board.querySelectorAll('.year .polaroid img').forEach(img=>{const key=img.getAttribute('src').slice(7);img.replaceWith(window.createCoverMedia(key,img.alt));});
+
 const anchors={profile:[965,470],profileSide:[1365,1070],contact:[1960,1037]};
 items.forEach(y=>anchors[y.year]=[y.x+149,y.y+9]);
 const connections=mode==='years'?[['profile',2026],['profile',2025],['profile',2024],['profileSide',2023],[2022,2025],[2022,'profile'],[2024,2023],[2023,'contact'],['profileSide','contact']]:[['profile','伦敦'],['profile','新西兰'],['profile','苏州'],['profileSide','广州'],['伦敦','苏州'],['新西兰','广州'],['广州','contact'],['profileSide','contact']];
@@ -147,7 +150,7 @@ for(const [key,[x,y]] of Object.entries(anchors)){
  const colorIndex=items.findIndex(item=>String(item.year)===key);
  const pin=document.createElement(colorIndex<0?'img':'span');
  const offsetX=colorIndex<0?-26:-4,offsetY=colorIndex<0?-43:-80;
- if(colorIndex<0){pin.src='assets/board-pin.png';pin.alt='';}
+ if(colorIndex<0){pin.src='assets/board-pin.webp';pin.alt='';}
  pin.dataset.anchor=key;pin.dataset.offsetX=offsetX;pin.dataset.offsetY=offsetY;
  pin.className=`pushpin${colorIndex<0?'':' year-pin'}`;
  pin.style.cssText=`left:${x+offsetX}px;top:${y+offsetY}px`;
@@ -273,5 +276,6 @@ try{
   }
  }
 }catch{}
+if(!initialized)frame();
 window.portfolioBoardReady=true;
 document.dispatchEvent(new Event('portfolio:board-ready'));
