@@ -61,21 +61,23 @@
     const link = event.target.closest('a[href]');
     if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || link.target === '_blank' || link.hasAttribute('download')) return;
     const url = new URL(link.href);
-    if (document.body.classList.contains('project-detail') && link.matches('.project-sticker-header > a') && url.origin === location.origin) {
-      event.preventDefault();
-      if(navigating)return;
-      navigating=true;
-      if(window.parent!==window&&window.parent.portfolioCloseProject?.())return;
-      try{sessionStorage.setItem('portfolio-board-return','1');}catch{}
-      url.searchParams.set('preview','anchored-14');
-      window.top.location.assign(url.href);return;
+    const homeTarget=new URL('../index.html',location.href);
+    if (!document.querySelector('#board') && url.origin===location.origin && url.pathname===homeTarget.pathname && !url.hash) {
+      event.preventDefault();if(navigating)return;navigating=true;
+      try{
+        sessionStorage.setItem('portfolio-board-return','1');
+        const previous=JSON.parse(sessionStorage.getItem('portfolio-home-departure')||'null');
+        if(previous&&previous.project===location.href&&previous.home===document.referrer&&history.length>1){history.back();return;}
+      }catch{}
+      location.assign(url.href);return;
     }
-    if (url.origin !== location.origin || !/\/projects\/[^/]+\.html$/.test(url.pathname) || reduced.matches) return;
+    if (url.origin !== location.origin || !/\/projects\/[^/]+\.html$/.test(url.pathname)) return;
     // Native navigation starts immediately and does not wait for an entire hidden iframe.
+    if(document.querySelector('#board'))try{sessionStorage.setItem('portfolio-home-departure',JSON.stringify({home:location.href,project:url.href}));}catch{}
     document.dispatchEvent(new Event('portfolio:depart'));
 
   });
-  window.addEventListener('pageshow', () => {layer?.remove();cameraAnimation?.cancel();const scene=document.querySelector('#viewport')||document.querySelector('main');if(scene){scene.style.pointerEvents='';scene.style.transformOrigin='';}navigating = false;});
+  window.addEventListener('pageshow', event => {if(event.persisted&&document.querySelector('#board'))try{sessionStorage.removeItem('portfolio-board-return');}catch{}layer?.remove();cameraAnimation?.cancel();const scene=document.querySelector('#viewport')||document.querySelector('main');if(scene){scene.style.pointerEvents='';scene.style.transformOrigin='';}navigating = false;});
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('[data-project-copy]')?.addEventListener('click', async () => {
       const status = document.querySelector('.project-copy-status');

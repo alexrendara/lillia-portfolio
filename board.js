@@ -66,7 +66,7 @@ function clearProjects(){
  expandedYears.clear();
  board.querySelectorAll('.year[aria-expanded]').forEach(el=>{el.setAttribute('aria-expanded','false');el.classList.remove('projects-open');});
 }
-async function toggleYear(item,trigger){
+async function toggleYear(item,trigger,restoring=false){
  if(switching||projectMotion)return;
  projectMotion=-1;
  const closing=expandedYears.has(item.year),index=(mode==='years'?years:regions).indexOf(item);
@@ -82,7 +82,8 @@ async function toggleYear(item,trigger){
   document.querySelector('#threads').append(line);
   return {project,card,pin,line};
  });
- await Promise.all(entries.map(({card})=>{const media=card.querySelector('img,video');return media.tagName==='IMG'?media.decode().catch(()=>{}):new Promise(resolve=>{if(media.readyState>=1||media.error)return resolve();media.addEventListener('loadedmetadata',resolve,{once:true});media.addEventListener('error',resolve,{once:true});setTimeout(resolve,4000);});}));
+ const mediaReady=Promise.all(entries.map(({card})=>{const media=card.querySelector('img,video');return media.tagName==='IMG'?media.decode().catch(()=>{}):new Promise(resolve=>{if(media.readyState>=1||media.error)return resolve();media.addEventListener('loadedmetadata',resolve,{once:true});media.addEventListener('error',resolve,{once:true});setTimeout(resolve,4000);});}));
+ await (restoring?Promise.race([mediaReady,new Promise(resolve=>setTimeout(resolve,600))]):mediaReady);
  entries.forEach(({card,line,project})=>{
   sizeCover(card.querySelector('img,video'));
   const sx=item.x+149,sy=item.y+9,tx=project.x+card.offsetWidth/2,ty=project.y+8;
@@ -93,7 +94,7 @@ async function toggleYear(item,trigger){
  entries.forEach(({card,pin,line})=>{card.inert=true;line.style.opacity=0;pin.style.opacity=0;board.append(pin);});
  const start=performance.now(),duration=closing?340:440,stagger=28,total=duration+(entries.length-1)*stagger+90;
  function tick(now){
-  const elapsed=reducedMotion.matches?total:now-start;
+  const elapsed=(restoring||reducedMotion.matches)?total:now-start;
   entries.forEach(({project,card,pin,line},i)=>{
    const t=Math.max(0,Math.min(1,(elapsed-i*stagger)/duration)),eased=(1-Math.cos(Math.PI*t))/2;
    const compact=Math.min(.68,(trigger.offsetHeight-40)/card.offsetHeight);
@@ -115,7 +116,7 @@ async function toggleYear(item,trigger){
   const left=Math.min(item.x-35,...entries.map(e=>e.project.x-35)),top=Math.min(item.y-85,...entries.map(e=>e.project.y-85));
   const right=Math.max(item.x+trigger.offsetWidth+110,...entries.map(e=>e.project.x+e.card.offsetWidth+50)),bottom=Math.max(item.y+trigger.offsetHeight+80,...entries.map(e=>e.project.y+e.card.offsetHeight+45));
   const scale=Math.max(MIN,Math.min(DEFAULT_SCALE,(viewport.clientWidth-60)/(right-left),(viewport.clientHeight-130)/(bottom-top)));
-  moveCamera({scale,x:viewport.clientWidth/2-(left+right)/2*scale,y:(viewport.clientHeight-80)/2-(top+bottom)/2*scale});
+  moveCamera({scale,x:viewport.clientWidth/2-(left+right)/2*scale,y:(viewport.clientHeight-80)/2-(top+bottom)/2*scale},!restoring);
  }
 }
 function drawLayout(){
@@ -269,7 +270,7 @@ try{
    await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
    for(const year of saved.years){
     const item=(mode==='years'?years:regions).find(y=>y.year===year),trigger=document.getElementById(`year-${year}`);
-    if(item&&trigger&&groupProjects(item).length){await toggleYear(item,trigger);await new Promise(resolve=>{function wait(){if(projectMotion)requestAnimationFrame(wait);else resolve();}wait();});}
+    if(item&&trigger&&groupProjects(item).length){await toggleYear(item,trigger,true);await new Promise(resolve=>{function wait(){if(projectMotion)requestAnimationFrame(wait);else resolve();}wait();});}
    }
    moveCamera(saved.state,false);
    if(!reducedMotion.matches)board.animate([{opacity:0},{opacity:1}],{duration:250,fill:'both'});

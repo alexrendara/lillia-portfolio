@@ -28,7 +28,8 @@
   else {el.alt=alt;el.decoding='async';if(source!==original)el.addEventListener('error',()=>{el.src=new URL('assets/'+original,root).href;},{once:true});}
   el.draggable=false;return el;
  };
- window.coverMediaReady=Promise.all([fetch(new URL('cover-media.json',root),{cache:'no-cache'}).then(r=>r.ok?r.json():{}).catch(()=>({})),fetch(new URL('home-previews.json',root),{cache:'no-cache'}).then(r=>r.ok?r.json():{}).catch(()=>({}))]).then(([c,p])=>{covers=c;previews=p;});
+ const read=name=>window.portfolioReadJSON?window.portfolioReadJSON(new URL(name,root)):fetch(new URL(name,root),{cache:'no-cache'}).then(r=>r.ok?r.json():{}).catch(()=>({}));
+ window.coverMediaReady=Promise.all([read('cover-media.json'),read('home-previews.json')]).then(([c,p])=>{covers=c;previews=p;});
  window.coverMediaReady.then(()=>{
   const update=()=>{document.querySelectorAll('img:not([data-cover-key])').forEach(img=>{
    if(!img.getAttribute('src'))return;

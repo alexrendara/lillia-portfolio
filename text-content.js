@@ -44,8 +44,10 @@
  const observer=new MutationObserver(()=>{clearTimeout(timer);timer=setTimeout(scan,120);});
  window.portfolioTextReady=new Promise(resolve=>window.resolvePortfolioTextReady=resolve);
  async function start(){
-  try{const response=await fetch(new URL('text-content.json',root),{cache:'no-cache'});if(response.ok)edits=(await response.json())[page]||{};}catch{}
-  try{const response=await fetch(new URL('dynamic-copy.json',root),{cache:'no-cache'});if(response.ok){const data=await response.json();for(const original of [...(data['*']||[]),...(data[page]||[])]){catalog.set(original,true);const key='@copy:'+original;slots.set(key,{key,original,tag:'dynamic',section:'动态内容',size:20,spans:[]});}}}catch{}
+  const read=name=>window.portfolioReadJSON?window.portfolioReadJSON(new URL(name,root)):fetch(new URL(name,root),{cache:'no-cache'}).then(r=>r.ok?r.json():{}).catch(()=>({}));
+  const [textData,data]=await Promise.all([read('text-content.json'),read('dynamic-copy.json')]);
+  edits=textData[page]||{};
+  for(const original of [...(data['*']||[]),...(data[page]||[])]){catalog.set(original,true);const key='@copy:'+original;slots.set(key,{key,original,tag:'dynamic',section:'动态内容',size:20,spans:[]});}
   scan();window.resolvePortfolioTextReady();
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
