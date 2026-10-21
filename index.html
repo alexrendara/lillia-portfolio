@@ -3,12 +3,13 @@
 <style>
 #board-loading{position:fixed;inset:0;z-index:2147483647;display:grid;place-content:center;justify-items:center;gap:24px;background:#f3f3ef;color:#41423f;font:14px/1.7 'PingFang SC',sans-serif;touch-action:none}
 .loading-prints{position:relative;width:280px;height:240px}
-.loading-print{position:absolute;left:108px;top:78px;width:64px;height:84px;padding:6px 6px 20px;background:#fff;box-shadow:0 5px 14px #30342f18;transform:rotate(var(--tilt)) translateY(-28px);will-change:transform,opacity}
+.loading-print{position:absolute;left:108px;top:78px;width:64px;height:84px;padding:6px 6px 20px;background:#fff;box-shadow:0 5px 14px #30342f18;transform:rotate(var(--tilt)) translateY(-28px);will-change:transform;animation:loading-orbit 4s linear infinite}
+@keyframes loading-orbit{0%{transform:rotate(var(--tilt)) translateY(-36px)}50%{transform:rotate(calc(var(--tilt) + 180deg)) translateY(-48px)}100%{transform:rotate(calc(var(--tilt) + 360deg)) translateY(-36px)}}
 .loading-print:before{content:'';display:block;height:100%;background:var(--color)}
 .loading-actions{display:flex;gap:20px}.loading-actions[hidden]{display:none}.loading-actions button{border:0;border-bottom:1px solid #777;background:transparent;padding:8px 0;font:inherit;color:inherit;cursor:pointer}.loading-actions button:focus-visible{outline:2px solid #4164bd;outline-offset:5px}
 #loading-status{max-width:280px;text-align:center;margin:0;padding:0 12px}
 @media(max-width:480px){.loading-prints{transform:scale(.85)}}
-@media(prefers-reduced-motion:reduce){.loading-print{will-change:auto}}
+@media(prefers-reduced-motion:reduce){.loading-print{animation:none;will-change:auto}}
 </style>
 <link rel="stylesheet" href="board.css?v=stable-19"><link rel="stylesheet" href="project-entry.css?v=hero-8" />
 <script src="project-entry.js?v=media-fix-20"></script>
