@@ -1,0 +1,32 @@
+{
+  "foundations": {
+    "title": "基础规范",
+    "status": "ready",
+    "placeholderSource": null,
+    "images": [
+      "foundations/type.webp",
+      "foundations/color.webp",
+      "foundations/icons.webp"
+    ]
+  },
+  "business": {
+    "title": "业务组件",
+    "status": "placeholder",
+    "placeholderSource": "foundations",
+    "images": [
+      "business/type.webp",
+      "business/color.webp",
+      "business/icons.webp"
+    ]
+  },
+  "pages": {
+    "title": "页面与状态",
+    "status": "placeholder",
+    "placeholderSource": "foundations",
+    "images": [
+      "pages/type.webp",
+      "pages/color.webp",
+      "pages/icons.webp"
+    ]
+  }
+}

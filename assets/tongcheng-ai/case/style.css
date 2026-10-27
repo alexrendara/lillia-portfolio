@@ -12,3 +12,7 @@
 /* Preserve the content offset when using the shared fixed project buttons. */
 body.ai-guide-page main{padding-top:72px}
 @media(max-width:767px){body.ai-guide-page main{padding-top:92px}}
+
+/* Independently replaceable module galleries; temporary status stays in metadata. */
+.component-placeholders{grid-template-columns:repeat(3,minmax(0,1fr))}.component-placeholders>div{background:transparent;border-style:solid;padding:24px;min-width:0}.component-gallery{display:grid;gap:16px;align-content:start}.component-gallery img{width:100%;height:auto;border-radius:6px;background:#fff}.component-gallery img:hover{box-shadow:0 4px 18px #203a3014}
+@media(max-width:767px){.component-placeholders{grid-template-columns:1fr}}
