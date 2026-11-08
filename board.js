@@ -36,8 +36,8 @@ const expandedYears=new Map();
 // Leave room for landscape prints, their pins, and their rotated corners.
 Object.assign(years[0],{x:460,y:170});
 Object.assign(years[1],{x:330,y:990});
-Object.assign(years[2],{x:1510,y:180});
-Object.assign(years[3],{x:1650,y:650});
+Object.assign(years[2],{x:1680,y:90});
+Object.assign(years[3],{x:1820,y:560});
 Object.assign(years[4],{x:100,y:570});
 Object.assign(projects[2025][0],{x:-100,y:1770});
 Object.assign(projects[2025][1],{x:-790,y:1270});
