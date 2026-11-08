@@ -44,6 +44,13 @@ Object.assign(projects[2025][1],{x:-790,y:1270});
 Object.assign(projects[2025][2],{x:610,y:1950});
 Object.assign(projects[2022][0],{x:-1470,y:50});
 Object.assign(projects[2022][1],{x:-810,y:250});
+// Swap the complete year groups, preserving each expanded layout relative to its cover.
+const year2025=years.find(item=>item.year===2025),year2022=years.find(item=>item.year===2022);
+const swapDX=year2022.x-year2025.x,swapDY=year2022.y-year2025.y;
+[year2025.x,year2022.x]=[year2022.x,year2025.x];
+[year2025.y,year2022.y]=[year2022.y,year2025.y];
+for(const project of projects[2025]){project.x+=swapDX;project.y+=swapDY;}
+for(const project of projects[2022]){project.x-=swapDX;project.y-=swapDY;}
 const regionProjects={
  '伦敦':projects[2022].map((project,i)=>({...project,x:-700,y:80+i*620})),
  '新西兰':projects[2024].map(project=>({...project,x:2350,y:-100})),

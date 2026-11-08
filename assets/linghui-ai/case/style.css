@@ -10,3 +10,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei
 /* Linghui case accent: purple, within the shared portfolio layout. */
 :root{--ink:#30283f;--muted:#746c7e;--accent:#7952a3;--paper:#fcfaff;--tint:#f0ebf7;--line:#e4ddec}
 .hero-art{background:#eae2f3}.art-caption{color:#79628f}.home-study,.commerce-images{background:#eae2f3}.note{color:#797080}.hero-art img{box-shadow:0 18px 32px #49306024}.home-study .phone img{box-shadow:0 12px 28px #4930600d}.screen-sequence img{box-shadow:0 8px 20px #4930600d}.project-sticker::before{background:#e6d9f4}.project-sticker{color:#49345f}.project-contact summary::before{background:#eee0ff}dialog::backdrop{background:#281d38df}
+
+/* Full cover image, matching the portfolio cover slot. */
+.hero-art.cover-stage{height:auto;overflow:hidden;aspect-ratio:4/3;background:#eeeaf2;border-radius:12px}.cover-stage .image-button{width:100%;height:100%}.hero-art.cover-stage img,.hero-art.cover-stage video{width:100%;height:100%;object-fit:contain;border:0;border-radius:0;box-shadow:none}
