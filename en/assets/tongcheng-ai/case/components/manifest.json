@@ -1,0 +1,28 @@
+{
+  "foundations": {
+    "title": "Foundations",
+    "status": "ready",
+    "placeholderSource": null,
+    "images": [
+      "foundations/type.webp",
+      "foundations/color.webp"
+    ]
+  },
+  "business": {
+    "title": "Business components",
+    "status": "ready",
+    "placeholderSource": null,
+    "images": [
+      "business/icons.webp",
+      "business/molecules.webp"
+    ]
+  },
+  "pages": {
+    "title": "Pages and states",
+    "status": "ready",
+    "placeholderSource": null,
+    "images": [
+      "pages/cards.webp"
+    ]
+  }
+}

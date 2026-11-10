@@ -1,0 +1,232 @@
+/* Shared homepage edges and column tracks; project layouts stay in styles.css. */
+body.home-reference {
+  --home-gutter: 32px;
+  --home-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  --home-gap: 64px;
+  color-scheme: light;
+}
+.home-reference .site-header,
+.home-reference main,
+.home-reference footer {
+  width: calc(100% - var(--home-gutter) * 2);
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 0;
+}
+.home-reference .site-header { padding-block: 16px; }
+.home-reference nav { gap: 24px; }
+.home-reference nav a {
+  min-height: 44px;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 0;
+}
+.home-reference nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-color: #7962b8;
+  text-underline-offset: 8px;
+}
+.home-reference .home-hero {
+  width: 100%;
+  margin: 0;
+  padding: 24px 0 40px;
+  gap: 40px;
+}
+.home-reference .hero-copy,
+.home-reference .home-section-head,
+.home-reference .about-section,
+.home-reference .contact-section {
+  display: grid;
+  grid-template-columns: var(--home-columns);
+  gap: var(--home-gap);
+  align-items: start;
+}
+.home-reference .hero-copy > div:first-child { gap: 20px; }
+.home-reference .home-hero h1 {
+  font-size: 48px;
+  line-height: 1.25;
+  max-width: none;
+  white-space: nowrap;
+}
+.home-reference .home-intro-card p,
+.home-reference .home-section-head > p,
+.home-reference .about-copy p,
+.home-reference .contact-section p {
+  max-width: none;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.9;
+  word-break: normal;
+  overflow-wrap: break-word;
+  line-break: strict;
+  text-wrap: pretty;
+}
+.home-reference .home-intro-card dl {
+  grid-template-columns: 1.35fr 1fr 1fr;
+  gap: 16px;
+  padding-top: 16px;
+}
+.home-reference .home-intro-card dl div {
+  min-width: 0;
+  border: 0;
+  padding: 0;
+}
+.home-reference .home-intro-card dt { color: var(--muted); }
+.home-reference .home-intro-card dd {
+  white-space: normal;
+  word-break: keep-all;
+  line-height: 1.6;
+}
+.home-reference .text-unit { white-space: nowrap; }
+.home-reference .home-methods {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+}
+.home-methods p { margin: 0; color: #6c529f; }
+.home-methods ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.home-methods li { display: flex; align-items: center; gap: 10px; }
+.home-methods li::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #9984be;
+}
+.home-reference .years-section { margin: 0; padding: 48px 0 64px; }
+.home-reference .home-section-head { margin-bottom: 24px; }
+.home-reference .home-section-head h2,
+.home-reference #about-title,
+.home-reference .contact-section h2 {
+  margin: 0;
+  max-width: none;
+  color: var(--ink);
+  font-size: 32px;
+  line-height: 1.45;
+}
+.home-reference .contact-section h2 { white-space: nowrap; }
+.home-reference .year-folder-card:nth-child(n) { grid-template-rows: 190px 1fr; }
+.home-reference .year-folder-copy strong {
+  word-break: normal;
+  line-break: strict;
+  text-wrap: pretty;
+}
+.home-reference .about-section,
+.home-reference .contact-section {
+  width: 100%;
+  margin: 0;
+  padding: 48px 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+}
+.home-reference .contact-section { position: relative; }
+.home-reference .contact-section > div p { margin-top: 12px; color: var(--muted); }
+.home-reference .contact-list {
+  align-self: start;
+  justify-items: start;
+  gap: 4px;
+  margin: 0;
+  font-style: normal;
+}
+.home-reference .contact-list a,
+.home-reference .contact-list button {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 0;
+  text-align: left;
+  color: var(--ink);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.home-reference .contact-list :is(a, button):hover { color: #6c529f; }
+.home-reference footer {
+  border-top: 1px solid var(--line);
+  padding-block: 24px;
+  background: transparent;
+  text-align: left;
+}
+.home-reference footer p { margin: 0; color: var(--muted); }
+.home-reference :is(a, button) { touch-action: manipulation; }
+.home-reference :is(a, button):focus-visible {
+  outline: 2px solid #7962b8;
+  outline-offset: 5px;
+}
+.home-reference :is(section[id], main[id]) { scroll-margin-top: 24px; }
+.home-reference .skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 12px;
+  left: var(--home-gutter);
+  padding: 12px 20px;
+  background: var(--ink);
+  color: white;
+  transform: translateY(-200%);
+}
+.home-reference .skip-link:focus { transform: translateY(0); }
+.home-reference .copy-status {
+  position: absolute;
+  bottom: 16px;
+  right: 0;
+  font-size: 13px;
+  color: #6c529f;
+}
+@media (max-width: 1100px) {
+  body.home-reference { --home-gap: 40px; }
+  .home-reference .home-hero h1 { font-size: 40px; }
+}
+@media (max-width: 980px) {
+  body.home-reference { --home-columns: minmax(0, 1fr); --home-gap: 24px; }
+  .home-reference .home-hero h1 { font-size: 40px; }
+  .home-reference .home-hero { gap: 28px; }
+  .home-reference .contact-section { padding-bottom: 56px; }
+  .home-reference .copy-status { right: auto; left: 0; }
+}
+@media (max-width: 560px) {
+  body.home-reference { --home-gutter: 20px; }
+  .home-reference .site-header { gap: 12px; padding-block: 12px; }
+  .home-reference nav { width: 100%; display: flex; justify-content: space-between; gap: 8px; }
+  .home-reference nav a { flex: 0 0 auto; font-size: 13px; }
+  .home-reference .home-hero { padding-top: 20px; padding-bottom: 32px; }
+  .home-reference .home-hero h1 { font-size: 30px; }
+  .home-reference .hero-copy .button.primary { width: auto; justify-self: start; }
+  .home-reference .home-section-head h2,
+  .home-reference #about-title,
+  .home-reference .contact-section h2 { font-size: 26px; }
+  .home-reference .home-methods { gap: 12px; }
+  .home-methods p { flex-basis: 100%; }
+  .home-methods ul { gap: 12px 20px; }
+  .home-reference .years-section { padding-block: 32px 40px; }
+  .home-reference .year-folder-card:nth-child(n) { grid-template-rows: 158px 1fr; }
+  .home-reference .about-section,
+  .home-reference .contact-section { padding-block: 32px 48px; }
+}
+@media (max-width: 360px) {
+  .home-reference .home-hero h1 { font-size: 27px; }
+  .home-reference .home-intro-card dl { grid-template-columns: 1fr; gap: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html:has(.home-reference) { scroll-behavior: auto; }
+  .home-reference *, .home-reference *::before, .home-reference *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

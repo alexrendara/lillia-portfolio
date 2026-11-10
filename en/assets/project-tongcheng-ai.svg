@@ -1,0 +1,40 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">同程旅行景区AI导览项目封面</title>
+  <desc id="desc">基于真实导览设计稿重组的项目封面，包含首页、路线与足迹地图界面。</desc>
+  <rect width="1200" height="900" fill="#050506"/>
+  <path d="M0 0H1200V900H0V0Z" fill="url(#bg)"/>
+  <path d="M80 210C220 110 378 112 520 190C704 292 860 264 1115 120" stroke="#2dd4bf" stroke-width="2" stroke-opacity=".35"/>
+  <path d="M86 708C260 590 438 618 590 698C774 794 948 758 1132 632" stroke="#ffffff" stroke-width="1.5" stroke-opacity=".2"/>
+  <g filter="url(#shadow)">
+    <rect x="120" y="188" width="264" height="572" rx="36" fill="#111114"/>
+    <image href="tongcheng-ai/home.png" x="138" y="210" width="228" height="494" preserveAspectRatio="xMidYMid slice" clip-path="url(#phoneA)"/>
+    <rect x="138" y="210" width="228" height="494" rx="26" stroke="#ffffff" stroke-opacity=".14"/>
+  </g>
+  <g filter="url(#shadow)" transform="rotate(-5 614 430)">
+    <rect x="460" y="124" width="308" height="667" rx="40" fill="#111114"/>
+    <image href="tongcheng-ai/route-detail.png" x="482" y="150" width="264" height="572" preserveAspectRatio="xMidYMid slice" clip-path="url(#phoneB)"/>
+    <rect x="482" y="150" width="264" height="572" rx="30" stroke="#2dd4bf" stroke-opacity=".45"/>
+  </g>
+  <g filter="url(#shadow)" transform="rotate(6 928 455)">
+    <rect x="820" y="228" width="238" height="516" rx="34" fill="#111114"/>
+    <image href="tongcheng-ai/footprint-map.png" x="836" y="248" width="206" height="446" preserveAspectRatio="xMidYMid slice" clip-path="url(#phoneC)"/>
+    <rect x="836" y="248" width="206" height="446" rx="24" stroke="#ffffff" stroke-opacity=".14"/>
+  </g>
+  <rect x="72" y="70" width="218" height="42" rx="21" fill="#2dd4bf" fill-opacity=".16" stroke="#2dd4bf" stroke-opacity=".45"/>
+  <text x="96" y="98" fill="#8ff5e5" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800">2026 / AI GUIDE</text>
+  <text x="72" y="812" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="68" font-weight="800">同程旅行景区AI导览</text>
+  <text x="76" y="856" fill="#a7fff0" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Map interaction · Route guide · Footprint system</text>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1200" y1="0" y2="900">
+      <stop stop-color="#041b19"/>
+      <stop offset=".42" stop-color="#050506"/>
+      <stop offset="1" stop-color="#0b2623"/>
+    </linearGradient>
+    <clipPath id="phoneA"><rect x="138" y="210" width="228" height="494" rx="26"/></clipPath>
+    <clipPath id="phoneB"><rect x="482" y="150" width="264" height="572" rx="30"/></clipPath>
+    <clipPath id="phoneC"><rect x="836" y="248" width="206" height="446" rx="24"/></clipPath>
+    <filter id="shadow" x="60" y="60" width="1080" height="760" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="28" stdDeviation="28" flood-color="#000000" flood-opacity=".55"/>
+    </filter>
+  </defs>
+</svg>

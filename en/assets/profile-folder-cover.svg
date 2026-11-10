@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 650" preserveAspectRatio="none">
+<defs>
+<path id="cover" d="M2 2H428Q437 2 443 8L465 28Q468 31 468 38V205Q468 212 462 217L442 233Q438 237 438 244V628Q438 648 418 648H2Z"/>
+<clipPath id="shape"><use href="#cover"/></clipPath>
+<filter id="fibers"><feTurbulence type="fractalNoise" baseFrequency=".035 .09" numOctaves="4" seed="18"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="linear" slope=".30" intercept=".73"/><feFuncG type="linear" slope=".28" intercept=".60"/><feFuncB type="linear" slope=".24" intercept=".43"/></feComponentTransfer></filter>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".72" numOctaves="3" seed="6"/><feColorMatrix type="saturate" values="0"/></filter>
+<linearGradient id="fold"><stop stop-color="#7e7359" stop-opacity=".22"/><stop offset=".4" stop-color="#f4dbb0" stop-opacity=".14"/><stop offset="1" stop-color="#e4c798" stop-opacity="0"/></linearGradient>
+</defs>
+<g clip-path="url(#shape)"><use href="#cover" fill="#e4c798"/><rect width="470" height="650" filter="url(#fibers)" opacity=".32"/><rect width="470" height="650" filter="url(#grain)" opacity=".12" style="mix-blend-mode:multiply"/><rect x="3" width="12" height="650" fill="url(#fold)"/></g>
+<use href="#cover" fill="none" stroke="#bda078" stroke-width="1"/>
+<path d="M4 3H428Q436 3 442 9L463 29" fill="none" stroke="#f4dbb0" stroke-opacity=".65"/>
+</svg>

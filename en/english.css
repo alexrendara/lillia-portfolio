@@ -1,0 +1,18 @@
+html[lang=en] h1,html[lang=en] h2,html[lang=en] h3{white-space:normal;word-break:normal;overflow-wrap:normal;text-wrap:balance;letter-spacing:0}
+html[lang=en] p,html[lang=en] strong,html[lang=en] small,html[lang=en] figcaption{word-break:normal;overflow-wrap:break-word;line-break:auto;letter-spacing:0}
+html[lang=en] .profile .disciplines{font-size:18px;line-height:1.8}
+html[lang=en] .profile .paper .profile-bio{font-size:18px;line-height:1.55}
+html[lang=en] .career-note{width:340px}
+html[lang=en] .career-note .career-company{font-size:23px}
+html[lang=en] .career-note .career-role{font-size:19px}
+html[lang=en] .career-note .career-keywords{font-size:15px;line-height:1.5}
+html[lang=en] .year-tag{font-size:25px;white-space:nowrap}
+html[lang=en] .case-meta strong{line-height:1.6}
+html[lang=en] .project-card>span{font-size:20px;line-height:1.4}
+html[lang=en] .view-tools button{min-width:80px}
+html[lang=en] #board-loading{font-family:ProfileHand,PuHui,sans-serif}
+@media(max-width:600px){
+ html[lang=en] .project-detail:not(.fullscreen-gallery-page) main>.hero:first-child{padding-top:130px}
+ html[lang=en] .case-hero h1{font-size:32px;line-height:1.2}
+ html[lang=en] .project-sticker{font-size:14px}
+}

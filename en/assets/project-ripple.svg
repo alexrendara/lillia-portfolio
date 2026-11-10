@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Ripple Pay abstract project cover</title>
+  <desc id="desc">Fintech dashboard cards, circular data forms, and transaction paths.</desc>
+  <rect width="1200" height="900" fill="#fffaf2"/>
+  <rect x="112" y="136" width="976" height="628" rx="48" fill="#151413"/>
+  <rect x="168" y="198" width="360" height="236" rx="30" fill="#f7f3eb"/>
+  <rect x="576" y="198" width="456" height="236" rx="30" fill="#0f8b8d"/>
+  <rect x="168" y="478" width="864" height="214" rx="30" fill="#f7f3eb"/>
+  <circle cx="330" cy="318" r="70" fill="#ff6b57"/>
+  <circle cx="330" cy="318" r="36" fill="#fffaf2"/>
+  <path d="M660 348c64-104 150 48 236-54" fill="none" stroke="#fffaf2" stroke-width="18" stroke-linecap="round"/>
+  <rect x="224" y="546" width="248" height="20" rx="10" fill="#151413"/>
+  <rect x="224" y="604" width="160" height="20" rx="10" fill="#8f6bdc"/>
+  <rect x="550" y="546" width="176" height="20" rx="10" fill="#0f8b8d"/>
+  <rect x="550" y="604" width="292" height="20" rx="10" fill="#ff6b57"/>
+  <circle cx="960" cy="628" r="38" fill="#f8c945"/>
+</svg>

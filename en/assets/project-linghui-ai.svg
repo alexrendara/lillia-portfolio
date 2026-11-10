@@ -1,0 +1,39 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">灵绘AI项目封面</title>
+  <desc id="desc">基于灵绘AI首页、数字人定制和口播流程设计稿重组的项目封面。</desc>
+  <rect width="1200" height="900" fill="#050506"/>
+  <path d="M0 0H1200V900H0V0Z" fill="url(#bg)"/>
+  <circle cx="980" cy="118" r="210" fill="#ff7a66" fill-opacity=".16"/>
+  <circle cx="186" cy="704" r="260" fill="#8f7bff" fill-opacity=".14"/>
+  <path d="M110 216C295 126 456 161 613 248C774 337 958 316 1090 228" stroke="#ffb0a4" stroke-width="2" stroke-opacity=".32"/>
+  <g filter="url(#shadow)" transform="rotate(-7 300 454)">
+    <rect x="172" y="154" width="256" height="556" rx="36" fill="#111114"/>
+    <image href="linghui-ai/home.png" x="190" y="176" width="220" height="476" preserveAspectRatio="xMidYMid slice" clip-path="url(#phoneA)"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="474" y="106" width="292" height="634" rx="42" fill="#111114"/>
+    <image href="linghui-ai/avatar-custom-1-0.png" x="496" y="132" width="248" height="538" preserveAspectRatio="xMidYMid slice" clip-path="url(#phoneB)"/>
+    <rect x="496" y="132" width="248" height="538" rx="30" stroke="#ff7a66" stroke-opacity=".5"/>
+  </g>
+  <g filter="url(#shadow)" transform="rotate(7 920 474)">
+    <rect x="800" y="210" width="240" height="520" rx="36" fill="#111114"/>
+    <image href="linghui-ai/talking-avatar-1-0.png" x="818" y="232" width="204" height="442" preserveAspectRatio="xMidYMid slice" clip-path="url(#phoneC)"/>
+  </g>
+  <rect x="72" y="70" width="228" height="42" rx="21" fill="#ff7a66" fill-opacity=".16" stroke="#ff7a66" stroke-opacity=".42"/>
+  <text x="96" y="98" fill="#ffb0a4" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800">2025 / AI CREATION</text>
+  <text x="72" y="812" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800">灵绘 AI</text>
+  <text x="76" y="856" fill="#ffb0a4" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Image generation · Avatar customization · Talking video</text>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1200" y1="0" y2="900">
+      <stop stop-color="#231119"/>
+      <stop offset=".48" stop-color="#050506"/>
+      <stop offset="1" stop-color="#1a1230"/>
+    </linearGradient>
+    <clipPath id="phoneA"><rect x="190" y="176" width="220" height="476" rx="28"/></clipPath>
+    <clipPath id="phoneB"><rect x="496" y="132" width="248" height="538" rx="30"/></clipPath>
+    <clipPath id="phoneC"><rect x="818" y="232" width="204" height="442" rx="26"/></clipPath>
+    <filter id="shadow" x="80" y="50" width="1040" height="760" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="30" stdDeviation="30" flood-color="#000000" flood-opacity=".55"/>
+    </filter>
+  </defs>
+</svg>
