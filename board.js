@@ -57,7 +57,7 @@ Object.assign(projects[2022][2],{x:610,y:2370});
 const regionProjects={
  '伦敦':projects[2022].map((project,i)=>({...project,x:-700,y:80+i*620})),
  '新西兰':projects[2024].map(project=>({...project,x:2350,y:-100})),
- '苏州':[...projects[2026],...projects[2025]].map((project,i)=>({...project,x:-450+i*680,y:i%2?2300:1770})),
+ '苏州':[...projects[2026],...projects[2025]].map((project,i)=>({...project,image:project.page==='tongcheng-ai-guide'?years.find(item=>item.year===2026).images[0]:project.image,x:-450+i*680,y:i%2?2300:1770})),
  '广州':[]
 };
 const groupProjects=item=>(mode==='years'?projects:regionProjects)[item.year]||[];
@@ -69,8 +69,9 @@ function toggleUpdate(item,trigger){
  trigger.append(note);trigger.setAttribute('aria-expanded','true');
  if(!reducedMotion.matches)note.animate([{opacity:0,transform:'translateX(-18px) rotate(-8deg)'},{opacity:1,transform:'translateX(0) rotate(4deg)'}],{duration:260,easing:'ease-out'});
 }
-let projectMotion=0;
+let projectMotion=0,projectRevision=0;
 function clearProjects(){
+ projectRevision++;
  cancelAnimationFrame(projectMotion);projectMotion=0;
  board.querySelectorAll('.project-card,.project-pin,.project-thread').forEach(el=>el.remove());
  expandedYears.clear();
@@ -78,8 +79,10 @@ function clearProjects(){
 }
 async function toggleYear(item,trigger,restoring=false){
  if(switching||projectMotion)return;
+ const turn=++projectRevision;
  projectMotion=-1;
  const closing=expandedYears.has(item.year),index=(mode==='years'?years:regions).indexOf(item);
+ if(!closing){document.dispatchEvent(new CustomEvent('portfolio:projects-opening'));careerCamera=null;}
  const entries=closing?expandedYears.get(item.year):groupProjects(item).map((project,i)=>{
   const card=document.createElement('a');card.className='project-card item';card.href=`projects/${project.page}.html`;card.style.visibility='hidden';
   card.style.setProperty('--paper',i%2?'#e4e3dc':'#fcfcf7');card.style.setProperty('--angle',`${i%2?5:-4}deg`);
@@ -94,6 +97,7 @@ async function toggleYear(item,trigger,restoring=false){
  });
  const mediaReady=Promise.all(entries.map(({card})=>{const media=card.querySelector('img,video');return media.tagName==='IMG'?media.decode().catch(()=>{}):new Promise(resolve=>{if(media.readyState>=1||media.error)return resolve();media.addEventListener('loadedmetadata',resolve,{once:true});media.addEventListener('error',resolve,{once:true});setTimeout(resolve,4000);});}));
  await (restoring?Promise.race([mediaReady,new Promise(resolve=>setTimeout(resolve,600))]):mediaReady);
+ if(turn!==projectRevision)return;
  entries.forEach(({card,line,project})=>{
   sizeCover(card.querySelector('img,video'));
   const sx=item.x+149,sy=item.y+9,tx=project.x+card.offsetWidth/2,ty=project.y+8;
@@ -244,6 +248,7 @@ document.querySelector('#fit').onclick=()=>frame(true,true);
 let careerCamera=null;
 document.addEventListener('portfolio:career-toggle',event=>{
  if(event.detail.opened){
+  clearProjects();
   careerCamera={...state};
   const scale=Math.min(state.scale,(viewport.clientWidth-50)/780,(viewport.clientHeight-110)/1300);
   moveCamera({scale,x:viewport.clientWidth/2-1165*scale,y:(viewport.clientHeight-70)/2-1085*scale});

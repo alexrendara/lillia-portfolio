@@ -7,12 +7,13 @@
   {company:'Nomo 金融科技有限公司',role:'UX & UI设计师',date:'2022.07 - 2022.12 · 伦敦',keywords:'产品系统 / 交互规范 / 本地化研究',x:830,y:1480,color:'#dce9ef'},
   {company:'网易游戏',role:'用户体验研究员',date:'2019.07 - 2021.07 · 广州',keywords:'用户研究 / 体验评估 / 运营策略',x:1200,y:1480,color:'#f3e7b8'}
  ];
- let opened=false,busy=false,elements=[];
+ let opened=false,busy=false,elements=[],revision=0;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  profile.setAttribute('role','button');profile.tabIndex=0;
  profile.setAttribute('aria-label','个人简介，展开或收起四段工作经历');profile.setAttribute('aria-expanded','false');
  async function toggle(){
   if(busy||board.classList.contains('rearranging'))return;
+  const turn=++revision;
   busy=true;opened=!opened;profile.setAttribute('aria-expanded',String(opened));
   if(opened){
    elements=jobs.map((job,index)=>{
@@ -37,14 +38,23 @@
    const compact={transform:`translate(${1010-job.x}px,${650-job.y}px) scale(.3) rotate(0deg)`,opacity:0};
    const spread={transform:`translate(0,0) scale(1) rotate(${index%2?3:-3}deg)`,opacity:1};
    if(!reduced.matches)await note.animate(opened?[compact,spread]:[spread,compact],{duration:opened?420:300,delay:opened?index*35:0,easing:'cubic-bezier(.22,1,.36,1)',fill:'backwards'}).finished.catch(()=>{});
+   if(turn!==revision)return;
    if(opened){pin.style.opacity=1;line.style.opacity=1;}else{note.remove();pin.remove();line.remove();}
   }));
+  if(turn!==revision)return;
   if(!opened)elements=[];
   busy=false;
  }
  profile.addEventListener('click',toggle);
  profile.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();toggle();}});
- document.addEventListener('portfolio:layout-change',()=>{
-  elements.forEach(({note,pin,line})=>{note.remove();pin.remove();line.remove();});elements=[];opened=false;profile.setAttribute('aria-expanded','false');
- });
+ function reset(){
+  revision++;
+  elements.forEach(({note,pin,line})=>{
+   note.getAnimations().forEach(animation=>animation.cancel());
+   note.remove();pin.remove();line.remove();
+  });
+  elements=[];opened=false;busy=false;profile.setAttribute('aria-expanded','false');
+ }
+ document.addEventListener('portfolio:layout-change',reset);
+ document.addEventListener('portfolio:projects-opening',reset);
 })();

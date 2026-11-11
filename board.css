@@ -58,8 +58,8 @@ button.year.locked{cursor:pointer}
 
 .language-switch{position:fixed;right:24px;top:22px;z-index:40;padding:11px 16px;border:1px solid #d5d8cd;border-radius:5px;background:#fffffff0;color:#343e36;font:13px/1.4 system-ui,sans-serif;text-decoration:none}.language-switch:focus-visible{outline:3px solid #4887f6}.language-switch[aria-disabled=true]{color:#777;cursor:default}@media(max-width:600px){.language-switch{right:14px;top:14px;font-size:12px}}
 
-/* Warm archival folder stock on a light desktop. */
-body{background:#f3f3ef;color:#30342f;color-scheme:light}
+/* Reference palette: deep blue desktop and warm kraft folder stock. */
+body{background:#f3f3ef url('assets/light-cloth.svg') repeat;background-size:256px 256px;color:#30342f;color-scheme:light}
 #board{background-image:none}
 .profile{isolation:isolate}
 .profile .paper{

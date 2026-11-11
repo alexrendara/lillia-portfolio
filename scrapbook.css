@@ -1,0 +1,26 @@
+/* Shared stationery materials; decoration never intercepts canvas or case controls. */
+:root{--journal-grid:linear-gradient(#738f9d25 1px,transparent 1px),linear-gradient(90deg,#738f9d25 1px,transparent 1px);--journal-stock:#faf8ee}
+#board .print-1,#board .print-2{background-color:var(--journal-stock);background-image:var(--journal-grid);background-size:18px 18px;border:1px solid #dad8c9}
+#board .print-2{background-color:#eae6d8;background-size:12px 12px}
+.profile-photo-stack:before{content:'';position:absolute;left:15px;top:-28px;width:440px;height:calc(100% + 30px);background-color:var(--journal-stock);background-image:var(--journal-grid);background-size:16px 16px;transform:rotate(-5deg);box-shadow:1px 3px 7px #30291b25;border:8px solid #f9f6e9}
+body.project-detail{background:#f3f3ef url('assets/light-cloth.svg') repeat;background-size:256px 256px}
+body.project-detail :is(.reflection,.tradeoff){position:relative;background-color:#f5efda;background-image:var(--journal-grid);background-size:22px 22px;border:1px solid #ddd8c7;padding:32px;box-shadow:3px 6px 12px #453c2710}
+body.project-detail :is(.chapter>.intro,.case-section>.section-heading){position:relative}
+
+
+body.project-detail .pdf-page{position:relative;box-shadow:3px 6px 18px #453c2720}
+body.project-detail .pdf-page:after{content:'';position:absolute;top:-10px;left:calc(50% - 45px);width:90px;height:20px;background:#d7c29280;transform:rotate(-3deg);pointer-events:none}
+@media(max-width:700px){body.project-detail :is(.overview,.case-meta,.meta.wrap,.reflection,.tradeoff){padding:22px}}
+
+/* Pale, theme-coloured project folders. */
+body.project-detail{--folder-stock:#e4edf2;--folder-ink:#354f60}
+body.ace-exam-page{--folder-stock:#dfeef3;--folder-ink:#355e70}
+body.ai-guide-page{--folder-stock:#e5ecdd;--folder-ink:#496047}
+body.linghui-page{--folder-stock:#ede7f3;--folder-ink:#655477}
+body.ai-ticket-page{--folder-stock:#eee7f4;--folder-ink:#69557b}
+body.ai-travel-photo-page{--folder-stock:#ede7f3;--folder-ink:#655477}
+body.project-detail :is(.overview,.case-meta,.meta.wrap){position:relative;isolation:isolate;margin-top:48px;padding:30px 32px 32px;background:linear-gradient(115deg,#ffffff25,transparent 65%),var(--folder-stock);border:0;border-radius:0 12px 12px 12px;box-shadow:inset 0 1px 0 #ffffff70,0 2px 3px #263a4610,0 8px 18px #263a4609;}
+body.project-detail :is(.overview,.case-meta,.meta.wrap):before{content:'项目概览';position:absolute;left:0;top:-33px;width:210px;height:34px;box-sizing:border-box;padding:10px 28px 0;background:var(--folder-stock);color:var(--folder-ink);font-family:inherit;font-weight:500;font-size:13px;line-height:1.4;letter-spacing:.04em;border:0;border-radius:15px 21px 0 0;clip-path:polygon(0 0,88% 0,94% 78%,100% 100%,0 100%);transform:none;pointer-events:none}
+html[lang=en] body.project-detail :is(.overview,.case-meta,.meta.wrap):before{content:'Project overview';letter-spacing:.02em}
+body.project-detail :is(.overview,.case-meta,.meta.wrap) small{color:var(--folder-ink)}
+@media(max-width:700px){body.project-detail :is(.overview,.case-meta,.meta.wrap){margin-top:44px;padding:24px 22px;gap:24px 20px}body.project-detail :is(.overview,.case-meta,.meta.wrap):before{width:190px;padding-left:22px}}

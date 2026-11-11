@@ -172,6 +172,7 @@ document.querySelectorAll("[data-copy-email]").forEach((button) => {
 });
 
 document.querySelectorAll("[data-pdf-viewer]").forEach((viewer) => {
+  if (document.body.hasAttribute("data-page-tabs")) return;
   const pages = Array.from(viewer.querySelectorAll(".pdf-page"));
   const links = Array.from(viewer.querySelectorAll(".pdf-sidebar a"));
   const counter = viewer.querySelector("[data-pdf-count]");
