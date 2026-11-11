@@ -91,5 +91,5 @@ body{background:#f3f3ef;color:#30342f;color-scheme:light}
 
 /* Die-cut archival folder: front cover, tucked prints, one right-hand tab. */
 .profile .paper{isolation:isolate;background:transparent;border:1px solid transparent;box-shadow:none;border-radius:0}
-.profile .paper:before{content:'';position:absolute;inset:-1px auto -1px -1px;width:calc(100% + 30px);border:0;border-radius:0;z-index:-1;pointer-events:none;background:url('assets/profile-folder-cover.svg') center/100% 100% no-repeat;-webkit-mask-image:none;mask-image:none;box-shadow:none;filter:drop-shadow(2px 4px 3px #0003)}
+.profile .paper:before{content:'';position:absolute;inset:-1px auto -1px -1px;width:calc(100% + 30px);border:0;border-radius:0;z-index:-1;pointer-events:none;background:url('assets/profile-folder-cover.svg?v=kraft-light-31') center/100% 100% no-repeat;-webkit-mask-image:none;mask-image:none;box-shadow:none;filter:drop-shadow(2px 4px 3px #0003)}
 .profile-back-photo{padding:5px 5px 9px;box-shadow:1px 2px 4px #0003;background:#f4f0e4;border-color:#ddd6c5}
