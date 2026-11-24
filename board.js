@@ -13,7 +13,7 @@ board.addEventListener('loadedmetadata',event=>sizeCover(event.target),true);
 board.addEventListener('portfolio:cover-sized',event=>sizeCover(event.target),true);
 new MutationObserver(()=>board.querySelectorAll('.print-0 img,.print-0 video,.project-card img,.project-card video').forEach(sizeCover)).observe(board,{childList:true,subtree:true});
 const years=[
- {year:2026,x:510,y:220,color:'#b4d0ac',tilt:-5,images:['year-2026-cover.png','tongcheng-ai/footprint-album.png','tongcheng-ai/route-detail.png'],label:'景区智能导览系统'},
+ {year:2026,x:510,y:220,color:'#b4d0ac',tilt:-5,images:['year-2026-cover.png','tongcheng-ai/footprint-album.png','project-dada-ai-cover.apng'],label:'智能导览与知识库多端体验'},
  {year:2025,x:530,y:850,color:'#bca4da',tilt:4,images:['year-2025-cover.png','project-linghui-ai-cover.png','project-ai-ticket-cover.png'],label:'人工智能创作与生成'},
  {year:2024,x:1480,y:200,color:'#91bdcf',tilt:5,images:['year-2024-cover.png','ace-exam/test-dashboard.png','ace-exam/test-create-timed.png'],label:'医学考试学习平台'},
  {year:2023,x:1470,y:690,color:'#df8a76',tilt:-4,images:['year-2023-cover.png','year-2023-cover.png'],label:'服务设计项目探索，暂未开放',locked:true},
@@ -27,7 +27,7 @@ const regions=[
 ];
 let mode='years';
 const projects={
- 2026:[{title:'同程旅行景区AI导览',image:'project-tongcheng-ai-cover.png',page:'tongcheng-ai-guide',x:155,y:110}],
+ 2026:[{title:'同程旅行景区AI导览',image:'project-tongcheng-ai-cover.png',page:'tongcheng-ai-guide',x:155,y:110},{title:'嗒嗒 AI · 知识库',image:'project-dada-ai-cover.apng',page:'dada-ai',x:1000,y:-360}],
  2025:[{title:'灵绘AI',image:'project-linghui-ai-cover.png',page:'linghui-ai',x:60,y:1210},{title:'年会电子纪念票',image:'project-ai-ticket-cover.png',page:'ai-ticket',x:-390,y:1080},{title:'AI旅拍',image:'project-ai-travel-photo-cover.png',page:'ai-travel-photo',x:475,y:1450}],
  2024:[{title:'Ace the Exam',image:'project-ace-exam-cover.png',page:'ace-the-exam',x:1940,y:240}],
  2022:[{title:'Nomo Fintech',image:'project-nomo-cover.png',page:'nomo-fintech',x:-390,y:65},{title:'Play@',image:'project-play-cover.png',page:'play-at',x:-430,y:455},{title:'TBI · The Big Impact',image:'project-tbi-cover.png',page:'tbi',x:-1470,y:650}],
