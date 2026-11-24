@@ -97,3 +97,7 @@ body{background:#f3f3ef url('assets/light-cloth.svg') repeat;background-size:256
 /* Keep the connecting threads subtle over portfolio imagery. */
 #threads{opacity:.32}
 #threads path{filter:none}
+
+/* Thread runs behind opaque photos and cards; pins remain above them. */
+#threads{z-index:0}
+.project-card,.career-note{z-index:1}
