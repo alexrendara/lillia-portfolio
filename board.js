@@ -85,7 +85,7 @@ async function toggleYear(item,trigger,restoring=false){
  if(!closing){document.dispatchEvent(new CustomEvent('portfolio:projects-opening'));careerCamera=null;}
  const entries=closing?expandedYears.get(item.year):groupProjects(item).map((project,i)=>{
   const card=document.createElement('a');card.className='project-card item';card.href=`projects/${project.page}.html`;card.style.visibility='hidden';
-  card.style.setProperty('--paper',i%2?'#e4e3dc':'#fcfcf7');card.style.setProperty('--angle',`${i%2?5:-4}deg`);
+  card.style.setProperty('--paper',project.page==='dada-ai'?'#ffffff':i%2?'#e4e3dc':'#fcfcf7');card.style.setProperty('--angle',`${i%2?5:-4}deg`);
   const img=window.createCoverMedia(project.image);
   const title=document.createElement('span');title.textContent=project.title;card.append(img,title);board.append(card);
   const pin=document.createElement('span');pin.className='pushpin year-pin project-pin';pin.style.backgroundPosition=`${index*25}% 0`;pin.style.opacity=0;pin.setAttribute('aria-hidden','true');board.append(pin);
