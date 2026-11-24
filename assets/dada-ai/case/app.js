@@ -22,4 +22,4 @@ const links=[...document.querySelectorAll('nav a')];const observer=new Intersect
 
 const heroCat=document.querySelector('#hero-cat');
 // Static fallback uses the same artwork for visitors who prefer reduced motion.
-if(heroCat){const still=new URL('../../../project-dada-ai-cover.png',assetBase).href;const setHero=()=>heroCat.src=motionPreference.matches?still:new URL('../../../project-dada-ai-cover-hq.webp?v=hq-1',assetBase).href;setHero();motionPreference.addEventListener('change',setHero);}
+if(heroCat){const still=new URL('../../../project-dada-ai-cover.png',assetBase).href;const setHero=()=>heroCat.src=motionPreference.matches?still:new URL('../../../project-dada-ai-cover-clear.webp?v=clear-1',assetBase).href;setHero();motionPreference.addEventListener('change',setHero);}
