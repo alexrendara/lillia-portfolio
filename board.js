@@ -27,7 +27,7 @@ const regions=[
 ];
 let mode='years';
 const projects={
- 2026:[{title:'同程旅行景区AI导览',image:'project-tongcheng-ai-cover.png',page:'tongcheng-ai-guide',x:155,y:110},{title:'嗒嗒 AI · 知识库',image:'project-dada-ai-cover.apng',page:'dada-ai',x:1000,y:-360}],
+ 2026:[{title:'同程旅行景区AI导览',image:'project-tongcheng-ai-cover.png',page:'tongcheng-ai-guide',x:-100,y:-400},{title:'嗒嗒 AI · 知识库',image:'project-dada-ai-cover.apng',page:'dada-ai',x:600,y:-430}],
  2025:[{title:'灵绘AI',image:'project-linghui-ai-cover.png',page:'linghui-ai',x:60,y:1210},{title:'年会电子纪念票',image:'project-ai-ticket-cover.png',page:'ai-ticket',x:-390,y:1080},{title:'AI旅拍',image:'project-ai-travel-photo-cover.png',page:'ai-travel-photo',x:475,y:1450}],
  2024:[{title:'Ace the Exam',image:'project-ace-exam-cover.png',page:'ace-the-exam',x:1940,y:240}],
  2022:[{title:'Nomo Fintech',image:'project-nomo-cover.png',page:'nomo-fintech',x:-390,y:65},{title:'Play@',image:'project-play-cover.png',page:'play-at',x:-430,y:455},{title:'TBI · The Big Impact',image:'project-tbi-cover.png',page:'tbi',x:-1470,y:650}],
